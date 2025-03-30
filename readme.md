@@ -287,7 +287,7 @@ We used AI-Creator to generate a video adaptation of the opening chapters from *
 
 **Prompt:**
 ```
-[Lingxuan write here]
+编写通顺的解说文案，字数达到1500。
 ```
 
 ## 6. Tech News Updates
@@ -318,7 +318,7 @@ Original Tech Report
 
 **Prompt:**
 ```
-[Add prompt example here]
+Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
 ```
 
 ### 6.2 Dune Movie Cast Updates
@@ -337,7 +337,7 @@ Original Interview with <i>Dune</i> Cast
 
 **Prompt:**
 ```
-[Add prompt example here]
+Short movie podcast, colloquial expression within 300 words, notice to identify which actor or host is talking, don't mention movie tickets available issue.
 ```
 
 # Acknowledgements
