@@ -64,6 +64,7 @@ AI-Creator employs a powerful multimodal encoder that transforms video clips con
 **Key Features:**
 - Perfect sync between visuals and background music rhythm
 - Expert capture of high-energy scenes (<1 min) from the full movie (>2 hours)
+- Maintain visual continuity and reduce redundant clips
 
 Through intelligent analysis of xx hours of film footage, AI-Creator automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
 
