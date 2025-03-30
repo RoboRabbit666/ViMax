@@ -87,7 +87,7 @@ We showcase two distinct edits of *Interstella* created using AI-Creator. The fi
 **Prompt**:
 ```
 Version 1:
-Love can transcend tiem and space.
+Love can transcend time and space.
 ```
 ```
 Version 2:
