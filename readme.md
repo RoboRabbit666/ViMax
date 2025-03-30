@@ -223,7 +223,7 @@ Ready to create music videos realizing your creative ideas? AI-Creator helps you
 
 **Prompts:**
 ```
-[Hengji write prompts here]
+The song is performed by Patrick Star, focusing on the theme of ​**"the struggles of manuscript submission and dealing with overly critical reviewers"**, following the original lyrics' sentence structure while replacing specific content. It incorporates elements of reviewer nitpicking (e.g., questioning innovation, demanding redundant experiments) and expresses frustration with lines like "If only I could swap reviewers, this academic fate is too cruel" to highlight the emotional toll of peer review.
 ```
 
 
