@@ -360,4 +360,13 @@ All content used in our demonstrations is for research purposes only. We deeply 
 Then a short explanation on the framework, without specific technical details. -->
 
 # Usage
-[Hengji write instruction for users to run through several simplest demos.]
+## Clone and install
+```
+git clone https://github.com/HKUDS/AI-Creator.git
+
+conda create --name aicreator python=3.10
+
+conda activate cosyvoice
+
+pip install -r requirements.txt
+```
