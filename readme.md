@@ -297,10 +297,6 @@ Want to create engaging tech news videos? AI-Creator helps transform complex tec
 
 AI-Creator processes source videos through automatic speech recognition, employing text-based character dialogue matching inference. Through multiple self-reflection cycles, it distills critical news and dialogue elements while eliminating extraneous content. Then generates condensed summaries using customizable presentation styles for both text and speech output. Finally, it leverages semantic analysis to retrieve relevant scenes and speaker footage from the original video, producing a concise, coherent final edit that distills the news's core substance.
 
-**Key Features:**
-- Automated news content summarization
-- Accurate audio and video clip alignment (eg. 1:00 Generated a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
-
 ### 6.1 Tech News: OpenAI's GPT-4o Image Generation Release
 <table>
 <tr>
@@ -315,6 +311,10 @@ Original Tech Report
 </tr>
 </table>
 
+**Key Features:**
+- Automated news content summarization
+- Accurate audio and video clip alignment (eg. 1:00 Generated a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
+
 **Prompt:**
 ```
 Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
@@ -325,14 +325,18 @@ Short tech news, colloquial expression within 250 words, check the accuracy of k
 <tr>
 <td align="center" width="50%">
 <a href="https://www.bilibili.com/video/BV1m1Z6Y2Erb/"><img src="assets/dune_news_cover.png" width="100%"></a>
-News About <i>Dune</i>
+Podcast Summarization About <i>Dune</i> 2 Cast
 </td>
 <td align="center" width="50%">
 <a href="https://www.youtube.com/watch?v=AVQRnDFZ1Qs"><img src="assets/dune_original_cover.png" width="100%"></a>
-Original Interview with <i>Dune</i> Cast
+Original Podcast with <i>Dune</i> 2 Cast
 </td>
 </tr>
 </table>
+
+**Key Features:**
+- Automated news content summarization
+- Accurate audio and main characters video clip alignment (eg. 00:13 Timothée Chalamet, 00:28 Zendaya, 00:38 Romance, 00:47 Florence Pugh, 00:56 Austin Butler, 01:06 Javier Bardem)
 
 **Prompt:**
 ```
@@ -349,7 +353,13 @@ First and foremost, we are indebted to the open-source community and AI service 
 - [Fish Speech](https://github.com/fishaudio/fish-speech)
 - [Seed-VC](https://github.com/Plachtaa/seed-vc)
 - [DiffSinger](https://github.com/MoonInTheRiver/DiffSinger)
-Lingxuan: VideoRAG, LightRAG, nano-graphrag, ImageBind, CosyVoice, whisper-large-v3 turbo, MiniCPM-V-2_6-int4, Librosa, moviepy, FFmpeg
+- [VideoRAG](https://github.com/HKUDS/VideoRAG)
+- [ImageBind](https://github.com/facebookresearch/ImageBind)
+- [whisper](https://github.com/openai/whisper)
+- [MiniCPM](https://github.com/OpenBMB/MiniCPM-o)
+- [Librosa](https://github.com/librosa/librosa)
+- [moviepy](https://github.com/Zulko/moviepy)
+- [ffmpeg](https://github.com/FFmpeg/FFmpeg)
 
 Our work has been significantly enriched by the creative contributions of content creators across various platforms:
 - The talented creators behind the original video content we used for testing and demonstration
