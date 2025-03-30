@@ -293,14 +293,13 @@ We used AI-Creator to generate a video adaptation of the opening chapters from *
 ## 6. Tech News Updates
 Want to create engaging tech news videos? AI-Creator helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
 
-**How AI-Creator Makes News Videos**
+**How AI-Creator Makes News Summary Videos**
 
-[Lingxuan write this part]
+AI-Creator processes source videos through automatic speech recognition, employing text-based character dialogue matching inference. Through multiple self-reflection cycles, it distills critical news and dialogue elements while eliminating extraneous content. Then generates condensed summaries using customizable presentation styles for both text and speech output. Finally, it leverages semantic analysis to retrieve relevant scenes and speaker footage from the original video, producing a concise, coherent final edit that distills the news's core substance.
 
 **Key Features:**
 - Automated news content summarization
-- Dynamic visuals selection and composition
-- Clear audio narration synthesis
+- Accurate audio and video clip alignment (eg. 1:00 Generated a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
 
 ### 6.1 Tech News: OpenAI's GPT-4o Image Generation Release
 <table>
