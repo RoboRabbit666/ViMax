@@ -98,7 +98,7 @@ Celebrate humanity's courage in space exploration. Include scenes featuring spac
 <a href='https://www.bilibili.com/video/BV1NQZ6YCEPH/' target='_blank'><img src='assets/nezha_cover.png' width=60%/></a>
 
 **Key Features:**
-- Capturing scences of conflicts and battals
+- Capturing scences of conflicts and battles
 
 **Prompt:**
 ```
