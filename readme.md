@@ -1,4 +1,4 @@
-<h1 align='center'>🚀 AI-Creator: Automated Video Editing with LLM Agents</h1>
+<h1 align='center'>🚀 AI-Creator: Fully-Automated Video Editing with LLM Agents</h1>
 
 <div align='center'>
     <a href='https://space.bilibili.com/3546868449544308'><img src="https://img.shields.io/badge/bilibili-00A1D6.svg?logo=bilibili&logoColor=white" /></a>&nbsp;
