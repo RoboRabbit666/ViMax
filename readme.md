@@ -370,3 +370,21 @@ conda activate cosyvoice
 
 pip install -r requirements.txt
 ```
+
+## Model download
+```
+# CosyVoice Model Download
+cd tools/CosyVoice
+mkdir -p pretrained_models
+git clone https://www.modelscope.cn/iic/CosyVoice2-0.5B.git pretrained_models/CosyVoice2-0.5B
+
+# Fish Speech Model Download
+cd tools/fish-speech
+huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
+# 对于中国大陆用户，可使用 mirror 下载。
+HF_ENDPOINT=https://hf-mirror.com huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
+
+# Seed-VC Model Download
+Initial activation of the song cover functionality triggers an automatic model download.
+```
+
