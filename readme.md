@@ -62,9 +62,10 @@ AI-Creator employs a powerful multimodal encoder that transforms video clips con
 <a href='https://www.bilibili.com/video/BV1C9Z6Y3ESo/' target='_blank'><img src='assets/spiderman_cover.png' width=60%/></a>
 
 **Key Features:**
-- Perfect sync between visuals and background music rhythm
+- Perfect sync between visuals and background music rhythm (eg. 13s, 22s, 25s)
 - Expert capture of high-energy scenes (<1 min) from the full movie (>2 hours)
 - Maintain visual continuity and reduce redundant clips
+- Accurately align the storyboard description of the user prompt (eg. 1st, 2nd sections)
 
 Through intelligent analysis of xx hours of film footage, AI-Creator automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
 
