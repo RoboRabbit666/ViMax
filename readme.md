@@ -337,7 +337,7 @@ Original Interview with <i>Dune</i> Cast
 
 **Prompt:**
 ```
-[Add prompt example here]
+Short movie podcast, colloquial expression within 300 words, notice to identify which actor or host is talking, don't mention movie tickets available issue.
 ```
 
 # Acknowledgements
