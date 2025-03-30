@@ -320,7 +320,7 @@ Original Tech Report
 Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
 ```
 
-### 6.2 Dune Movie Cast Updates
+### 6.2 Dune 2 Movie Cast Update Interview
 <table>
 <tr>
 <td align="center" width="50%">
