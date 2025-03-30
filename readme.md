@@ -275,7 +275,7 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 
 **How AI-Creator Makes Novel-to-Screen Adaption**
 
-[lingxuan write here]
+AI-Creator employs a self-reflection workflow when processing novel text. This iterative approach enhances key narrative elements while progressively minimizing information gaps in the main storyline, including plot-advancing dialogues. Then crafts speech using customizable copywriting techniques, leveraging the semantic content of each sentence to retrieve matched video clips from a vector database, creating a seamless audiovisual adaptation of the original text.
 
 **Key Features:**
 - Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
