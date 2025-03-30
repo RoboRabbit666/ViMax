@@ -55,10 +55,10 @@ News Summarization
 Ever dreamed of creating stunning movie edits that captivate your audience? With AI-Creator, you can transform your favorite movie clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
 
 **How AI-Creator Makes Movie Edits**
-- Users only need to prepare the video sources and music files they want
-- Automatically extract music rhythm points
-- Automatically assists with storyboard query design through video content based on user-provided ideas
-- Automatically complete the editing and integration of the video
+- Users just need to prepare the video sources, music audio file and the idea they want.
+- Automatically extract music rhythm points (optional) setting threshold & mask parameters.
+- Automatically assists with storyboard query design through video content based on user-provided ideas.
+- Automatically complete the editing and integration of the video.
 
 ### 1.1 *Spider-Man: Across the Spider-Verse*
 <a href='https://www.bilibili.com/video/BV1C9Z6Y3ESo/' target='_blank'><img src='assets/spiderman_cover.png' width=60%/></a>
@@ -277,11 +277,11 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 
 **How AI-Creator Makes Novel-to-Screen Adaption**
 
-- Users only need to provide the film and television source files they want as visual materials
-- Users only provide ideas and automatically write copy based on the provided novel/book text content
-- Options: Provide favorite explanation audio files for cloning
-- Options: Customized speech style
-- Automatically complete video material splicing and audio integration
+- Users just need to provide their idea, novel/book txt file and film/tv series video source files they want as visual materials.
+- (Optional) Provide favorite commentary audio files for cloning.
+- (Optional) Customized presentation style txt file.
+- Automatically write copy based on the provided novel/book text content.
+- Automatically complete video material splicing and audio integration.
 
 **Key Features:**
 - Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
@@ -302,11 +302,11 @@ Want to create engaging tech news videos? AI-Creator helps transform complex tec
 
 **How AI-Creator Makes News Summary Videos**
 
-- Users only need to provide the interview source files they want as visual content
-- Users only need to provide ideas, automatically transcribe the interview content through voice and extract key information of people/events to write news summaries
-- Option: Provide favorite explanation audio files for cloning
-- Option: Customize speech style
-- Automatically complete video material splicing and audio integration
+- Users only need to provide their idea and the interview/news source files they want to summarize.
+- (Optional) Provide favorite audio files for cloning.
+- (Optional) Customize presentation style txt file.
+- Automatically transcribe the interview content through voice and extract key information of people/events to write news summaries.
+- Automatically complete video material splicing and audio integration.
 
 ### 6.1 Tech News: OpenAI's GPT-4o Image Generation Release
 <table>
