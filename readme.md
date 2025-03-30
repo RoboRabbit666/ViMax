@@ -302,7 +302,7 @@ Want to create engaging tech news videos? AI-Creator helps transform complex tec
 - Dynamic visuals selection and composition
 - Clear audio narration synthesis
 
-### 6.1 Tech News: OpenAI's GPT-4 Release
+### 6.1 Tech News: OpenAI's GPT-4o Image Generation Release
 <table>
 <tr>
 <td align="center" width="50%">
