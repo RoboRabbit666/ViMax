@@ -44,7 +44,7 @@ TV Drama
 </td>
 <td align="center" width="33%">
 <a href="https://www.bilibili.com/video/BV12mZ6YLEqW/"><img src="assets/openai_news_cover.png" width="100%"></a>
-News
+News Summarization
 </td>
 </tr>
 </table>
