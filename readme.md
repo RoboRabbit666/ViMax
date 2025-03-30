@@ -318,7 +318,7 @@ Original Tech Report
 
 **Prompt:**
 ```
-[Add prompt example here]
+Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
 ```
 
 ### 6.2 Dune Movie Cast Updates
