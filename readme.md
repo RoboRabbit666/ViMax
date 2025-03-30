@@ -287,7 +287,7 @@ We used AI-Creator to generate a video adaptation of the opening chapters from *
 
 **Prompt:**
 ```
-[编写通顺的解说文案，字数达到1500。]
+编写通顺的解说文案，字数达到1500。
 ```
 
 ## 6. Tech News Updates
