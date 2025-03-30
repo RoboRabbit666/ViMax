@@ -57,7 +57,7 @@ Ever dreamed of creating stunning movie edits that captivate your audience? With
 **How AI-Creator Makes Movie Edits**
 - Users only need to prepare the video sources and music files they want
 - Automatically extract music rhythm points
-- Automatically assist in storyboard query design based on the idea provided by the user
+- Automatically assists with storyboard query design through video content based on user-provided ideas
 - Automatically complete the editing and integration of the video
 
 ### 1.1 *Spider-Man: Across the Spider-Verse*
@@ -277,7 +277,11 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 
 **How AI-Creator Makes Novel-to-Screen Adaption**
 
-AI-Creator employs a self-reflection workflow when processing novel text. This iterative approach enhances key narrative elements while progressively minimizing information gaps in the main storyline, including plot-advancing dialogues. Then crafts speech using customizable copywriting techniques, leveraging the semantic content of each sentence to retrieve matched video clips from a vector database, creating a seamless audiovisual adaptation of the original text.
+- Users only need to provide the film and television source files they want as visual materials
+- Users only provide ideas and automatically write copy based on the provided novel/book text content
+- Options: Provide favorite explanation audio files for cloning
+- Options: Customized speech style
+- Automatically complete video material splicing and audio integration
 
 **Key Features:**
 - Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
@@ -298,7 +302,11 @@ Want to create engaging tech news videos? AI-Creator helps transform complex tec
 
 **How AI-Creator Makes News Summary Videos**
 
-AI-Creator processes source videos through automatic speech recognition, employing text-based character dialogue matching inference. Through multiple self-reflection cycles, it distills critical news and dialogue elements while eliminating extraneous content. Then generates condensed summaries using customizable presentation styles for both text and speech output. Finally, it leverages semantic analysis to retrieve relevant scenes and speaker footage from the original video, producing a concise, coherent final edit that distills the news's core substance.
+- Users only need to provide the interview source files they want as visual content
+- Users only need to provide ideas, automatically transcribe the interview content through voice and extract key information of people/events to write news summaries
+- Option: Provide favorite explanation audio files for cloning
+- Option: Customize speech style
+- Automatically complete video material splicing and audio integration
 
 ### 6.1 Tech News: OpenAI's GPT-4o Image Generation Release
 <table>
