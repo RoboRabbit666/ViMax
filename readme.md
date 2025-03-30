@@ -209,8 +209,10 @@ Based on the following scenario, create an angry rebuttal from Zhuge Liang (me):
 Ready to create music videos realizing your creative ideas? AI-Creator helps you write lyrics, select singers you specify, and generate matching visuals to bring your musical vision to life. The system can coordinate lyrics, visuals, and music to create engaging amateur music videos.
 
 **How AI-Creator Makes Music Videos**
-
-[hengji write here, you can refer to the instructions I wrote for movie edit]
+- Users just need to provide the music MIDI file, original lyrics, BGM file (optional), target voice file, and requirements. 
+- Automatically performs loudness normalization and annotates the MIDI file using the Annotator Agent.
+- Automatically calibrates and adapts lyrics at the word level via the Analyzer Agent.
+- Automatically divides long rest intervals to reduce melodic errors and enables song covers.
 
 
 <a href='https://www.bilibili.com/video/BV1AV411S7yc/?spm_id_from=333.337.search-card.all.click&vd_source=13182b3a133b27042e1f14577e85d60f' target='_blank'><img src='assets/airencuoguo_cover.png' width=60%/></a>
@@ -229,8 +231,9 @@ Ready to create music videos realizing your creative ideas? AI-Creator helps you
 Interested in bridging cultural gaps through comedy? Transform popular English talk show segments into authentic Chinese crosstalk performances, and vice versa. Complete with cultural adaptations and localized humor that resonates with audiences of different culture backgrounds.
 
 **How AI-Creator Makes Talk Show Transitions**
-
-[hengji write here, you can refer to the instructions I wrote for movie edit]
+- Users just need to provide the target cross-talk (comedy dialogue) audio file.
+- Automatically adapts the script based on the provided target audio file.
+- Automatically selects the appropriate vocal tone for voice cloning according to the emotional context of the script.
 
 **Key Features:**
 - Cultural context adaptation and localization of humor
