@@ -58,7 +58,7 @@ Ever dreamed of creating stunning movie edits that captivate your audience? With
 
 AI-Creator employs a powerful multimodal encoder that transforms video clips content into high-dimensional vector representations. This system leverages a joint embedding framework that projects both video visual information and textual queries into a unified semantic space, facilitating precise cross-modal retrieval operations during subsequent information access phases. For rhythmic extraction, we employ energy envelopes and spectral characteristics into a unified rhythmic detection framework, facilitating precise identification of perceptually significant time points. In our retrieval and video precision-editing framework, we have designed a dual-stage retrieval workflow. Initially, we employ VLM to comprehend the visual content of source videos, assisting users in transforming conceptual ideas into storyboard textual queries. During the storyboard query generation process, we unify rhythm points and audio information into the LLM, enabling enhanced cross-modal semantic integration and producing high-quality queries that precisely retrieve corresponding video segments. In the second stage, we again leverage VLM to identify and extract, with greater granularity, the segments that best match the query storyboards within the rhythm-constrained boundaries, thereby reducing visual redundancy while enhancing visual coherence and accuracy.
 
-### 1.1 *Spiderman*
+### 1.1 *Spider-Man: Across the Spider-Verse*
 <a href='https://www.bilibili.com/video/BV1C9Z6Y3ESo/' target='_blank'><img src='assets/spiderman_cover.png' width=60%/></a>
 
 **Key Features:**
