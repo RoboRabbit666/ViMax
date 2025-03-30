@@ -55,8 +55,10 @@ News Summarization
 Ever dreamed of creating stunning movie edits that captivate your audience? With AI-Creator, you can transform your favorite movie clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
 
 **How AI-Creator Makes Movie Edits**
-
-AI-Creator employs a powerful multimodal encoder that transforms video clips content into high-dimensional vector representations. This system leverages a joint embedding framework that projects both video visual information and textual queries into a unified semantic space, facilitating precise cross-modal retrieval operations during subsequent information access phases. For rhythmic extraction, we employ energy envelopes and spectral characteristics into a unified rhythmic detection framework, facilitating precise identification of perceptually significant time points. In our retrieval and video precision-editing framework, we have designed a dual-stage retrieval workflow. Initially, we employ VLM to comprehend the visual content of source videos, assisting users in transforming conceptual ideas into storyboard textual queries. During the storyboard query generation process, we unify rhythm points and audio information into the LLM, enabling enhanced cross-modal semantic integration and producing high-quality queries that precisely retrieve corresponding video segments. In the second stage, we again leverage VLM to identify and extract, with greater granularity, the segments that best match the query storyboards within the rhythm-constrained boundaries, thereby reducing visual redundancy while enhancing visual coherence and accuracy.
+- Users only need to prepare the video sources and music files they want
+- Automatically extract music rhythm points
+- Automatically assist in storyboard query design based on the idea provided by the user
+- Automatically complete the editing and integration of the video
 
 ### 1.1 *Spider-Man: Across the Spider-Verse*
 <a href='https://www.bilibili.com/video/BV1C9Z6Y3ESo/' target='_blank'><img src='assets/spiderman_cover.png' width=60%/></a>
@@ -280,6 +282,7 @@ AI-Creator employs a self-reflection workflow when processing novel text. This i
 **Key Features:**
 - Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
 - Automated scene matching that pairs textual descriptions with appropriate visual elements, ensuring narrative coherence
+- Audio generation
 
 <a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/"><img src="assets/joylife_cover.png" width="60%"></a>
 
@@ -290,7 +293,7 @@ We used AI-Creator to generate a video adaptation of the opening chapters from *
 编写通顺的解说文案，字数达到1500。
 ```
 
-## 6. Tech News Updates
+## 6. Tech News Summarization Updates
 Want to create engaging tech news videos? AI-Creator helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
 
 **How AI-Creator Makes News Summary Videos**
@@ -314,6 +317,7 @@ Original Tech Report
 **Key Features:**
 - Automated news content summarization
 - Accurate audio and video clip alignment (eg. 1:00 Generated a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
+- Audio generation
 
 **Prompt:**
 ```
@@ -337,6 +341,7 @@ Original Podcast with <i>Dune</i> 2 Cast
 **Key Features:**
 - Automated news content summarization
 - Accurate audio and main characters video clip alignment (eg. 00:13 Timothée Chalamet, 00:28 Zendaya, 00:38 Romance, 00:47 Florence Pugh, 00:56 Austin Butler, 01:06 Javier Bardem)
+- Audio generation
 
 **Prompt:**
 ```
