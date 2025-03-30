@@ -347,6 +347,7 @@ We would like to express our deepest gratitude to the numerous individuals and o
 First and foremost, we are indebted to the open-source community and AI service providers whose tools and technologies form the foundation of our work:
 
 [list of libraries, packages, projects, tools, api providers]
+Lingxuan: VideoRAG, LightRAG, nano-graphrag, ImageBind, CosyVoice, whisper-large-v3 turbo, MiniCPM-V-2_6-int4, Librosa, moviepy, FFmpeg
 
 Our work has been significantly enriched by the creative contributions of content creators across various platforms:
 - The talented creators behind the original video content we used for testing and demonstration
