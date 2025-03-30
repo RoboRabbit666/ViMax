@@ -1,0 +1,22 @@
+mad_svc:
+  midi: "dataset/mad_svc/有何不可.mid"
+  lyrics: "dataset/mad_svc/有何不可.txt"
+  bgm: "dataset/mad_svc/有何不可-bgm.wav"
+  target: "dataset/mad_svc/派大星.wav"
+  reqs: |
+        - 演唱者：派大星
+        - 结合派大星的无厘头哲学，以论文中稿难为主题，歌词能够给人带来快乐
+        - 模仿原歌词的句式结构，只替换具体内容
+        - 保留原歌词的'啦啦啦...'部分
+        - 歌词具有诗意，抒情风格，而不要太直白。例如'你其实明白我心意'就不需要修改为'你其实明白我内心想法'
+
+#mad_svc:
+#  midi: "dataset/mad_svc/爱人错过.mid"
+#  lyrics: "dataset/mad_svc/爱人错过.txt"
+#  target: "dataset/mad_svc/派大星.wav"
+  reqs: |
+        - 演唱者：派大星
+        - 以**论文中稿难，遇到为难的审稿人**为主题
+        - 模仿原歌词的句式结构，只替换具体内容
+        - 需要提及审稿人是如何为难的，可以从创新、实验等角度出发
+        - 可以抒发投稿换个审稿人，命运太折磨这类情感

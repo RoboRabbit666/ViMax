@@ -1,0 +1,7 @@
+llm:
+  api_key: "sk-MwQrsAOUwsyYxdcq4429E9A7AaE942308d6534A75c039c97"
+  base_url: "https://az.gptplus5.com/v1"
+viggle:
+  api_key: "8a4b4989a63a432f946b3005022b6693"
+  base_url: "https://dzwlai.com/apiuser/_open/vigl/video/generate"
+
