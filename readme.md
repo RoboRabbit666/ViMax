@@ -118,8 +118,11 @@ A romantic and sweet love story about Jack and Rose meeting on the Titanic. It c
 Want to create engaging and hilarious meme videos? AI-Creator helps you craft memorable content by intelligently combining video clips, text, and effects into shareable content that could go viral.
 
 **How AI-Creator Makes Meme Videos**
-
-[hengji write here, you can refer to the instructions I wrote for movie edit]
+- Users just need to provide the video path and your requirements.
+- Automatically preprocesses audio (voice separation, loudness normalization, resampling, transcription) with corresponding agents
+- Automatically segments the audio and performs segment-level copywriting adaptation via the Writer Agent
+- Uses the Infer Agent for zero-shot inference on audio segments
+- Aligns and merges audio-visual content automatically with the Combiner Agent
 
 ### 2.1 Master Ma as AI Researcher
 <table>
