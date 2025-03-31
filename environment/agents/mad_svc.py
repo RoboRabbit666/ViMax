@@ -34,12 +34,9 @@ class MadSVCAgent:
         annotator_msg = Message(content={"midi": self.midi, "lyrics": self.lyrics})
         annotator_result = self.annotator.process_message(annotator_msg)
 
-        # analyzer_msg = Message(content={"annotator_result": annotator_result.content, "reqs": self.reqs})
-        # analyzer_result = self.analyzer.process_message(analyzer_msg)
-
-        with open('dataset/mad_svc/script.txt', 'r', encoding='utf-8') as f:
-            script = f.read()
-        analyzer_result = Message(content={"lyrics": script})
+        analyzer_msg = Message(content={"annotator_result": annotator_result.content, "reqs": self.reqs})
+        analyzer_result = self.analyzer.process_message(analyzer_msg)
+        
         spliter_msg = Message(content={"annotator_result": annotator_result, "analyzer_result": analyzer_result})
         spliter_result = self.spliter.process_message(spliter_msg)
 
