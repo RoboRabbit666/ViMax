@@ -30,28 +30,29 @@ class TalkShowAgent:
         self.translator = TalkShowTranslator()
         self.subtitle = TalkShowSubtitle()
     def orchestrator(self):
-        # pre_msg = Message(content={"audio_dir": os.path.dirname(self.audio_path)})
-        # separator_msg = self.seperator.process_message(pre_msg)
+        pre_msg = Message(content={"audio_dir": os.path.dirname(self.audio_path)})
+        separator_msg = self.seperator.process_message(pre_msg)
 
-        # normalizer_result = self.normalizer.process_message(pre_msg)
-        # resampler_result = self.resampler.process_message(pre_msg)
-        # transcriber_result = self.transcriber.process_message(pre_msg)
-        # target_msg = Message(content={"audio_dir": self.target})
-        # transcriber_target_result = self.transcriber.process_message(target_msg)
-        # lab_path = os.path.splitext(self.audio_path)[0] + '.lab'
-        # adapter_msg = Message(content={"reqs": self.reqs, "lab_path": lab_path})
-        # adapter_result = self.adapter.process_message(adapter_msg)
-        # with open('dataset/talk_show/ts.txt', 'r', encoding='utf-8') as f:
-        #     script = f.read()
-        # adapter_result = Message(content={'script': script})
-        # synth_msg = Message(content={"script": adapter_result.content.get('script'), "target": self.target})
-        # synth_result = self.synth.process_message(synth_msg)
-        json_path = "dataset/talk_show/ts.json"
-        audio_dir = "dataset/talk_show/guodegang/exp"
-        video_path = "dataset/talk_show/guodegang/final/final.mp4"
-        output_path = "dataset/talk_show/guodegang/final/final_subtitle.mp4"
-        subtitle_msg = Message(content={"video_path": video_path, "output_path": output_path, "audio_dir": audio_dir, "json_path": js})
-        subtitle_result = self.subtitle.process_message(subtitle_msg)
+        normalizer_result = self.normalizer.process_message(pre_msg)
+        resampler_result = self.resampler.process_message(pre_msg)
+        transcriber_result = self.transcriber.process_message(pre_msg)
+        
+        target_msg = Message(content={"audio_dir": self.target})
+        transcriber_target_result = self.transcriber.process_message(target_msg)
+        
+        lab_path = os.path.splitext(self.audio_path)[0] + '.lab'
+        adapter_msg = Message(content={"reqs": self.reqs, "lab_path": lab_path})
+        adapter_result = self.adapter.process_message(adapter_msg)
+
+        synth_msg = Message(content={"script": adapter_result.content.get('script'), "target": self.target})
+        synth_result = self.synth.process_message(synth_msg)
+        
+        # json_path = "dataset/talk_show/ts.json"
+        # audio_dir = "dataset/talk_show/guodegang/exp"
+        # video_path = "dataset/talk_show/guodegang/final/final.mp4"
+        # output_path = "dataset/talk_show/guodegang/final/final_subtitle.mp4"
+        # subtitle_msg = Message(content={"video_path": video_path, "output_path": output_path, "audio_dir": audio_dir, "json_path": js})
+        # subtitle_result = self.subtitle.process_message(subtitle_msg)
 
         # translator_msg = Message(content={"target": self.target})
         # translator_result = self.translator.process_message(translator_msg)
