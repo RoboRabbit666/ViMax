@@ -422,7 +422,7 @@ Initial activation of the song cover functionality triggers an automatic model d
 ```
 ```
 # DiffSinger Model
-[DiffSinger](https://drive.google.com/drive/folders/1LUYu6LLAeoaHGgqjaJMlqkQ--FzWhIB1?usp=drive_link)
+wget https://drive.google.com/drive/folders/1LUYu6LLAeoaHGgqjaJMlqkQ--FzWhIB1?usp=drive_link
 Users need to download the link above and place it in the ​tools/DiffSinger/checkpoints folder in the following format.
 |--checkpoints
     |--0102_xiaoma_pe
