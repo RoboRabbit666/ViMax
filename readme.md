@@ -422,7 +422,8 @@ Initial activation of the song cover functionality triggers an automatic model d
 
 ## Command Line
 ```
-Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory (a template is provided). Then, run the following command and enter their requirements:
+Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory (a template is provided).
+Then, run the following command and enter their requirements:
 
 cd AI-Creator
 python main.py
