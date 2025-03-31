@@ -326,7 +326,7 @@ Original Tech Report
 
 🌟 **Key Features:**
 - Automated news content summarization
-- Accurate audio and video clip alignment (eg. 1:00 Generated a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
+- Accurate audio and video clip alignment (eg. 1:00 Generate a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
 - Audio generation
 
 📝 **Prompt:**
