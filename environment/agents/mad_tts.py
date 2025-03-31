@@ -20,8 +20,7 @@ class MadTTSAgent:
     def __init__(self, config):
         self.video_path = config["mad_tts"]["video_path"]
         self.reqs = config["mad_tts"]["reqs"]
-        # self.audio_path = self.extract_audio()
-        self.audio_path = 'dataset/mad_tts/马保国.wav'
+        self.audio_path = self.extract_audio()
 
         self.separator = Separator()
         self.normalizer = LoudnessNormalizer()
@@ -60,37 +59,37 @@ class MadTTSAgent:
             print("Error: FFmpeg not found. Please install FFmpeg and add it to the system PATH")
 
     def orchestrator(self):
-        # pre_msg = Message(content={"audio_dir": os.path.dirname(self.audio_path)})
-        #
-        # separator_result = self.separator.process_message(pre_msg)
-        #
-        # normalizer_result = self.normalizer.process_message(pre_msg)
-        #
-        # resampler_result = self.resampler.process_message(pre_msg)
-        #
-        # transcriber_result = self.transcriber.process_message(pre_msg)
-        #
-        # slicer_msg = Message(content={"audio_path": self.audio_path, "output_dir": os.path.splitext(self.audio_path)[0]})
-        # slicer_result = self.slicer.process_message(slicer_msg)
-        #
+        pre_msg = Message(content={"audio_dir": os.path.dirname(self.audio_path)})
+
+        separator_result = self.separator.process_message(pre_msg)
+
+        normalizer_result = self.normalizer.process_message(pre_msg)
+
+        resampler_result = self.resampler.process_message(pre_msg)
+
+        transcriber_result = self.transcriber.process_message(pre_msg)
+
+        slicer_msg = Message(content={"audio_path": self.audio_path, "output_dir": os.path.splitext(self.audio_path)[0]})
+        slicer_result = self.slicer.process_message(slicer_msg)
+
         msg = Message(content={"audio_dir": os.path.splitext(self.audio_path)[0]})
-        # transcriber_result = self.transcriber.process_message(msg)
-        #
-        # lab_path = os.path.splitext(self.audio_path)[0] + ".lab"
-        # writer_msg = Message(content={"lab_path": lab_path, "reqs": self.reqs})
-        # writer_result = self.writer.process_message(writer_msg)
-        #
+        transcriber_result = self.transcriber.process_message(msg)
+
+        lab_path = os.path.splitext(self.audio_path)[0] + ".lab"
+        writer_msg = Message(content={"lab_path": lab_path, "reqs": self.reqs})
+        writer_result = self.writer.process_message(writer_msg)
+
         infer_result = self.infer.process_message(msg)
-        #
+
         combiner_msg = Message(content={"video_path": self.video_path, "audio_dir": os.path.splitext(self.audio_path)[0]})
         combiner_result = self.combiner.process_message(combiner_msg)
 
-        derivative_dir = os.path.join(os.path.splitext(self.audio_path)[0], "derivative")
-        txt_path = os.path.join(os.path.dirname(self.audio_path), "speech.txt")
-        video_path = os.path.join(os.path.splitext(self.audio_path)[0], "final", "final.mp4")
-        output_path = os.path.join(os.path.dirname(video_path), "final_subtitle.mp4")
-        subtitle_msg = Message(content={"derivative_dir": derivative_dir, "txt_path": txt_path, "video_path": video_path, "output_path": output_path})
-        subtitle_result = self.subtitle_v2.process_message(subtitle_msg)
+        # derivative_dir = os.path.join(os.path.splitext(self.audio_path)[0], "derivative")
+        # txt_path = os.path.join(os.path.dirname(self.audio_path), "speech.txt")
+        # video_path = os.path.join(os.path.splitext(self.audio_path)[0], "final", "final.mp4")
+        # output_path = os.path.join(os.path.dirname(video_path), "final_subtitle.mp4")
+        # subtitle_msg = Message(content={"derivative_dir": derivative_dir, "txt_path": txt_path, "video_path": video_path, "output_path": output_path})
+        # subtitle_result = self.subtitle_v2.process_message(subtitle_msg)
         return 1
 
 def gen_mad_tts():
