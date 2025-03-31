@@ -420,6 +420,15 @@ HF_ENDPOINT=https://hf-mirror.com huggingface-cli download fishaudio/fish-speech
 # Seed-VC Model Download
 Initial activation of the song cover functionality triggers an automatic model download.
 ```
+```
+# DiffSinger Model
+[DiffSinger](https://drive.google.com/drive/folders/1LUYu6LLAeoaHGgqjaJMlqkQ--FzWhIB1?usp=drive_link)
+Users need to download the link above and place it in the ​tools/DiffSinger/checkpoints folder in the following format.
+|--checkpoints
+    |--0102_xiaoma_pe
+    |--0109_hifigan_bigpopcs_hop128
+    |--0228_opencpop_ds100_rel
+```
 
 ## Command Line
 ```
