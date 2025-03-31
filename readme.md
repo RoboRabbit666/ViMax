@@ -395,7 +395,7 @@ git clone https://github.com/HKUDS/AI-Creator.git
 
 conda create --name aicreator python=3.10
 
-conda activate cosyvoice
+conda activate aicreator
 
 conda install -y -c conda-forge pynini==2.1.5
 pip install -r requirements.txt
@@ -420,3 +420,12 @@ HF_ENDPOINT=https://hf-mirror.com huggingface-cli download fishaudio/fish-speech
 Initial activation of the song cover functionality triggers an automatic model download.
 ```
 
+## Command Line
+```
+Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory (a template is provided).
+Then, run the following command and enter their requirements:
+
+cd AI-Creator
+python main.py
+Please describe what you want to do: ...
+```
