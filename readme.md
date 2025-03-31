@@ -21,21 +21,21 @@ We have made videos of six distinct types using our AI-Creator, including:
 <table>
 <tr>
 <td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1C9Z6Y3ESo/"><img src="assets/spiderman_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1C9Z6Y3ESo/" target='_blank'><img src="assets/spiderman_cover.png" width="100%"></a>
 Movie Edits
 </td>
 <td align="center" width="33%">
-<a href=""><img src="assets/masterma_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1ucZ6YmEBU/" target='_blank'><img src="assets/masterma_cover.png" width="100%"></a>
 Meme Videos
 </td>
 <td align="center" width="33%">
-<a href=""><img src="assets/airencuoguo_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1t8ZCYsEeA/"><img src="assets/airencuoguo_cover.png" width="100%"></a>
 Music Videos
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
-<a href=""><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/"><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
 Verbal Comedy Arts
 </td>
 <td align="center" width="33%">
@@ -132,7 +132,7 @@ Want to create engaging and hilarious meme videos? AI-Creator helps you craft me
 <table>
 <tr>
 <td align="center" width="50%">
-<a href='https://www.bilibili.com/video/BV1AV411S7yc/?spm_id_from=333.337.search-card.all.click&vd_source=13182b3a133b27042e1f14577e85d60f' target='_blank'><img src='assets/masterma_cover.png' width=100%/></a>
+<a href='https://www.bilibili.com/video/BV1ucZ6YmEBU/' target='_blank'><img src='assets/masterma_cover.png' width=100%/></a>
 Master Ma as AI Researcher
 </td>
 <td align="center" width="50%">
@@ -155,17 +155,17 @@ Create a humorous narrative about two PhD students seeking advice from Master Ma
 <table>
 <tr>
 <td align="center" width="50%">
-<a href='https://www.bilibili.com/video/BV1AV411S7yc/?spm_id_from=333.337.search-card.all.click&vd_source=13182b3a133b27042e1f14577e85d60f' target='_blank'><img src='assets/xiaomingjianmo1_cover.png' width=100%/></a>
+<a href='https://www.bilibili.com/video/BV1gFZ6YEE5W' target='_blank'><img src='assets/xiaomingjianmo1_cover.png' width=100%/></a>
 Video 1: Mixue's Response
 </td>
 <td align="center" width="50%">
-<a href='https://www.bilibili.com/video/BV1AV411S7yc/?spm_id_from=333.337.search-card.all.click&vd_source=13182b3a133b27042e1f14577e85d60f' target='_blank'><img src='assets/xiaomingjianmo_findyourproblem_meme.png' width=100%/></a>
+<a href='https://www.bilibili.com/video/BV1ucZ6YmE5x/' target='_blank'><img src='assets/xiaomingjianmo_findyourproblem_meme.png' width=100%/></a>
 Video 2: Find Your Own Problems
 </td>
 </tr>
 <tr>
 <td align="center" width="50%">
-<a href='https://www.bilibili.com/video/BV1AV411S7yc/?spm_id_from=333.337.search-card.all.click&vd_source=13182b3a133b27042e1f14577e85d60f' target='_blank'><img src='assets/xiaomingjianmo_mvp_cover.png' width=100%/></a>
+<a href='https://www.bilibili.com/video/BV1ucZ6YmEFQ' target='_blank'><img src='assets/xiaomingjianmo_mvp_cover.png' width=100%/></a>
 Video 3: MVP
 </td>
 <td align="center" width="50%">
@@ -219,7 +219,7 @@ Ready to create music videos realizing your creative ideas? AI-Creator helps you
 - Automatically divides long rest intervals to reduce melodic errors and enables song covers.
 
 
-<a href='https://www.bilibili.com/video/BV1AV411S7yc/?spm_id_from=333.337.search-card.all.click&vd_source=13182b3a133b27042e1f14577e85d60f' target='_blank'><img src='assets/airencuoguo_cover.png' width=60%/></a>
+<a href='https://www.bilibili.com/video/BV1t8ZCYsEeA/' target='_blank'><img src='assets/airencuoguo_cover.png' width=60%/></a>
 
 **Key Features:**
 - Automated lyric generation based on themes
@@ -248,7 +248,7 @@ Interested in bridging cultural gaps through comedy? Transform popular English t
 <table>
 <tr>
 <td align="center" width="50%">
-<a href=""><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/"><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
 Chinese Crosstalk Adaptation
 </td>
 <td align="center" width="50%">
@@ -262,7 +262,7 @@ Original Stand-up Comedy Segment
 <table>
 <tr>
 <td align="center" width="50%">
-<a href=""><img src="assets/adapted_standupcomedy_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV13oZzYnEZq/"><img src="assets/adapted_standupcomedy_cover.png" width="100%"></a>
 Stand-up Comedy Adaptation
 </td>
 <td align="center" width="50%">
@@ -412,7 +412,7 @@ git clone https://www.modelscope.cn/iic/CosyVoice2-0.5B.git pretrained_models/Co
 # Fish Speech Model Download
 cd tools/fish-speech
 huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
-# 对于中国大陆用户，可使用 mirror 下载。
+# For users from mainland China, you may use this mirror for downloading
 HF_ENDPOINT=https://hf-mirror.com huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
 ```
 ```
