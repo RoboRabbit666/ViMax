@@ -427,4 +427,5 @@ Then, run the following command and enter their requirements:
 
 cd AI-Creator
 python main.py
+Please describe what you want to do: ...
 ```
