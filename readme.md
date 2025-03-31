@@ -69,7 +69,7 @@ Ever dreamed of creating stunning movie edits that captivate your audience? With
 - Maintain visual continuity and reduce redundant clips
 - Accurately align the storyboard description of the user prompt (eg. 1st, 2nd sections)
 
-Through intelligent analysis of xx hours of film footage, AI-Creator automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
+Through intelligent analysis of hours of film footage, AI-Creator automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
 
 **Prompt**:
 ```
