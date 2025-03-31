@@ -295,7 +295,7 @@ We used AI-Creator to generate a video adaptation of the opening chapters from *
 
 **Prompt:**
 ```
-编写通顺的解说文案，字数达到1500。
+Write fluent commentary script with 1500 words.
 ```
 
 ## 6. Tech News Summarization Updates
