@@ -418,7 +418,14 @@ HF_ENDPOINT=https://hf-mirror.com huggingface-cli download fishaudio/fish-speech
 ```
 ```
 # Seed-VC Model Download
-Initial activation of the song cover functionality triggers an automatic model download.
+wget https://drive.google.com/drive/folders/1fqFYxSBiLGuwGC3Bx8cAAqQflkC-W0FY?usp=drive_link
+Users need to download the link above and place it in the ​tools/seed-vc/checkpoints folder in the following format.
+|--checkpoints
+    |--.locks
+    |--hf_cache
+    |--models--funasr--campplus
+    |--models--lj1995--VoiceConversionWebUI
+    |--models--Plachta--Seed-VC
 ```
 ```
 # DiffSinger Model
@@ -430,7 +437,7 @@ Users need to download the link above and place it in the ​tools/DiffSinger/ch
     |--0228_opencpop_ds100_rel
 ```
 
-## Command Line
+## Command Line Usage
 ```
 Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory (a template is provided).
 Then, run the following command and enter their requirements:
