@@ -35,30 +35,28 @@ class CrossTalkAgent:
         dou_gen_msg = Message(content={"audio_dir": self.dou_gen})
         peng_gen_msg = Message(content={"audio_dir": self.peng_gen})
 
-        # separator_result = self.seperator.process_message(pre_msg)
-        # normalizer_result = self.normalizer.process_message(pre_msg)
-        # resampler_result = self.resampler.process_message(pre_msg)
-        # transcriber_result = self.transcriber.process_message(pre_msg)
-        # transcriber_dou_gen_res = self.transcriber.process_message(dou_gen_msg)
-        # transcriber_peng_gen_res = self.transcriber.process_message(peng_gen_msg)
+        separator_result = self.seperator.process_message(pre_msg)
+        normalizer_result = self.normalizer.process_message(pre_msg)
+        resampler_result = self.resampler.process_message(pre_msg)
+        transcriber_result = self.transcriber.process_message(pre_msg)
+        transcriber_dou_gen_res = self.transcriber.process_message(dou_gen_msg)
+        transcriber_peng_gen_res = self.transcriber.process_message(peng_gen_msg)
 
-        # lab_path = os.path.splitext(self.audio_path)[0] + '.lab'
-        # adapter_msg = Message(content={"reqs": self.reqs, "lab_path": lab_path, "dou_gen": self.dou_gen, "peng_gen": self.peng_gen})
-        # adapter_result = self.adapter.process_message(adapter_msg)
-        # with open('dataset/cross_talk/ct.txt', 'r', encoding='utf-8') as f:
-        #     adapter_result = Message(content={"script": f.read()})
-        #
-        # synth_msg = Message(content={"script": adapter_result.content.get('script'), "dou_gen": self.dou_gen, "peng_gen": self.peng_gen})
-        # synth_result = self.synth.process_message(synth_msg)
+        lab_path = os.path.splitext(self.audio_path)[0] + '.lab'
+        adapter_msg = Message(content={"reqs": self.reqs, "lab_path": lab_path, "dou_gen": self.dou_gen, "peng_gen": self.peng_gen})
+        adapter_result = self.adapter.process_message(adapter_msg)
+
+        synth_msg = Message(content={"script": adapter_result.content.get('script'), "dou_gen": self.dou_gen, "peng_gen": self.peng_gen})
+        synth_result = self.synth.process_message(synth_msg)
 
         # video_path = synth_result.content.get("video_path")
         # output_path = synth_result.content.get("output_path")
-        video_path = "dataset/cross_talk/final/final.mp4"
-        output_path = "dataset/cross_talk/final/final_subtitle.mp4"
-        json_path = "dataset/cross_talk/ct.json"
-        audio_dir = "dataset/cross_talk/exp"
-        subtitle_msg = Message(content={"video_path": video_path, "output_path": output_path, "audio_dir": audio_dir, "json_path": json_path})
-        subtitle_result = self.subtitle.process_message(subtitle_msg)
+        # video_path = "dataset/cross_talk/final/final.mp4"
+        # output_path = "dataset/cross_talk/final/final_subtitle.mp4"
+        # json_path = "dataset/cross_talk/ct.json"
+        # audio_dir = "dataset/cross_talk/exp"
+        # subtitle_msg = Message(content={"video_path": video_path, "output_path": output_path, "audio_dir": audio_dir, "json_path": json_path})
+        # subtitle_result = self.subtitle.process_message(subtitle_msg)
 
         # translator_result = self.translator.process_message()
 
