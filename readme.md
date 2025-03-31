@@ -16,7 +16,7 @@
 - [x] [2024.03.31] 📢 Releasing the implementation code of AI-Creator!
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
 
-# Demos & How We Made Them
+# 🎥 Demos & How We Made Them
 We have made videos of six distinct types using our AI-Creator, including:
 <table>
 <tr>
@@ -54,7 +54,7 @@ News Summarization
 ## 1. Movie Edits
 Ever dreamed of creating stunning movie edits that captivate your audience? With AI-Creator, you can transform your favorite movie clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
 
-**How AI-Creator Makes Movie Edits**
+🚀 **How AI-Creator Makes Movie Edits**
 - Users just need to prepare the video sources, music audio file and the idea they want.
 - Automatically extract music rhythm points (optional) setting threshold & mask parameters.
 - Automatically assists with storyboard query design through video content based on user-provided ideas.
@@ -63,7 +63,7 @@ Ever dreamed of creating stunning movie edits that captivate your audience? With
 ### 1.1 *Spider-Man: Across the Spider-Verse*
 <a href='https://www.bilibili.com/video/BV1C9Z6Y3ESo/' target='_blank'><img src='assets/spiderman_cover.png' width=60%/></a>
 
-**Key Features:**
+🌟 **Key Features:**
 - Perfect sync between visuals and background music rhythm (eg. 13s, 22s, 25s)
 - Expert capture of high-energy scenes (<1 min) from the full movie (>2 hours)
 - Maintain visual continuity and reduce redundant clips
@@ -71,7 +71,7 @@ Ever dreamed of creating stunning movie edits that captivate your audience? With
 
 Through intelligent analysis of hours of film footage, AI-Creator automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
 
-**Prompt**:
+📝 **Prompt**:
 ```
 Begin with Gwen with blonde hair sitting at a dining table in front of a window, followed by her playing drums with pop textures and notes in the background. Include action scenes featuring Miguel O'Hara in his dark blue suit with red accents, sharp red claws and black/red eye lenses, Spider-Gwen in her white and pink suit with hood and ballet shoes, Miles Morales with curly hair and red spider logo on his chest, and The Spot in his black suit covered in white spots using portal powers. Focus on the chase scene in the blue sky with trains, and emphasize quality motion such as web-swinging, fighting, and colorful special effects throughout the sequence.
 ```
@@ -81,12 +81,12 @@ Begin with Gwen with blonde hair sitting at a dining table in front of a window,
 <a href='https://www.bilibili.com/video/BV1yQZ6YkEkw/' target='_blank'><img src='assets/interstella_cover_love.png' width=45%/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href='https://www.bilibili.com/video/BV1koZ6YuEeL/' target='_blank'><img src='assets/interstella_cover.png' width=45%/></a>
 
-**Key Features:**
+🌟 **Key Features:**
 - For the same input video, edit different styles by adapting your prompts
 
 We showcase two distinct edits of *Interstella* created using AI-Creator. The first version focuses on the theme "love transcending space and time," while the second emphasizes humanity's courage in space exploration. Both edits demonstrate how different prompts can shape the narrative and emotional impact of the same source material.
 
-**Prompt**:
+📝 **Prompt**:
 ```
 Version 1:
 Love can transcend time and space.
@@ -99,10 +99,10 @@ Celebrate humanity's courage in space exploration. Include scenes featuring spac
 ### 1.3 *Nezha*
 <a href='https://www.bilibili.com/video/BV1NQZ6YCEPH/' target='_blank'><img src='assets/nezha_cover.png' width=60%/></a>
 
-**Key Features:**
+🌟 **Key Features:**
 - Capturing scences of conflicts and battles
 
-**Prompt:**
+📝 **Prompt:**
 ```
 Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (black-robed), Dragon Prince Ao Bing (blue-robed).
 ```
@@ -110,10 +110,10 @@ Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (bla
 ### 1.4 *Titanic*
 <a href='https://www.bilibili.com/video/BV12mZ6YLEXJ/' target='_blank'><img src='assets/titanic_cover.png' width=60%/></a>
 
-**Key Features:**
+🌟 **Key Features:**
 - Understanding of romantic scenes
 
-**Prompt:**
+📝 **Prompt:**
 ```
 A romantic and sweet love story about Jack and Rose meeting on the Titanic. It cannot include the part where the ship is in distress, nor the night scene. In the first section, Rose, wearing a purple hat and a white shirt, walks out of a white car with a purple umbrella, looking thoughtfully.
 ```
@@ -121,14 +121,14 @@ A romantic and sweet love story about Jack and Rose meeting on the Titanic. It c
 ## 2. Meme Videos
 Want to create engaging and hilarious meme videos? AI-Creator helps you craft memorable content by intelligently combining video clips, text, and effects into shareable content that could go viral.
 
-**How AI-Creator Makes Meme Videos**
+🚀 **How AI-Creator Makes Meme Videos**
 - Users just need to provide the video path and your requirements.
 - Automatically preprocesses audio (voice separation, loudness normalization, resampling, transcription) with corresponding agents
 - Automatically segments the audio and performs segment-level copywriting adaptation via the Writer Agent
 - Uses the Infer Agent for zero-shot inference on audio segments
 - Aligns and merges audio-visual content automatically with the Combiner Agent
 
-**Key Features:**
+🌟 **Key Features:**
 - Intelligent understanding and transformation of meme concepts
 - Precise audio synthesis and precise scene matching
 
@@ -147,7 +147,7 @@ Original Video of Master Ma
 </table>
 
 
-**Prompt:**
+📝 **Prompt:**
 ```
 Create a humorous narrative about two PhD students seeking advice from Master Ma. For the two PhD students, one of them is known for high citation counts and the other for numerous publications. Transform martial arts terms into AI research terminology while keeping phrase lengths similar (length difference should be less than two Chinese characters). The story highlights their academic rivalry and ends with Master Ma advising against "窝里斗" (internal competition). Keep signature phrases like "大意了没有闪" (wasn't cautious enough) and "四两拨千斤" (achieving great results with minimal effort) while avoiding mentions of real institutions. The word combinations should be logical and appropriate for an academic context.
 ```
@@ -178,7 +178,7 @@ Video 4: Original 小明剑魔 Video
 
 The 小明剑魔 meme has gained massive popularity recently through his insightful yet comedic streaming commentary. Many content creators have successfully adapted his distinctive speech pattern into creative videos. We've used AI-Creator to generate three videos of this viral meme format, each capturing the unique style and energy of the original while adding new creative elements.
 
-**Prompts:**
+📝 **Prompts**:
 ```
 Video 1:
 Background: Mixue Ice Cream is a national chain brand focusing on ice cream and tea beverages. On March 15th (Consumer Rights Day), they were reported to be using overnight lemons. However, compared to other exposures, using overnight lemons isn't considered a particularly serious violation and is somewhat understandable.
@@ -213,7 +213,7 @@ Based on the following scenario, create an angry rebuttal from Zhuge Liang (me):
 ## 3. AI Music Videos
 Ready to create music videos realizing your creative ideas? AI-Creator helps you write lyrics, select singers you specify, and generate matching visuals to bring your musical vision to life. The system can coordinate lyrics, visuals, and music to create engaging amateur music videos.
 
-**How AI-Creator Makes Music Videos**
+🚀 **How AI-Creator Makes Music Videos**
 - Users just need to provide the music MIDI file, original lyrics, BGM file (optional), target voice file, and requirements. 
 - Automatically performs loudness normalization and annotates the MIDI file using the Annotator Agent.
 - Automatically calibrates and adapts lyrics at the word level via the Analyzer Agent.
@@ -222,11 +222,11 @@ Ready to create music videos realizing your creative ideas? AI-Creator helps you
 
 <a href='https://www.bilibili.com/video/BV1t8ZCYsEeA/' target='_blank'><img src='assets/airencuoguo_cover.png' width=60%/></a>
 
-**Key Features:**
+🌟 **Key Features:**
 - Automated lyric generation based on themes
 - Intelligent matching of visuals and lyrics
 
-**Prompts:**
+📝 **Prompts**:
 ```
 The song is performed by Patrick Star, focusing on the theme of ​**"the struggles of manuscript submission and dealing with overly critical reviewers"**, following the original lyrics' sentence structure while replacing specific content. It incorporates elements of reviewer nitpicking (e.g., questioning innovation, demanding redundant experiments) and expresses frustration with lines like "If only I could swap reviewers, this academic fate is too cruel" to highlight the emotional toll of peer review.
 ```
@@ -235,12 +235,12 @@ The song is performed by Patrick Star, focusing on the theme of ​**"the strugg
 ## 4. Cross-Culture Verbal Comedy Arts
 Interested in bridging cultural gaps through comedy? Transform popular English talk show segments into authentic Chinese crosstalk performances, and vice versa. Complete with cultural adaptations and localized humor that resonates with audiences of different culture backgrounds.
 
-**How AI-Creator Makes Talk Show Transitions**
+🚀 **How AI-Creator Makes Talk Show Transitions**
 - Users just need to provide the target cross-talk (comedy dialogue) audio file.
 - Automatically adapts the script based on the provided target audio file.
 - Automatically selects the appropriate vocal tone for voice cloning according to the emotional context of the script.
 
-**Key Features:**
+🌟 **Key Features:**
 - Cultural context adaptation and localization of humor
 - Performance style transformation while preserving core comedic elements
 - Voice generation
@@ -276,7 +276,7 @@ Original Chinese Crosstalk Segment
 ## 5. Novel-to-Screen Adaptation
 Want to bring your favorite novels to life? AI-Creator transforms written narratives into compelling video adaptations, complete with AI-generated scenes, characters, and dialogues - all without the need for actual filming or actors. Experience your beloved stories in a whole new medium.
 
-**How AI-Creator Makes Novel-to-Screen Adaption**
+🚀 **How AI-Creator Makes Novel-to-Screen Adaption**
 
 - Users just need to provide their idea, novel/book txt file and film/tv series video source files they want as visual materials.
 - (Optional) Provide favorite commentary audio files for cloning.
@@ -284,7 +284,7 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 - Automatically write copy based on the provided novel/book text content.
 - Automatically complete video material splicing and audio integration.
 
-**Key Features:**
+🌟 **Key Features:**
 - Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
 - Automated scene matching that pairs textual descriptions with appropriate visual elements, ensuring narrative coherence
 - Audio generation
@@ -293,7 +293,7 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 
 We used AI-Creator to generate a video adaptation of the opening chapters from *Joy of Life*. Our agents analyzed the novel's text and automatically created a compelling video sequence by intelligently selecting and arranging relevant scenes from the TV series.
 
-**Prompt:**
+📝 **Prompt:**
 ```
 Write fluent commentary script with 1500 words.
 ```
@@ -301,7 +301,7 @@ Write fluent commentary script with 1500 words.
 ## 6. Tech News Summarization Updates
 Want to create engaging tech news videos? AI-Creator helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
 
-**How AI-Creator Makes News Summary Videos**
+🚀 **How AI-Creator Makes News Summary Videos**
 
 - Users only need to provide their idea and the interview/news source files they want to summarize.
 - (Optional) Provide favorite audio files for cloning.
@@ -323,12 +323,12 @@ Original Tech Report
 </tr>
 </table>
 
-**Key Features:**
+🌟 **Key Features:**
 - Automated news content summarization
 - Accurate audio and video clip alignment (eg. 1:00 Generated a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
 - Audio generation
 
-**Prompt:**
+📝 **Prompt:**
 ```
 Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
 ```
@@ -347,12 +347,12 @@ Original Podcast with <i>Dune</i> 2 Cast
 </tr>
 </table>
 
-**Key Features:**
+🌟 **Key Features:**
 - Automated news content summarization
 - Accurate audio and main characters video clip alignment (eg. 00:13 Timothée Chalamet, 00:28 Zendaya, 00:38 Romance, 00:47 Florence Pugh, 00:56 Austin Butler, 01:06 Javier Bardem)
 - Audio generation
 
-**Prompt:**
+📝 **Prompt:**
 ```
 Short movie podcast, colloquial expression within 300 words, notice to identify which actor or host is talking, don't mention movie tickets available issue.
 ```
