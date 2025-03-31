@@ -29,21 +29,21 @@ Movie Edits
 Meme Videos
 </td>
 <td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1t8ZCYsEeA/"><img src="assets/airencuoguo_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1t8ZCYsEeA/" target='_blank'><img src="assets/airencuoguo_cover.png" width="100%"></a>
 Music Videos
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/"><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/" target='_blank'><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
 Verbal Comedy Arts
 </td>
 <td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/"><img src="assets/joylife_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/" target='_blank'><img src="assets/joylife_cover.png" width="100%"></a>
 TV Drama
 </td>
 <td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/"><img src="assets/openai_news_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/" target='_blank'><img src="assets/openai_news_cover.png" width="100%"></a>
 News Summarization
 </td>
 </tr>
@@ -248,11 +248,11 @@ Interested in bridging cultural gaps through comedy? Transform popular English t
 <table>
 <tr>
 <td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/"><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/" target='_blank'><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
 Chinese Crosstalk Adaptation
 </td>
 <td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV1u1421t78T"><img src="assets/standup_original_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1u1421t78T" target='_blank'><img src="assets/standup_original_cover.png" width="100%"></a>
 Original Stand-up Comedy Segment
 </td>
 </tr>
@@ -262,11 +262,11 @@ Original Stand-up Comedy Segment
 <table>
 <tr>
 <td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV13oZzYnEZq/"><img src="assets/adapted_standupcomedy_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV13oZzYnEZq/" target='_blank'><img src="assets/adapted_standupcomedy_cover.png" width="100%"></a>
 Stand-up Comedy Adaptation
 </td>
 <td align="center" width="50%">
-<a href="https://www.bilibili.com/audio/au4765690/"><img src="assets/crosstalk_original_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/audio/au4765690/" target='_blank'><img src="assets/crosstalk_original_cover.png" width="100%"></a>
 Original Chinese Crosstalk Segment
 </td>
 </tr>
@@ -288,7 +288,7 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 - Automated scene matching that pairs textual descriptions with appropriate visual elements, ensuring narrative coherence
 - Audio generation
 
-<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/"><img src="assets/joylife_cover.png" width="60%"></a>
+<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/" target='_blank'><img src="assets/joylife_cover.png" width="60%"></a>
 
 We used AI-Creator to generate a video adaptation of the opening chapters from *Joy of Life*. Our agents analyzed the novel's text and automatically created a compelling video sequence by intelligently selecting and arranging relevant scenes from the TV series.
 
@@ -312,11 +312,11 @@ Want to create engaging tech news videos? AI-Creator helps transform complex tec
 <table>
 <tr>
 <td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/"><img src="assets/openai_news_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/" target='_blank'><img src="assets/openai_news_cover.png" width="100%"></a>
 Tech News made by AI-Creator
 </td>
 <td align="center" width="50%">
-<a href="https://www.youtube.com/watch?v=2f3K43FHRKo"><img src="assets/tech_news_original_cover.png" width="100%"></a>
+<a href="https://www.youtube.com/watch?v=2f3K43FHRKo" target='_blank'><img src="assets/tech_news_original_cover.png" width="100%"></a>
 Original Tech Report
 </td>
 </tr>
@@ -336,11 +336,11 @@ Short tech news, colloquial expression within 250 words, check the accuracy of k
 <table>
 <tr>
 <td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV1m1Z6Y2Erb/"><img src="assets/dune_news_cover.png" width="100%"></a>
+<a href="https://www.bilibili.com/video/BV1m1Z6Y2Erb/" target='_blank'><img src="assets/dune_news_cover.png" width="100%"></a>
 Podcast Summarization About <i>Dune</i> 2 Cast
 </td>
 <td align="center" width="50%">
-<a href="https://www.youtube.com/watch?v=AVQRnDFZ1Qs"><img src="assets/dune_original_cover.png" width="100%"></a>
+<a href="https://www.youtube.com/watch?v=AVQRnDFZ1Qs" target='_blank'><img src="assets/dune_original_cover.png" width="100%"></a>
 Original Podcast with <i>Dune</i> 2 Cast
 </td>
 </tr>
