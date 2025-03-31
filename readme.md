@@ -161,7 +161,7 @@ Create a humorous narrative about two PhD students seeking advice from Master Ma
 Video 1: Mixue's Response
 </td>
 <td align="center" width="50%">
-<a href='https://www.bilibili.com/video/BV1ucZ6YmE5x' target='_blank'><img src='assets/xiaomingjianmo_findyourproblem_meme.png' width=100%/></a>
+<a href='https://www.bilibili.com/video/BV1ucZ6YmE5x'><img src='assets/xiaomingjianmo_findyourproblem_meme.png' width=100%/></a>
 Video 2: Find Your Own Problems
 </td>
 </tr>
