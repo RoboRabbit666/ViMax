@@ -5,6 +5,7 @@ description = "AI Creator Toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+  "gdown",
   "tqdm==4.67.1",
   "demucs==4.0.1",
   "loguru==0.7.3",
