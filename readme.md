@@ -128,6 +128,10 @@ Want to create engaging and hilarious meme videos? AI-Creator helps you craft me
 - Uses the Infer Agent for zero-shot inference on audio segments
 - Aligns and merges audio-visual content automatically with the Combiner Agent
 
+**Key Features:**
+- Intelligent understanding and transformation of meme concepts
+- Precise audio synthesis and precise scene matching
+
 ### 2.1 Master Ma as AI Researcher
 <table>
 <tr>
@@ -142,9 +146,6 @@ Original Video of Master Ma
 </tr>
 </table>
 
-**Key Features:**
-- Intelligent understanding and transformation of meme concepts
-- Precise audio synthesis and precise scene matching
 
 **Prompt:**
 ```
