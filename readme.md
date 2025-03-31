@@ -418,7 +418,7 @@ HF_ENDPOINT=https://hf-mirror.com huggingface-cli download fishaudio/fish-speech
 ```
 ```
 # Seed-VC Model Download
-https://drive.google.com/drive/folders/1fqFYxSBiLGuwGC3Bx8cAAqQflkC-W0FY?usp=drive_link
+gdown --folder https://drive.google.com/drive/folders/1fqFYxSBiLGuwGC3Bx8cAAqQflkC-W0FY?usp=drive_link
 Users need to download the link above and place it in the ​tools/seed-vc/checkpoints folder in the following format.
 |--checkpoints
     |--.locks
@@ -429,7 +429,7 @@ Users need to download the link above and place it in the ​tools/seed-vc/check
 ```
 ```
 # DiffSinger Model
-https://drive.google.com/drive/folders/1LUYu6LLAeoaHGgqjaJMlqkQ--FzWhIB1?usp=drive_link
+gdown --folder https://drive.google.com/drive/folders/1LUYu6LLAeoaHGgqjaJMlqkQ--FzWhIB1?usp=drive_link
 Users need to download the link above and place it in the ​tools/DiffSinger/checkpoints folder in the following format.
 |--checkpoints
     |--0102_xiaoma_pe
