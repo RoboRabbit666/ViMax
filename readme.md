@@ -16,7 +16,7 @@
 - [x] [2024.03.31] 📢 Releasing the implementation code of AI-Creator!
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
 
-# Demos
+# Demos & How We Made Them
 We have made videos of six distinct types using our AI-Creator, including:
 <table>
 <tr>
