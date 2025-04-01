@@ -217,14 +217,14 @@ class MadSVCAnalyzer(BaseAgent):
         extract_index = 0
         for i in range(len(lyrics_structure)):
             if lyrics_structure[i] == "LYRICS":
-                lyrics_structure[i] = aligned_extract_parts[extract_index]
+                lyrics_structure[i] = aligned_extract_parts[extract_index].strip()
                 extract_index += 1
 
         result = "".join(lyrics_structure)
         with open('dataset/mad_svc/script.txt', 'w', encoding='utf-8') as f:
             f.write(result)
         data['text'] = result
-        with open(os.path.join('dataset/mad_svc/lyrics_annotation', f'{name}_cover.json')) as f:
+        with open(os.path.join('dataset/mad_svc/lyrics_annotation', f'{name}_cover.json'), 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
         return Message(
