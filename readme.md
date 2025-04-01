@@ -442,6 +442,7 @@ Users need to download the link above and place it in the ​tools/DiffSinger/ch
 ## Command Line Usage
 ```
 Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory (a template is provided).
+Note: You need to enter your own key and URL in the config.yml file..
 Then, run the following command and enter their requirements:
 
 cd AI-Creator
