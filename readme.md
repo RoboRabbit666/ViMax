@@ -443,7 +443,7 @@ Users need to download the link above and place it in the ​tools/DiffSinger/ch
 ```
 Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory.
 
-Note: Users need to enter your own key and URL in the config.yml file.
+Note: Users need to enter your own key and URL in the config.yml file and modify the model name in the llm.py file.
 Additionally, configure the corresponding YAML file for each function (e.g. if users want to create 马保国 video，you need to configure mad_tts.yml)
 And store the data in the appropriate folder under dataset directory.
 We have provided configuration templates in the respective YAML files, with examples given in comments.
