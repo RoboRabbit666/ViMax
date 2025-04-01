@@ -1,4 +1,4 @@
-talk_show:
-  reqs: '无'
-  audio_path: 'dataset/talk_show/郭德纲于谦双口.wav'
-  target: 'dataset/talk_show/guodegang'
+# talk_show:
+#   reqs: '无'
+#   audio_path: 'dataset/talk_show/郭德纲于谦双口.wav'
+#   target: 'dataset/talk_show/guodegang'
