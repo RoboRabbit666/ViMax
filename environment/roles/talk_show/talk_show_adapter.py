@@ -4,7 +4,7 @@ import os
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
 from environment.config.config import config
-
+from environment.config.llm import claude
 client = OpenAI(api_key='<KEY>')
 
 
@@ -54,12 +54,7 @@ class TalkShowAdapter(BaseAgent):
         """
 
         try:
-            response = client.chat.completions.create(
-                model="claude-3-7-sonnet-20250219",
-                messages=[
-                    {"role": "user", "content": user_prompt}
-                ],
-            )
+            response = claude(user=user_prompt)
             res = response.choices[0].message.content
 
             output_path = os.path.join(path.parent, 'ts.txt')

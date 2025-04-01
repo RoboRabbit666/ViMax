@@ -9,7 +9,7 @@ from cosyvoice.utils.file_utils import load_wav
 import torchaudio
 import json
 from pydub import AudioSegment
-
+from environment.config.llm import deepseek
 
 class TalkShowSynth(BaseAgent):
     def __init__(self):
@@ -86,12 +86,7 @@ class TalkShowSynth(BaseAgent):
             """
 
             try:
-                response = client.chat.completions.create(
-                    model="deepseek-v3",
-                    messages=[
-                        {"role": "user", "content": user_prompt}
-                    ],
-                )
+                response = deepseek(user=user_prompt)
                 res = response.choices[0].message.content
 
                 if res.startswith("```json"):

@@ -1,9 +1,7 @@
 from pathlib import Path
-
-
 from openai import OpenAI
 import os
-
+from environment.config.llm import claude
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
 from environment.config.config import config
@@ -62,12 +60,7 @@ class CrossTalkAdapter(BaseAgent):
         """
 
         try:
-            response = client.chat.completions.create(
-                model="claude-3-7-sonnet-20250219",
-                messages=[
-                    {"role": "user", "content": user_prompt}
-                ],
-            )
+            response = claude(user=user_prompt)
             res = response.choices[0].message.content
 
             output_path = os.path.join(path.parent, 'ct.txt')

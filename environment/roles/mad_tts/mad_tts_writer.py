@@ -3,6 +3,7 @@ import os
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
 from environment.config.config import config
+from environment.config.llm import claude, deepseek
 
 client = OpenAI(api_key='<KEY>')
 
@@ -53,12 +54,7 @@ class MadTTSWriter(BaseAgent):
         输出内容前后不要添加无关字符，或者解释
         """
         try:
-            response = client.chat.completions.create(
-                model="claude-3-7-sonnet-20250219",
-                messages=[
-                    {"role": "user", "content": user_prompt}
-                ],
-            )
+            response = claude(user=user_prompt)
         except Exception as e:
             print(e)
         generated_text = response.choices[0].message.content
@@ -90,12 +86,7 @@ class MadTTSWriter(BaseAgent):
         
         输出内容前后不要添加无关字符，或者解释
         """
-        response = client.chat.completions.create(
-            model="deepseek-v3",
-            messages=[
-                {"role": "user", "content": extract_prompt}
-            ],
-        )
+        response = deepseek(user=extract_prompt)
         extract_text = response.choices[0].message.content
 
         output_path = os.path.join(os.path.dirname(lab_path), 'speech.txt')

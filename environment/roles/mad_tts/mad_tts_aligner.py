@@ -1,6 +1,6 @@
 from pathlib import Path
 from openai import OpenAI
-
+from environment.config.llm import deepseek
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
 from environment.config.config import config
@@ -65,10 +65,7 @@ class MadTTSAligner(BaseAgent):
 
             while retry_count < self.max_retries and not validation_passed:
                 try:
-                    response = self.client.chat.completions.create(
-                        model="deepseek-v3",
-                        messages=[{"role": "user", "content": user_prompt}],
-                    )
+                    response = deepseek(user=user_prompt)
                     candidate = response.choices[0].message.content.strip()
                     print(candidate)
                     validation_result= self._validate_segment(
@@ -167,10 +164,7 @@ class MadTTSAligner(BaseAgent):
         <验证结果>（通过/不通过）"""
 
         try:
-            response = self.client.chat.completions.create(
-                model="deepseek-v3",
-                messages=[{"role": "user", "content": validation_prompt}],
-            )
+            response = deepseek(user=validation_prompt)
             result_text = response.choices[0].message.content
             print(result_text)
             # 解析响应

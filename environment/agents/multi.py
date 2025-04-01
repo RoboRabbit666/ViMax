@@ -1,8 +1,7 @@
 from typing import Dict, List, Callable
 import re
-
 from openai import OpenAI
-
+from environment.config.llm import deepseek
 from environment.agents.cross_talk import gen_cross_talk
 from environment.agents.mad_svc import gen_mad_svc
 from environment.agents.mad_tts import gen_mad_tts
@@ -46,13 +45,7 @@ class MultiAgent:
         - DO NOT include quotes, periods, spaces or any other symbols
         - Example valid output: gen_mad_tts"""
         try:
-            response = client.chat.completions.create(
-                model="deepseek-v3",
-                messages=[
-                    {"role": "system", "content": system_content},
-                    {"role": "user", "content": user_input}
-                ]
-            )
+            response = deepseek("deepseek-v3", system_content, user_input)
 
             func = response.choices[0].message.content.lower()
             print(func)

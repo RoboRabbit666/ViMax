@@ -4,6 +4,7 @@ import json
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
 from environment.config.config import config
+from environment.config.llm import claude, deepseek
 
 client = OpenAI(api_key='<KEY>')
 
@@ -80,10 +81,7 @@ class MadSVCAnalyzer(BaseAgent):
                 3. 不要添加AP标志
                 '''
 
-        response = client.chat.completions.create(
-            model="claude-3-7-sonnet-20250219",
-            messages=[{"role": "user", "content": prompt}],
-        )
+        response = claude(user=prompt)
         generated_lyrics = response.choices[0].message.content.strip()
         return generated_lyrics
 
@@ -112,12 +110,7 @@ class MadSVCAnalyzer(BaseAgent):
 
                         输出内容前后不要添加无关字符，或者解释
                         """
-        response = client.chat.completions.create(
-            model="deepseek-v3",
-            messages=[
-                {"role": "user", "content": extract_prompt}
-            ],
-        )
+        response = deepseek(user=extract_prompt)
         extract_lyrics = response.choices[0].message.content.strip()
         return extract_lyrics
 
@@ -174,11 +167,7 @@ class MadSVCAnalyzer(BaseAgent):
                     2. 输出内容前后不要添加无关字符、标点符号或者解释
                     3. 不要添加原歌词、字数限制等其他信息  
                 """
-
-                response = client.chat.completions.create(
-                    model="claude-3-7-sonnet-20250219",
-                    messages=[{"role": "user", "content": align_prompt}]
-                )
+                response = claude(user=align_prompt)
                 new_extract_part = response.choices[0].message.content.strip()
                 extract_parts[i] = new_extract_part
                 retry_count += 1
