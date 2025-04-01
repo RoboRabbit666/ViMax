@@ -111,9 +111,17 @@ class CrossTalkSynth(BaseAgent):
             try:
                 # 调用 OpenAI API
                 response = deepseek(user=user_prompt)
-
                 res = response.choices[0].message.content
-                print(res)
+
+                if res.startswith("```json"):
+                    res = res[len("```json"):]
+                elif res.startswith("```"):
+                    res = res[len("```"):]
+                if res.endswith("```"):
+                    res = res[:-3]
+                res = res.strip()
+                
+                print(cnt, ":", res)
                 result = json.loads(res)
                 role = result['role']
                 tone = result['tone'].strip().lower()

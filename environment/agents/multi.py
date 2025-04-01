@@ -31,7 +31,7 @@ class MultiAgent:
            - Capabilities: Generate parody audios by changing song lyrics while maintaining the original melody and performing with vocals
                    
         2. GEN_MAD_TTS
-           -- Capabilities: Clone voice timbre from a given audio sample and generate text copy to create high-quality MAD
+           -- Capabilities: Given a character video, creatively adapt/rework the dialogue spoken by the character in the video
         
         3. GEN_TALK_SHOW
            -- Capabilities: Generate talk show
