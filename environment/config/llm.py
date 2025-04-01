@@ -8,22 +8,30 @@ llm_base_url = config['llm']['base_url']
 client.api_key = llm_api_key
 client.base_url = llm_base_url
 
+
 def deepseek(model="deepseek-v3", system=None, user=None):
+    messages = []
+    if system is not None:
+        messages.append({"role": "system", "content": system})
+    if user is not None:
+        messages.append({"role": "user", "content": user})
+
     response = client.chat.completions.create(
-                model=model,
-                messages=[
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user}
-                ]
-            )
+        model=model,
+        messages=messages
+    )
     return response
 
+
 def claude(model="claude-3-7-sonnet-20250219", system=None, user=None):
+    messages = []
+    if system is not None:
+        messages.append({"role": "system", "content": system})
+    if user is not None:
+        messages.append({"role": "user", "content": user})
+
     response = client.chat.completions.create(
-                model=model,
-                messages=[
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user}
-                ]
-            )
+        model=model,
+        messages=messages
+    )
     return response
