@@ -17,7 +17,7 @@
 - [ ] [2024.04.07] 🎯 Plan to release the technical details of AI-Creator!
 - [ ] [2024.04.07] 🎯 Plan to release more implementation code, supporting all the demo video types showcased!
 - [ ] [2024.04.07] 🎯 Plan to release more interesting demo videos made by AI-Creator!
-- [x] [2024.04.01] 📢 Our demo videos have received over 15k views and 3k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
+- [x] [2024.04.02] 📢 Our demo videos have received over 33k views and 13k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
 - [x] [2024.03.31] 📢 Releasing the audio files of AI-Creator (Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion)!
 - [x] [2024.03.31] 📢 Releasing the audio implementation code of AI-Creator!
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
