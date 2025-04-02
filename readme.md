@@ -1,6 +1,10 @@
-<h1 align='center'>🚀 AI-Creator: Fully-Automated Video Editing <br/> with LLM Agents</h1>
+<h1 align='center'>🚀 AI-Creator: Multi-Modal Agents for Video Production</h1>
 
 <div align='center'>
+    <h3>
+    One Prompt to Final Cut: AI-Powered Video Creation Unleashed<br/>
+    一句话，一键成片：AI助你实现创意自由
+    </h3>
     <a href='https://space.bilibili.com/3546868449544308'><img src="https://img.shields.io/badge/bilibili-00A1D6.svg?logo=bilibili&logoColor=white" /></a>&nbsp;
     <a href='https://www.youtube.com/@AI-Creator-is-here'><img src='https://badges.aleen42.com/src/youtube.svg' /></a>&nbsp;
     <img src="https://badges.pufler.dev/visits/hkuds/ai-creator?style=flat-square&logo=github">&nbsp;
@@ -392,7 +396,7 @@ All content used in our demonstrations is for research purposes only. We deeply 
 Then a short explanation on the framework, without specific technical details. -->
 
 # Usage
-## Clone and install
+## Clone and Install
 ```
 git clone https://github.com/HKUDS/AI-Creator.git
 
@@ -404,7 +408,7 @@ conda install -y -c conda-forge pynini==2.1.5
 pip install -r requirements.txt
 ```
 
-## Model download
+## Model Download
 ```
 # CosyVoice Model Download
 cd tools/CosyVoice
