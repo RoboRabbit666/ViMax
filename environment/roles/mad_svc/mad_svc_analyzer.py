@@ -6,6 +6,7 @@ from environment.communication.message import Message
 from environment.config.config import config
 from environment.config.llm import claude, deepseek
 
+
 client = OpenAI(api_key='<KEY>')
 
 
@@ -110,9 +111,14 @@ class MadSVCAnalyzer(BaseAgent):
 
                         输出内容前后不要添加无关字符，或者解释
                         """
-        response = deepseek(user=extract_prompt)
-        extract_lyrics = response.choices[0].message.content.strip()
-        return extract_lyrics
+        try:
+            print(extract_prompt)
+            response = deepseek(user=extract_prompt)
+            extract_lyrics = response.choices[0].message.content.strip()
+            return extract_lyrics
+        except Exception as e:
+            print(e)
+
 
     def align_extract_parts(self, lyrics_parts, extract_parts, reqs):
         """
@@ -167,6 +173,7 @@ class MadSVCAnalyzer(BaseAgent):
                     2. 输出内容前后不要添加无关字符、标点符号或者解释
                     3. 不要添加原歌词、字数限制等其他信息  
                 """
+
                 response = claude(user=align_prompt)
                 new_extract_part = response.choices[0].message.content.strip()
                 extract_parts[i] = new_extract_part
@@ -191,6 +198,8 @@ class MadSVCAnalyzer(BaseAgent):
 
         lyrics_structure, lyrics_parts = self.parse_lyrics_structure(original_lyrics)
         template = self.generate_lyrics_template(lyrics_parts)
+        print("-------------------------------------------------")
+        print("Creating Lyrics.....")
         generated_lyrics = self.generate_full_lyrics(
             original_lyrics,
             reqs,
@@ -205,8 +214,9 @@ class MadSVCAnalyzer(BaseAgent):
         print(extract_lyrics)
         extract_parts = extract_lyrics.strip().split('\n')
 
+        print("-------------------------------------------------")
+        print("Aligning Lyrics...")
         aligned_extract_parts = self.align_extract_parts(lyrics_parts, extract_parts, reqs)
-        print(aligned_extract_parts)
         output_path = os.path.join(os.path.dirname(json_path), 'lyrics.txt')
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(aligned_extract_parts))
