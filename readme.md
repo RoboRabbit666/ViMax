@@ -490,7 +490,7 @@ rhythm_agent:
 # Your video source folder
   video_source_dir: "dataset/user_video/"
 ```
-Your final tools directory structure after downloading all checkpoints should look like this:
+📝 Your final tools directory structure after downloading all checkpoints should look like this:
 ```
 tools
 ├── .checkpoints
