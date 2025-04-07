@@ -35,3 +35,20 @@ def claude(model="claude-3-7-sonnet-20250219", system=None, user=None):
         messages=messages
     )
     return response
+
+
+def gpt(model="gpt-4o-mini", system=None, user=None, messages=None):
+    if messages is not None:
+        pass
+    else:
+        messages = []
+        if system is not None:
+            messages.append({"role": "system", "content": system})
+        if user is not None:
+            messages.append({"role": "user", "content": user})
+
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages
+    )
+    return response

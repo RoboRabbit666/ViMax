@@ -1,6 +1,6 @@
 [project]
 name = "AI-Creator"
-version = "0.1.0"
+version = "0.2.0"
 description = "AI Creator Toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -40,10 +40,11 @@ dependencies = [
   "tensorboard",
   "torch==2.3.1",
   "torchaudio==2.3.1",
+  "torchvision==0.18.1",
   "accelerate==0.30.1",
   "bitsandbytes==0.43.1",
   "moviepy==1.0.3",
-  "pytorchvideo @ git+https://github.com/facebookresearch/pytorchvideo.git@28fe037d212663c6a24f373b94cc5d478c8c1a1d",
+  "pytorchvideo @ git+https://github.com/facebookresearch/pytorchvideo.git@6cdc929315aab1b5674b6dcf73b16ec99147735f",
   "timm",
   "ftfy",
   "regex",
@@ -55,9 +56,6 @@ dependencies = [
   "types-regex",
   "cartopy",
   "ctranslate2==4.4.0",
-  "neo4j",
-  "hnswlib",
-  "xxhash",
   "nano-vectordb",
   "tiktoken",
   "tenacity",
@@ -133,4 +131,3 @@ package-dir = {"fish_audio_preprocess" = "tools/audio-preprocess/fish_audio_prep
 
 [tool.isort]
 profile = "black"
-
