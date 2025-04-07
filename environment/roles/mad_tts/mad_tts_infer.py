@@ -154,7 +154,7 @@ class MadTTSInfer(BaseAgent):
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     text=True,
-                    encoding='utf-8',
+                    encoding='gbk',
                     bufsize=0
                 )
 
@@ -183,7 +183,7 @@ class MadTTSInfer(BaseAgent):
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     text=True,
-                    encoding='utf-8',
+                    encoding='gbk',
                     bufsize=0
                 )
 
