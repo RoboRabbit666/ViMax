@@ -459,6 +459,37 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 cd ../
 ```
 
+## Config Settings
+```
+#AI-Creator\environment\config\config.yml
+#Input your LLM API (Currently we only support third-party proxy that can use a variety of business models eg. OpenAI/DeepSeek/Claude)
+
+llm:
+  api_key: 
+  base_url: 
+
+```
+
+```
+# Configure the Input of various types of videos in advance in various config (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
+# eg. AI-Creator\environment\config\rhythm_agent.yml
+
+#rhythm_agent:
+#  Path to background music file 
+#  audio: "dataset/user_music/xxxxx.mp3"
+
+#  idea: "Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (black-robed), Dragon Prince Ao Bing (blue-robed), notice to describe every character's appearance."
+
+#  Whether to use video caption content for storyboard writing (1 = yes, 2 = no, notice that Option 1 is not yet developed and cannot be used)
+#  use_video_content: "2"
+
+#  Output file path for your final video within this type
+#  output: "dataset/user_output_video/rhythm_output_video.mp4"
+
+#  Your video source folder
+#  video_source_dir: "dataset/user_video/"
+```
+
 ## Command Line Usage
 ```
 Users only need to configure the corresponding YAML file in the AI-Creator/environment/config directory.
