@@ -54,7 +54,7 @@ class Transcriber(BaseAgent):
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
-                encoding='utf-8',  # 如果遇到编码问题，可以改为'gbk'
+                encoding='gbk', 
                 bufsize=1
             )
 
