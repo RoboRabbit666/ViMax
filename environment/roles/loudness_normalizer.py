@@ -53,7 +53,7 @@ class LoudnessNormalizer(BaseAgent):
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=True,
-                encoding='gbk',  # 如果遇到编码问题，可以改为'gbk'
+                encoding='gbk',  
                 bufsize=1
             )
 
