@@ -15,8 +15,8 @@
 # 🎉 News
 
 - [ ] [2024.04.07] 🎯 Plan to release the technical details of AI-Creator!
-- [ ] [2024.04.07] 🎯 Plan to release more implementation code, supporting all the demo video types showcased!
 - [ ] [2024.04.07] 🎯 Plan to release more interesting demo videos made by AI-Creator!
+- [x] [2024.04.07] 🎯 Releasing the video retrieval implementation code of AI-Creator! Supporting all the demo video types showcased!
 - [x] [2024.04.02] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
 - [x] [2024.03.31] 📢 Releasing the audio files of AI-Creator (Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion)!
 - [x] [2024.03.31] 📢 Releasing the audio implementation code of AI-Creator!
@@ -441,6 +441,22 @@ Users need to download the link above and place it in the ​tools/DiffSinger/ch
     |--0102_xiaoma_pe
     |--0109_hifigan_bigpopcs_hop128
     |--0228_opencpop_ds100_rel
+```
+```
+# Make sure you have git-lfs installed (https://git-lfs.com)
+git lfs install
+
+cd tools
+# MiniCPM
+git lfs clone https://huggingface.co/openbmb/MiniCPM-V-2_6-int4
+
+# Whisper
+git lfs clone https://huggingface.co/openai/whisper-large-v3-turbo
+
+# ImageBind
+cd .checkpoints
+wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
+cd ../
 ```
 
 ## Command Line Usage
