@@ -462,7 +462,7 @@ cd ../
 ## Config Settings
 ```
 #AI-Creator\environment\config\config.yml
-#Input your LLM API (Currently we only support third-party proxy that can use a variety of business models eg. OpenAI/DeepSeek/Claude)
+#Input your LLM API (Currently we only support third-party proxy that can use a variety of business models eg. OpenAI&DeepSeek&Claude)
 
 llm:
   api_key: 
