@@ -490,6 +490,20 @@ rhythm_agent:
 # Your video source folder
   video_source_dir: "dataset/user_video/"
 ```
+# Your final tools directory structure after downloading all checkpoints should look like this:
+```
+tools
+├── .checkpoints
+├── whisper-large-v3-turbo
+├── MiniCPM-V-2_6-int4
+├── videorag
+├──audio-preprocess
+├──CosyVoice
+├──DiffSinger
+├──fish-speech
+├──ImageBind
+├──seed-vc
+```
 
 ## Command Line Usage
 ```
