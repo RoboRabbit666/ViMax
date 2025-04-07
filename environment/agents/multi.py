@@ -89,7 +89,7 @@ class MultiAgent:
     def process_request(self):
         try:
             print("\n=== Video Production System ===")
-            user_input = input("Please describe the type of video you would like to make (You need to fill in various types of config.yml first):")
+            user_input = input("Please describe the type of video you would like to produce:")
 
             func = self.intent_analysis(user_input)
             if not func:
