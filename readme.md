@@ -475,18 +475,18 @@ llm:
 # eg. AI-Creator\environment\config\rhythm_agent.yml
 
 rhythm_agent:
-#  Path to background music file 
+# Path to background music file 
   audio: "dataset/user_music/xxxxx.mp3"
 
   idea: "Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (black-robed), Dragon Prince Ao Bing (blue-robed), notice to describe every character's appearance."
 
-#  Whether to use video caption content for storyboard writing (1 = yes, 2 = no, notice that Option 1 is not yet developed and cannot be used)
+# Whether to use video caption content for storyboard writing (1 = yes, 2 = no, notice that Option 1 is not yet developed and cannot be used)
   use_video_content: "2"
 
-#  Output file path for your final video within this type
+# Output file path for your final video within this type
   output: "dataset/user_output_video/rhythm_output_video.mp4"
 
-#  Your video source folder
+# Your video source folder
   video_source_dir: "dataset/user_video/"
 ```
 
