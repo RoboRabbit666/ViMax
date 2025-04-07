@@ -454,6 +454,7 @@ git lfs clone https://huggingface.co/openbmb/MiniCPM-V-2_6-int4
 git lfs clone https://huggingface.co/openai/whisper-large-v3-turbo
 
 # ImageBind
+mkdir .checkpoints
 cd .checkpoints
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 cd ../
