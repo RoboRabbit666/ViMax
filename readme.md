@@ -472,7 +472,7 @@ llm:
 ```
 
 ```
-# Configure the Input of videos in advance in various (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
+# Configure the input of videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
 # eg. AI-Creator\environment\config\rhythm_agent.yml
 
 rhythm_agent:
