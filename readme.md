@@ -14,6 +14,8 @@
 
 # 🎉 News
 
+- [ ] [2024.04.14] 🎯 Plan to implement precise visual perception to capture nuanced human gestures and emotions throughout storyboarding and clip editing processes.
+- [ ] [2024.04.14] 🎯 Plan to upgrade quality for music videos, providing perfect rythm!
 - [ ] [2024.04.10] 🎯 Plan to release the technical details of AI-Creator!
 - [x] [2024.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
 - [x] [2024.04.07] 📢 Releasing three more interesting demo videos made by AI-Creator on our bilibili account!
