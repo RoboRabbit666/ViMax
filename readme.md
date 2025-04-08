@@ -408,6 +408,7 @@ conda activate aicreator
 
 conda install -y -c conda-forge pynini==2.1.5
 pip install -r requirements.txt
+#users on Linux can install the package with the additionattsfrd dependency using: pip install .[linux]
 ```
 
 ## Model Download
