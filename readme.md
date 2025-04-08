@@ -445,6 +445,7 @@ Users need to download the link above and place it in the ​tools/DiffSinger/ch
     |--0228_opencpop_ds100_rel
 ```
 ```
+conda install -c conda-forge ffmpeg
 # Make sure you have git-lfs installed (https://git-lfs.com)
 git lfs install
 
