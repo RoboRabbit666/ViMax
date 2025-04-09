@@ -56,7 +56,7 @@ class VideoEditor:
         # Load segment data
         segments_path = os.path.join(self.scene_output_dir, 'visual_retrieved_segments.json')
         if os.path.exists(segments_path):
-            with open(segments_path, 'r') as f:
+            with open(segments_path, 'r', encoding='utf-8') as f:
                 self.video_segments = json.load(f)
                 print(f"Loaded video segments from: {segments_path}")
         else:
@@ -65,7 +65,7 @@ class VideoEditor:
             
         kv_store_path = os.path.join(self.working_dir, 'kv_store_video_segments.json')
         if os.path.exists(kv_store_path):
-            with open(kv_store_path, 'r') as f:
+            with open(kv_store_path, 'r', encoding='utf-8') as f:
                 self.video_segments_data = json.load(f)
         else:
             print(f"Warning: {kv_store_path} not found. Using default empty dict.")

@@ -331,12 +331,18 @@ class VideoTranscriber:
     def add_subtitles_with_ffmpeg(self, video_path, srt_path, output_path):
         """Alternative method to add subtitles using FFmpeg."""
         print(f"Adding subtitles to {video_path} using FFmpeg...")
-        
+
         # FFmpeg command with white text (font size 18) and no visible background
         cmd = [
             'ffmpeg', 
             '-i', video_path,
-            '-vf', f"subtitles={srt_path}:force_style='FontName=Arial,FontSize=18,PrimaryColour=&HFFFFFF&,OutlineColour=&H000000&,BorderStyle=1,Outline=0.5'",
+            '-vf', f"subtitles={srt_path}:force_style="
+                   f"'FontName=Microsoft YaHei,"
+                   f"FontSize=18,"
+                   f"PrimaryColour=&HFFFFFF,"
+                   f"OutlineColour=&H000000,"
+                   f"BorderStyle=1,"
+                   f"Outline=0.5'",
             '-c:v', 'libx264', 
             '-c:a', 'copy',
             '-y',  # Overwrite output file if it exists
@@ -345,7 +351,9 @@ class VideoTranscriber:
         
         subprocess.run(cmd, check=True)
         print(f"Video with subtitles saved to {output_path}")
+
         return output_path
+
 
 class LLMClient:
     """Client for making requests to LLM API with retry capabilities."""
@@ -657,7 +665,7 @@ def process_video(video_path=None, method="ffmpeg", clean_up=True):
     
     # Set default video path if not provided
     if video_path is None:
-        video_path = os.path.join(paths['video_output_dir'], 'news_output_video.mp4')
+        video_path = os.path.join(paths['video_output_dir'], 'comm_output_video.mp4')
     
     video_path = os.path.abspath(video_path)
     
@@ -669,7 +677,7 @@ def process_video(video_path=None, method="ffmpeg", clean_up=True):
     
     # Define output paths
     transcript_path = os.path.join(paths['writing_data_dir'], f"{video_name}_subtitle.txt")
-    srt_path = os.path.join(paths['video_output_dir'], f"{video_name}.srt")
+    srt_path = f"{video_name}.srt"
     output_video_path = os.path.join(paths['video_output_dir'], f"{video_name}_subtitled.mp4")
     scene_json_path = os.path.join(paths['scene_output_dir'], 'video_scene.json')
     
@@ -734,7 +742,7 @@ def subtitler_main(video_path=None, output_path=None):
         
         # Define paths
         transcript_path = os.path.join(paths['writing_data_dir'], f"{video_name}_subtitle.txt")
-        srt_path = os.path.join(paths['video_output_dir'], f"{video_name}.srt")
+        srt_path = f"{video_name}.srt"
         
         # Use custom output path if provided, otherwise use default
         if output_path is None:
@@ -783,4 +791,3 @@ def subtitler_main(video_path=None, output_path=None):
         import traceback
         print(traceback.format_exc())
         raise
-

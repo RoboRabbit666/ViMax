@@ -669,7 +669,7 @@ def process_video(video_path=None, method="ffmpeg", clean_up=True):
     
     # Define output paths
     transcript_path = os.path.join(paths['writing_data_dir'], f"{video_name}_subtitle.txt")
-    srt_path = os.path.join(paths['video_output_dir'], f"{video_name}.srt")
+    srt_path = f"{video_name}.srt"
     output_video_path = os.path.join(paths['video_output_dir'], f"{video_name}_subtitled.mp4")
     scene_json_path = os.path.join(paths['scene_output_dir'], 'video_scene.json')
     
@@ -734,7 +734,7 @@ def subtitler_main(video_path=None, output_path=None):
         
         # Define paths
         transcript_path = os.path.join(paths['writing_data_dir'], f"{video_name}_subtitle.txt")
-        srt_path = os.path.join(paths['video_output_dir'], f"{video_name}.srt")
+        srt_path = f"{video_name}.srt"
         
         # Use custom output path if provided, otherwise use default
         if output_path is None:
@@ -783,6 +783,3 @@ def subtitler_main(video_path=None, output_path=None):
         import traceback
         print(traceback.format_exc())
         raise
-
-
-

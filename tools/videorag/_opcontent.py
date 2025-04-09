@@ -60,10 +60,10 @@ async def videorag_query(
     working_dir = os.path.join(video_edit_dir, 'videosource-workdir')
 
     # Replace the existing file operations with these:
-    with open(os.path.join(scene_output_dir, 'textual_segmentations.json'), 'w') as f:
+    with open(os.path.join(scene_output_dir, 'textual_segmentations.json'), 'w', encoding='utf-8') as f:
         json.dump(scene_sentences, f)
 
-    with open(os.path.join(working_dir, 'kv_store_video_segments.json'), 'r') as file:
+    with open(os.path.join(working_dir, 'kv_store_video_segments.json'), 'r', encoding='utf-8') as file:
         kvdata = json.load(file)
 
 

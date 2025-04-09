@@ -55,7 +55,7 @@ class Video_Searcher:
             The response from VideoRAG query
         """
         try:
-            with open(self.scene_output_path, 'r') as file:
+            with open(self.scene_output_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
                 
             # Extract the content
