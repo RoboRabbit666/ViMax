@@ -95,7 +95,7 @@ class Pipeline:
             start_time = time.time()
             
             # Use gpt function with full messages array
-            response = gpt(model="gpt-4o", messages=messages)
+            response = gpt(model="gpt-4o-mini", messages=messages)
             
             elapsed_time = time.time() - start_time
             logger.info(f"API call completed in {elapsed_time:.2f}s")
