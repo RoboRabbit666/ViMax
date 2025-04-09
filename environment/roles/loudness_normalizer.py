@@ -11,12 +11,6 @@ from ..communication.message import Message
 class LoudnessNormalizer(BaseAgent):
     def __init__(self):
         super().__init__()
-        scripts_dir = os.path.join(sys.prefix, 'Scripts')
-        fap_path = os.path.join(scripts_dir, 'fap.exe')
-        self.fap_path = fap_path
-        # 验证路径是否存在
-        if not os.path.exists(self.fap_path):
-            print(f"警告: fap.exe 不存在于路径 {self.fap_path}")
 
     def _read_output(self, pipe):
         """读取子进程输出的辅助函数"""
@@ -41,7 +35,7 @@ class LoudnessNormalizer(BaseAgent):
         print(f"音频路径存在: {os.path.exists(abs_audio_dir)}")
 
         # 构建命令，使用完整路径
-        cmd = [self.fap_path, "loudness-norm", str(abs_audio_dir), str(abs_audio_dir), "--overwrite"]
+        cmd = ["fap", "loudness-norm", str(abs_audio_dir), str(abs_audio_dir), "--overwrite"]
         cmd_str = " ".join(cmd)
         print(f"执行命令: {cmd_str}")
 

@@ -11,12 +11,6 @@ from ..communication.message import Message
 class Resampler(BaseAgent):
     def __init__(self):
         super().__init__()
-        scripts_dir = os.path.join(sys.prefix, 'Scripts')
-        fap_path = os.path.join(scripts_dir, 'fap.exe')
-        self.fap_path = fap_path
-
-        if not os.path.exists(self.fap_path):
-            print(f"警告: fap.exe 不存在于路径 {self.fap_path}")
 
     def _read_output(self, pipe):
         """读取子进程输出的辅助函数"""
@@ -37,7 +31,7 @@ class Resampler(BaseAgent):
 
         print(f"音频路径存在: {os.path.exists(abs_audio_dir)}")
 
-        cmd = [self.fap_path, "resample", str(abs_audio_dir), str(abs_audio_dir), "--overwrite"]
+        cmd = ["fap", "resample", str(abs_audio_dir), str(abs_audio_dir), "--overwrite"]
         cmd_str = " ".join(cmd)
         print(f"执行命令: {cmd_str}")
 
