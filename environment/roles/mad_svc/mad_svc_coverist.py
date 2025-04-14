@@ -1,26 +1,18 @@
-from openai import OpenAI
 import os
 import sys
 import subprocess
-from pathlib import Path
-
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
-from environment.config.config import config
 
 
 class MadSVCCoverist(BaseAgent):
     def __init__(self):
         super().__init__()
-        self.client = OpenAI(
-            api_key=config['llm']['api_key'],
-            base_url=config['llm']['base_url']
-        )
 
     def process_message(self, message):
         source = '../../' + message.content.get('source')
         target = '../../' + message.content.get('target')
-        output = '../../dataset/mad_svc/final'
+        output = '../../dataset/video_edit/voice_gen'
         print(f"Source: {source}")
         print(f"Target: {target}")
 
@@ -61,7 +53,7 @@ class MadSVCCoverist(BaseAgent):
 
             if process.returncode == 0:
                 print("命令执行成功")
-                return Message(content={'status': 'success', 'output_dir': 'dataset/mad_svc/final'})
+                return Message(content={'status': 'success', 'output_dir': 'dataset/video_edit/voice_gen'})
             else:
                 print(f"命令执行失败，返回码: {process.returncode}")
                 return Message(content={

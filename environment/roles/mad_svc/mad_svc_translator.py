@@ -168,7 +168,10 @@ class MadSVCTranslator(BaseAgent):
             }
         }
 
-        output_path = os.path.join(dir_path, 'timestamps.json')
+        video_gen = 'dataset/video_edit/voice_gen'
+        os.makedirs(video_gen, exist_ok=True)
+
+        output_path = os.path.join(video_gen, 'gen_audio_timestamps.json')
         with open(output_path, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
 

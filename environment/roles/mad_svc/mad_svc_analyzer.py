@@ -1,20 +1,12 @@
 import os
-from openai import OpenAI
 import json
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
-from environment.config.config import config
 from environment.config.llm import claude, deepseek
-
-
-client = OpenAI(api_key='<KEY>')
-
 
 class MadSVCAnalyzer(BaseAgent):
     def __init__(self):
         super().__init__()
-        client.api_key = config['llm']['api_key']
-        client.base_url = config['llm']['base_url']
 
     def parse_lyrics_structure(self, lyrics):
         """解析歌词结构，返回包含AP和歌词的list，以及LYRICS部分的原歌词"""
@@ -78,8 +70,9 @@ class MadSVCAnalyzer(BaseAgent):
 
                 输出要求:
                 1. 补全输出格式的二创部分
-                2. 输出内容前后不要添加无关字符、标点符号或者解释
-                3. 不要添加AP标志
+                2. 补全时请勿添加标点符号
+                3. 输出内容前后不要添加无关字符、标点符号或者解释
+                4. 不要添加AP标志
                 '''
 
         response = claude(user=prompt)
@@ -155,6 +148,7 @@ class MadSVCAnalyzer(BaseAgent):
                     2. 填词需要保证句子语义完整
                     3. 词语搭配要合理
                     4. 二创歌词片段间注意押韵
+                    5. 不要添加标点符号
 
                     根据语境，选择性地满足用户要求：
                     {reqs}

@@ -1,8 +1,6 @@
 import os
 from pydub import AudioSegment
-
 from environment.agents.base import BaseAgent
-
 
 class MadSVCMixer(BaseAgent):
     def __init__(self):
@@ -11,15 +9,10 @@ class MadSVCMixer(BaseAgent):
     def process_message(self, message):
         bgm_path = message.content.get("bgm")
         output_dir = message.content.get('output_dir')
-        potential_vocals = [f for f in os.listdir(output_dir) if
-                            f.endswith(('.wav', '.mp3'))]
-        if not potential_vocals:
-            return {"status": "error", "message": "No vocal file specified and no audio files found in parent directory"}
-        vocal_path = os.path.join(output_dir, potential_vocals[0])
+        vocal_path = os.path.join(output_dir, "gen_audio.wav")
         print(f"Using vocal file: {vocal_path}")
 
-        output_filename = f"mixed_{os.path.basename(vocal_path)}"
-        output_path = os.path.join(output_dir, output_filename)
+        output_path = vocal_path
 
         bgm_volume = -1
 
