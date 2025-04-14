@@ -60,7 +60,6 @@ class CrossTalkAgent:
 
         translator_result = self.translator.process_message()
 
-
 def gen_cross_talk():
     print("Welcome to the Cross Talk Generator")
     with open('environment/config/cross_talk.yml', 'r', encoding='utf-8') as f:

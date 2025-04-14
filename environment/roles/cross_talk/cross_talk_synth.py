@@ -17,7 +17,7 @@ class CrossTalkSynth(BaseAgent):
 
     def concatenate_audio_files(self, base_path, cnt):
         combined_audio = AudioSegment.silent(duration=0)
-        os.makedirs(f"{base_path}/final", exist_ok=True)
+
         for i in range(cnt):
             audio_file_path = f"{base_path}/exp/{i}.wav"
             try:
@@ -27,7 +27,7 @@ class CrossTalkSynth(BaseAgent):
             except Exception as e:
                 print(f"Error loading {audio_file_path}: {str(e)}")
 
-        output_file_path = f"{base_path}/final/final.wav"
+        output_file_path = f"../../dataset/video_edit/voice_gen/gen_audio.wav"
         combined_audio.export(output_file_path, format="wav")
         print(f"Final audio saved to {os.path.abspath(output_file_path)}")
 

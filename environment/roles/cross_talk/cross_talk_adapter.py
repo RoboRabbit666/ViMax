@@ -36,7 +36,7 @@ class CrossTalkAdapter(BaseAgent):
         1. Each performer's lines must be on separate lines starting with their name.
         2. Begin each line with one tone marker: [Natural] or [Confused] or [Emphatic]. 
            The same tone should not appear consecutively for more than two lines.
-
+        
         Example:
         [tone] Role name: ... 
         [tone] Role name: ...

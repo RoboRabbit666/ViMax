@@ -46,7 +46,7 @@ class CrossTalkTranslator(BaseAgent):
 
         video_gen = 'dataset/video_edit/voice_gen'
         os.makedirs(video_gen, exist_ok=True)
-        with open(os.path.join(video_gen, 'adapt_audio_timestamps.json'), 'w', encoding='utf-8') as f:
+        with open(os.path.join(video_gen, 'gen_audio_timestamps.json'), 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
 
         return 0
