@@ -25,12 +25,12 @@ class CrossTalkAgent:
         # Get the project root path for resolving relative paths
         self.project_root = self._get_project_root()
 
-        self.output = self._resolve_path(self.config["talk_show"]["output"])
+        self.output = self._resolve_path(self.config["cross_talk"]["output"])
 
         # Handle video_source_dir - might be optional in the config
         self.video_source_dir = None
-        if "video_source_dir" in self.config["talk_show"]:
-            self.video_source_dir = self._resolve_path(self.config["talk_show"]["video_source_dir"])
+        if "video_source_dir" in self.config["cross_talk"]:
+            self.video_source_dir = self._resolve_path(self.config["cross_talk"]["video_source_dir"])
 
         # Setup logging
         self.logger = logging.getLogger(__name__)
