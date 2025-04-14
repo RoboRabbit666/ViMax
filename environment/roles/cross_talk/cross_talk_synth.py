@@ -1,16 +1,8 @@
 import re
-import sys
-from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont
-import subprocess
 import os
-from openai import OpenAI
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
-from environment.config.config import config
 from environment.config.llm import deepseek
-client = OpenAI(api_key='<KEY>')
-
 
 from cosyvoice.cli.cosyvoice import CosyVoice2
 from cosyvoice.utils.file_utils import load_wav
@@ -18,11 +10,10 @@ import torchaudio
 import json
 from pydub import AudioSegment
 
+
 class CrossTalkSynth(BaseAgent):
     def __init__(self):
         super().__init__()
-        client.api_key = config['llm']['api_key']
-        client.base_url = config['llm']['base_url']
 
     def concatenate_audio_files(self, base_path, cnt):
         combined_audio = AudioSegment.silent(duration=0)
@@ -120,7 +111,7 @@ class CrossTalkSynth(BaseAgent):
                 if res.endswith("```"):
                     res = res[:-3]
                 res = res.strip()
-                
+
                 print(cnt, ":", res)
                 result = json.loads(res)
                 role = result['role']

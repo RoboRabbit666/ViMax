@@ -1,7 +1,5 @@
-from openai import OpenAI
 import os
 from environment.agents.base import BaseAgent
-from environment.config.config import config
 import soundfile as sf
 import json
 
@@ -9,8 +7,6 @@ import json
 class CrossTalkTranslator(BaseAgent):
     def __init__(self):
         super().__init__()
-        self.client = OpenAI(api_key=config['llm']['api_key'])
-        self.client.base_url = config['llm']['base_url']
 
     def process_message(self, message=None):
         json_path = 'dataset/cross_talk/ct.json'
@@ -48,7 +44,9 @@ class CrossTalkTranslator(BaseAgent):
             }
         }
 
-        with open('dataset/cross_talk/timestamps.json', 'w', encoding='utf-8') as f:
+        video_gen = 'dataset/video_edit/voice_gen'
+        os.makedirs(video_gen, exist_ok=True)
+        with open(os.path.join(video_gen, 'adapt_audio_timestamps.json'), 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
 
         return 0

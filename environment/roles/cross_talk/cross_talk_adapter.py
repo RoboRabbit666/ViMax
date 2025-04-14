@@ -1,19 +1,13 @@
 from pathlib import Path
-from openai import OpenAI
 import os
 from environment.config.llm import claude
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
-from environment.config.config import config
-
-client = OpenAI(api_key='<KEY>')
 
 
 class CrossTalkAdapter(BaseAgent):
     def __init__(self):
         super().__init__()
-        client.api_key = config['llm']['api_key']
-        client.base_url = config['llm']['base_url']
 
     def process_message(self, message):
         reqs = message.content.get("reqs")
@@ -42,7 +36,7 @@ class CrossTalkAdapter(BaseAgent):
         1. Each performer's lines must be on separate lines starting with their name.
         2. Begin each line with one tone marker: [Natural] or [Confused] or [Emphatic]. 
            The same tone should not appear consecutively for more than two lines.
-        
+
         Example:
         [tone] Role name: ... 
         [tone] Role name: ...

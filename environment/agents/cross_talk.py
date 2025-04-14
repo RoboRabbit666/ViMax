@@ -58,7 +58,7 @@ class CrossTalkAgent:
         # subtitle_msg = Message(content={"video_path": video_path, "output_path": output_path, "audio_dir": audio_dir, "json_path": json_path})
         # subtitle_result = self.subtitle.process_message(subtitle_msg)
 
-        # translator_result = self.translator.process_message()
+        translator_result = self.translator.process_message()
 
 
 def gen_cross_talk():
