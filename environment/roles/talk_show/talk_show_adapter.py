@@ -1,18 +1,13 @@
 from pathlib import Path
-from openai import OpenAI
 import os
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
-from environment.config.config import config
 from environment.config.llm import claude
-client = OpenAI(api_key='<KEY>')
 
 
 class TalkShowAdapter(BaseAgent):
     def __init__(self):
         super().__init__()
-        client.api_key = config['llm']['api_key']
-        client.base_url = config['llm']['base_url']
 
     def process_message(self, message):
         reqs = message.content.get("reqs")

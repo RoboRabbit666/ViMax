@@ -27,7 +27,9 @@ class CrossTalkSynth(BaseAgent):
             except Exception as e:
                 print(f"Error loading {audio_file_path}: {str(e)}")
 
-        output_file_path = f"../../dataset/video_edit/voice_gen/gen_audio.wav"
+        output_file_dir = "../../dataset/video_edit/voice_gen"
+        output_file_path = os.path.join(output_file_dir,"gen_audio.wav")
+        os.makedirs(output_file_dir, exist_ok=True)
         combined_audio.export(output_file_path, format="wav")
         print(f"Final audio saved to {os.path.abspath(output_file_path)}")
 

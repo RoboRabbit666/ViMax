@@ -1,9 +1,5 @@
 import os
-import subprocess
-
 import yaml
-from PIL.ImImagePlugin import split
-
 from environment.communication.message import Message
 from environment.roles.loudness_normalizer import LoudnessNormalizer
 from environment.roles.resampler import Resampler
@@ -54,8 +50,8 @@ class TalkShowAgent:
         # subtitle_msg = Message(content={"video_path": video_path, "output_path": output_path, "audio_dir": audio_dir, "json_path": js})
         # subtitle_result = self.subtitle.process_message(subtitle_msg)
 
-        # translator_msg = Message(content={"target": self.target})
-        # translator_result = self.translator.process_message(translator_msg)
+        translator_msg = Message(content={"target": self.target})
+        translator_result = self.translator.process_message(translator_msg)
 
 def gen_talk_show():
     print("Welcome to the Talk Show Generator")

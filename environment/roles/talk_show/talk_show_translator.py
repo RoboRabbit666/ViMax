@@ -59,7 +59,9 @@ class TalkShowTranslator(BaseAgent):
             }
         }
 
-        with open(os.path.join(os.path.join(os.path.dirname(target), 'timestamps.json')), 'w', encoding='utf-8') as f:
+        video_gen = 'dataset/video_edit/voice_gen'
+        os.makedirs(video_gen, exist_ok=True)
+        with open(os.path.join(video_gen, 'gen_audio_timestamps.json'), 'w', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
 
         return 0

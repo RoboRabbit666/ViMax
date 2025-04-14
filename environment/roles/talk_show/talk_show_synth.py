@@ -1,9 +1,6 @@
 import os
-from openai import OpenAI
 from environment.agents.base import BaseAgent
 from environment.communication.message import Message
-from environment.config.config import config
-client = OpenAI(api_key='<KEY>')
 from cosyvoice.cli.cosyvoice import CosyVoice2
 from cosyvoice.utils.file_utils import load_wav
 import torchaudio
@@ -14,8 +11,6 @@ from environment.config.llm import deepseek
 class TalkShowSynth(BaseAgent):
     def __init__(self):
         super().__init__()
-        client.api_key = config['llm']['api_key']
-        client.base_url = config['llm']['base_url']
 
     def concatenate_audio_files(self, base_path, cnt):
         combined_audio = AudioSegment.silent(duration=0)
@@ -29,8 +24,9 @@ class TalkShowSynth(BaseAgent):
             except Exception as e:
                 print(f"Error loading {audio_file_path}: {str(e)}")
 
-        os.makedirs(os.path.join(base_path, 'final'), exist_ok=True)
-        output_file_path = os.path.join(base_path, 'final', 'final.wav')
+        output_file_dir = "../../dataset/video_edit/voice_gen"
+        output_file_path = os.path.join(output_file_dir,"gen_audio.wav")
+        os.makedirs(output_file_dir, exist_ok=True)
         combined_audio.export(output_file_path, format="wav")
         abs_output_file_path = os.path.abspath(output_file_path)
         print(f"Combined audio saved to {abs_output_file_path}")
