@@ -19,7 +19,6 @@ class RhythmAgent:
         
         # Convert relative paths to absolute if needed
         self.audio = self._resolve_path(self.config["rhythm_agent"]["audio"])
-        self.use_video_content = self.config["rhythm_agent"]["use_video_content"]
         self.idea = self.config["rhythm_agent"]["idea"]
         self.output = self._resolve_path(self.config["rhythm_agent"]["output"])
         
@@ -109,7 +108,7 @@ class RhythmAgent:
     def process_story(self):
         # Pass the parameters to story_main function
         self.logger.info(f"Starting story creation with idea: {self.idea}")
-        result = story_main(self.use_video_content, self.idea)
+        result = story_main(user_idea=self.idea)
         self.logger.info("Story creation completed")
         return result
 

@@ -344,7 +344,7 @@ def story_main(use_video_content=False, user_idea=None):
             print(f"Video segments file not found at {video_segments_path}")
         print("Creating storyboard based on your idea only.")
     
-    # If user_idea is not provided (should never happen with your new approach)
+    # If user_idea is not provided (should never happen with new approach)
     if user_idea is None or user_idea == "":
         user_idea = "A creative music video with visual effects"
         print(f"Using default idea: {user_idea}")
