@@ -417,7 +417,7 @@ class VideoEditor:
                 pass
 
 
-def main(input_path=None, keep_original_audio=False, audio_mix_ratio=0.3, output_file="comm_output_video.mp4"):
+def main(input_path=None, keep_original_audio=False, audio_mix_ratio=0.3, output_file="output_video.mp4"):
     editor = VideoEditor()
     
     # Update the root video directory if provided
