@@ -200,7 +200,7 @@ class VideoEditor:
             os.makedirs(os.path.dirname(output_file), exist_ok=True)
             
             # Load beat timestamps for time periods
-            with open(beats_file, 'r') as f:
+            with open(beats_file, 'r', encoding='utf-8') as f:
                 beats_data = json.load(f)
             
             # Handle different data formats
@@ -222,7 +222,7 @@ class VideoEditor:
             print(f"Created {len(time_periods)} time periods")
             
             # Load storyboard
-            with open(storyboard_file, 'r') as f:
+            with open(storyboard_file, 'r', encoding='utf-8') as f:
                 storyboard_data = json.load(f)
 
             storyboard_text = storyboard_data.get('segment_scene', '')
