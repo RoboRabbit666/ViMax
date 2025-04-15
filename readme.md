@@ -398,6 +398,7 @@ All content used in our demonstrations is for research purposes only. We deeply 
 Then a short explanation on the framework, without specific technical details. -->
 
 # Usage
+[中文文档](https://o86nig8lht.feishu.cn/docx/P86mdzslVowcz7xuGJ0cE7n0n2b?from=from_copylink)
 ## Clone and Install
 ```
 git clone https://github.com/HKUDS/AI-Creator.git
