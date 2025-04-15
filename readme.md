@@ -398,4 +398,49 @@ All content used in our demonstrations is for research purposes only. We deeply 
 Then a short explanation on the framework, without specific technical details. -->
 
 # Usage
-According to feedback, there are currently some conflicts between Windows and Linux environments. We will test and update the usage and codes as soon as possible.
+## Clone and Install
+```
+git clone https://github.com/HKUDS/AI-Creator.git
+conda create --name aicreator python=3.10
+conda activate aicreator
+conda install -y -c conda-forge pynini==2.1.5 ffmpeg
+pip install -r requirements.txt
+```
+## Model Download
+```
+# Download CosyVoice
+cd tools/CosyVoice
+huggingface-cli download PillowTa1k/CosyVoice --local-dir pretrained_models
+```
+```
+# Download fish-speech
+cd tools/fish-speech
+huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
+```
+```
+# Download seed-vc
+cd tools/seed-vc
+huggingface-cli download PillowTa1k/seed-vc --local-dir checkpoints
+```
+```
+# Download DiffSinger
+cd tools/DiffSinger
+huggingface-cli download PillowTa1k/DiffSinger --local-dir checkpoints
+```
+```
+# Download MiniCPM
+cd tools
+git lfs clone https://huggingface.co/openbmb/MiniCPM-V-2_6-int4
+```
+```
+# Download Whisper
+cd tools
+git lfs clone https://huggingface.co/openai/whisper-large-v3-turbo
+```
+```
+# Download ImageBind
+cd tools
+mkdir .checkpoints
+cd .checkpoints
+wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
+```
