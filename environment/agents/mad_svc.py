@@ -13,7 +13,7 @@ from environment.roles.mad_svc.mad_svc_subtitle import MadSVCSubtitle
 from environment.roles.mad_svc.mad_svc_translator import MadSVCTranslator
 from environment.roles.vid_adapter import VideoAdapter
 from environment.roles.vid_comm.vid_searcher import video_search_main
-from environment.roles.vid_comm.vid_editer import main
+from environment.roles.vid_comm.vid_editor import main
 
 
 class MadSVCAgent:

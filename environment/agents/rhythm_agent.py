@@ -4,9 +4,9 @@ import sys
 import logging
 from environment.roles.vid_preloader import Pre_Loader
 from environment.roles.vid_rhythm.music_filter import music_main
-from environment.roles.vid_rhythm.story_editer import story_main
+from environment.roles.vid_rhythm.story_editor import story_main
 from environment.roles.vid_rhythm.vid_searcher import video_search_main
-from environment.roles.vid_rhythm.vid_editer import main
+from environment.roles.vid_rhythm.vid_editor import main
 
 
 class RhythmAgent:

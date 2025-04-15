@@ -13,7 +13,7 @@ from environment.roles.separator import Separator
 from environment.roles.transcriber import Transcriber
 from environment.roles.vid_adapter import VideoAdapter
 from environment.roles.vid_comm.vid_searcher import video_search_main
-from environment.roles.vid_comm.vid_editer import main
+from environment.roles.vid_comm.vid_editor import main
 
 from environment.roles.transcriber import Transcriber
 

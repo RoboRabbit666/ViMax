@@ -8,7 +8,7 @@ from environment.roles.vid_news.audio_writer import transcribe_main
 from environment.roles.vid_news.news_loader import content_main
 from environment.roles.vid_news.voice_maker import voice_main
 from environment.roles.vid_news.vid_searcher import video_search_main
-from environment.roles.vid_news.vid_editer import main
+from environment.roles.vid_news.vid_editor import main
 from environment.roles.vid_news.vid_subtitler import subtitler_main
 
 class NewsAgent:

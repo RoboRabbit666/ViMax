@@ -15,7 +15,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir)
 
 # Now import comm_editer
-import comm_editer
+import comm_editor
 
 class ContentAgent:
     """Agent that creates content based on user ideas."""
@@ -35,7 +35,7 @@ class ContentAgent:
         """Generate video content incorporating user ideas and reference materials."""
 
         try:
-            pipeline = comm_editer.Pipeline()
+            pipeline = comm_editor.Pipeline()
             
             # Get formatted content from macontent2
             formatted_content = await pipeline.process(user_idea, self.txt_path, self.pre_txt_path)

@@ -7,7 +7,7 @@ from environment.roles.vid_preloader import Pre_Loader
 from environment.roles.vid_comm.comm_loader import content_main
 from environment.roles.vid_comm.voice_maker import voice_main
 from environment.roles.vid_comm.vid_searcher import video_search_main
-from environment.roles.vid_comm.vid_editer import main
+from environment.roles.vid_comm.vid_editor import main
 from environment.roles.vid_comm.vid_subtitler import subtitler_main
 
 class CommAgent:

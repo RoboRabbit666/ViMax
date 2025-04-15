@@ -14,8 +14,8 @@ from environment.config.llm import gpt
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir)
 
-# Now import news_editer
-import news_editer
+# Now import news_editor
+import news_editor
 
 class ContentAgent:
     """Agent that creates content based on user ideas."""
@@ -36,9 +36,9 @@ class ContentAgent:
 
         try:
             # Initialize pipeline without API key
-            pipeline = news_editer.Pipeline()
+            pipeline = news_editor.Pipeline()
             
-            # Get formatted content from news_editer
+            # Get formatted content from news_editor
             formatted_content = await pipeline.process(user_idea, self.txt_path, self.pre_txt_path)
             general_content = formatted_content
         
