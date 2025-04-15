@@ -54,6 +54,7 @@ class CrossTalkAdapter(BaseAgent):
         """
 
         try:
+            print("Creating crosstalk script... ")
             response = claude(user=user_prompt)
             res = response.choices[0].message.content
 

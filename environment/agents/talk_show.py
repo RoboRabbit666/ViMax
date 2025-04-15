@@ -130,11 +130,14 @@ class TalkShowAgent:
         """Edit the video with the generated content and voice."""
         self.logger.info(f"Starting video editing.")
         try:
-
+            output_dir = os.path.dirname(self.output)
+            os.makedirs(output_dir, exist_ok=True)
             # Call main function from vid_editer with our parameters
             editing_result = main(
                 input_path=self.video_source_dir,  # Use custom video source directory if specified
-                keep_original_audio=False
+                keep_original_audio=False,
+                audio_mix_ratio=0.3,
+                output_file=self.output,
             )
 
             self.logger.info(f"Video editing completed successfully.")
