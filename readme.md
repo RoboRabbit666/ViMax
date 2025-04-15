@@ -444,3 +444,71 @@ mkdir .checkpoints
 cd .checkpoints
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 ```
+```
+🌟Multiple models are available for your convenience; you may wish to download only those relevant to your project.
+```
+<div align="center">
+
+<table>
+  <tr>
+    <th align="center">Feature Type</th>
+    <th align="center">Required Models</th>
+  </tr>
+  <tr>
+    <td align="center">Cross Talk</td>
+    <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind</td>
+  </tr>
+  <tr>
+    <td align="center">Talk Show</td>
+    <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind</td>
+  </tr>
+  <tr>
+    <td align="center">MAD TTS</td>
+    <td align="center">fish-speech</td>
+  </tr>
+  <tr>
+    <td align="center">MAD SVC</td>
+    <td align="center">DiffSinger, seed-vc, MiniCPM, Whisper, ImageBind</td>
+  </tr>
+  <tr>
+    <td align="center">Rhythm</td>
+    <td align="center">MiniCPM, Whisper, ImageBind</td>
+  </tr>
+  <tr>
+    <td align="center">Comm</td>
+    <td align="center">MiniCPM, Whisper, ImageBind</td>
+  </tr>
+  <tr>
+    <td align="center">News</td>
+    <td align="center">MiniCPM, Whisper, ImageBind</td>
+  </tr>
+</table>
+
+</div>
+
+## LLM Config
+```
+#AI-Creator\environment\config\config.yml 
+#Input your LLM API (Currently we only support third-party proxy that can use a variety of business models eg. OpenAI&DeepSeek&Claude)
+llm:
+  api_key:
+  base_url: 
+```
+## Input Config
+```
+# Configure the input of cross talk videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
+# eg. AI-Creator\environment\config\cross_talk.yml
+cross_talk:
+  reqs: 'Generate a Chinese crosstalk (Xiangsheng) script. The story should be based on objectively existing situations, set against a Chinese background, avoiding examples from other countries. The script should be approximately 40-50 sentences long.'
+  audio_path: 'dataset/cross_talk/英文脱口秀1.wav'
+  dou_gen: 'dataset/cross_talk/郭德纲'
+  peng_gen: 'dataset/cross_talk/付航'
+  output: "dataset/user_output_video/cross_talk_video.mp4"
+  video_source_dir: "dataset/user_video/"
+```
+## Command Line Usage
+```
+# With the configuration now complete, proceed to run the following instructions:
+python main.py
+# The console will output:
+Please describe the type of video you would like to produce: 
