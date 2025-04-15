@@ -1,6 +1,7 @@
 # mad_svc:
 #   midi: "dataset/mad_svc/爱人错过.mid"
 #   lyrics: "dataset/mad_svc/爱人错过.txt"
+##  Target voice timbre for cloning
 #   target: "dataset/mad_svc/派大星.wav"
 #   bgm: "dataset/mad_svc/爱人错过-bgm.wav"
 #   reqs: |
