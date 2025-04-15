@@ -1,10 +1,6 @@
 rhythm_agent:
-#  Path to background music file (can be absolute or relative to project root)
   audio: "dataset/user_music/xxxxx.mp3"
   idea: "Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (black-robed), Dragon Prince Ao Bing (blue-robed), notice to describe every character's appearance."
-#  Whether to use video caption content for storyboard writing (1 = yes, 2 = no, notice that Option 1 is not yet developed and cannot be used)
   use_video_content: "2"
-
-#  Output file path for the final video
   output: "dataset/user_output_video/rhythm_output_video.mp4"
   video_source_dir: "dataset/user_video/"
