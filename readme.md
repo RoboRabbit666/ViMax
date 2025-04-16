@@ -489,12 +489,15 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 
 ## LLM Config
 ```
-#AI-Creator\environment\config\config.yml 
-#Input your LLM API (Currently we only support third-party proxy that can use a variety of business models eg. OpenAI&DeepSeek&Claude)
+# AI-Creator\environment\config\config.yml 
+# Input your LLM API
 llm:
   api_key:
   base_url: 
 ```
+Model names may vary depending on the LLM base URL.
+The correct model names must be specified in `environment/config/llm.py`.
+For direct APIs that support only a single model (e.g., the official GPT series), all model names should be replaced with the corresponding supported model (e.g., `gpt-4o-mini`)
 ## Input Config
 ```
 # Configure the input of cross talk videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
