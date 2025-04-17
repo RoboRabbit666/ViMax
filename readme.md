@@ -452,34 +452,42 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 <table>
   <tr>
     <th align="center">Feature Type</th>
+    <th align="center">Video Demo</th>
     <th align="center">Required Models</th>
   </tr>
   <tr>
     <td align="center">Cross Talk</td>
+    <td align="center">English Stand-up Comedy to Chinese Crosstalk</td>
     <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">Talk Show</td>
+    <td align="center">Chinese Crosstalk to English Stand-up Comedy</td>
     <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">MAD TTS</td>
+    <td align="center">Xiao-Ming-Jian-Mo(小明剑魔) Meme</td>
     <td align="center">fish-speech</td>
   </tr>
   <tr>
     <td align="center">MAD SVC</td>
+    <td align="center">AI Music Videos</td>
     <td align="center">DiffSinger, seed-vc, MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">Rhythm</td>
+    <td align="center">Spider-Man: Across the Spider-Verse</td>
     <td align="center">MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">Comm</td>
+    <td align="center">Novel-to-Screen Adaptation</td>  
     <td align="center">MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">News</td>
+    <td align="center">Tech News: OpenAI's GPT-4o Image Generation Release</td>
     <td align="center">MiniCPM, Whisper, ImageBind</td>
   </tr>
 </table>
