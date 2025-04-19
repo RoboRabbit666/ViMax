@@ -8,7 +8,7 @@ from environment.roles.mad_svc.mad_svc_analyzer import MadSVCAnalyzer
 from environment.roles.mad_svc.mad_svc_annotator import MadSVCAnnotator
 from environment.roles.mad_svc.mad_svc_coverist import MadSVCCoverist
 from environment.roles.mad_svc.mad_svc_mixer import MadSVCMixer
-from environment.roles.mad_svc.mad_svc_spliter import MadSVCSpliter
+from environment.roles.mad_svc.mad_svc_single import MadSVCSingle
 from environment.roles.mad_svc.mad_svc_subtitle import MadSVCSubtitle
 from environment.roles.mad_svc.mad_svc_translator import MadSVCTranslator
 from environment.roles.vid_adapter import VideoAdapter
@@ -161,8 +161,8 @@ class MadSVCAgent:
             analyzer_msg = Message(content={"annotator_result": annotator_result.content, "reqs": self.reqs})
             analyzer_result = self.analyzer.process_message(analyzer_msg)
 
-            spliter_msg = Message(content={"annotator_result": annotator_result, "analyzer_result": analyzer_result})
-            spliter_result = self.spliter.process_message(spliter_msg)
+            single_msg = Message(content={"annotator_result": annotator_result, "analyzer_result": analyzer_result})
+            single_result = self.single.process_message(single_msg)
 
             name = os.path.basename(self.midi)
             pure_name = os.path.splitext(name)[0]
@@ -172,9 +172,6 @@ class MadSVCAgent:
             new_name = annotator_result.content.get('name') + '_cover'
             cover_msg = Message(content={"source": f"dataset/mad_svc/cover/{new_name}.wav", "target": self.target})
             cover_result = self.cover.process_message(cover_msg)
-
-            pre_msg = Message(content={"audio_dir": cover_result.content.get('output_dir')})
-            loudness_result = self.normalizer.process_message(pre_msg)
 
             mixer_message = Message(content={"bgm": self.bgm, "output_dir": cover_result.content.get('output_dir')})
             mixer_result = self.mixer.process_message(mixer_message)

@@ -3,35 +3,10 @@ import os.path
 import time
 from pathlib import Path
 from environment.agents.base import BaseAgent
-from environment.config.config import config
-from openai import OpenAI
 
 class MadSVCTranslator(BaseAgent):
     def __init__(self):
         super().__init__()
-        self.client = OpenAI(api_key=config['llm']['api_key'])
-        self.client.base_url = config['llm']['base_url']
-
-
-    def _translate(self, text):
-        """带异常处理和速率控制的翻译函数"""
-        if not text.strip():
-            return text
-
-        prompt = (f"将以下文本翻译成英文，只需返回翻译结果：{text}"
-                  "结果前后请勿添加干扰字符")
-
-        for _ in range(3):
-            try:
-                response = self.client.chat.completions.create(
-                    model="deepseek-v3",
-                    messages=[{"role": "user", "content": prompt}],
-                )
-                return response.choices[0].message.content.strip()
-            except Exception as e:
-                print(f"翻译异常：{str(e)}")
-                time.sleep(1)
-        return text
 
     def parse_text_to_segments(self, text, durations):
         """解析文本并生成时间段落，返回 segments 和 AP 时间段"""
@@ -79,42 +54,31 @@ class MadSVCTranslator(BaseAgent):
         """处理请求的主函数"""
         name = message.content.get("name")
         dir_path = "dataset/mad_svc/lyrics_annotation"
+        script_path = "dataset/mad_svc/script.txt"
 
         # 加载原始数据
         timestamp_json_path = os.path.join(dir_path, f"{name}.json")
         with open(timestamp_json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        original_text = data["text"]
+        with open(script_path, "r", encoding="utf-8") as f:
+            script = f.read()
+        data["text"] = script
+        original_text = script
         durations = list(map(float, data["notes_duration"].split(" | ")))
 
         # 解析原始文本
         original_segments, ap_time_ranges = self.parse_text_to_segments(original_text, durations)
 
-        # 加载并合并覆盖文本
-        cover_texts = []
-        cover_files = sorted(Path(dir_path).glob(f"{name}_cover_part_*.json"),
-                             key=lambda x: int(x.stem.split('_')[-1]))
-        for cover_file in cover_files:
-            with open(cover_file, "r", encoding="utf-8") as f:
-                cover_data = json.load(f)
-            cover_segments, _ = self.parse_text_to_segments(cover_data["text"], durations)
-            cover_texts.extend([seg["text"] for seg in cover_segments])
-
-        # 合并文本段落
         merged_segments = original_segments.copy()
-        for i in range(min(len(cover_texts), len(merged_segments))):
-            merged_segments[i]["text"] = cover_texts[i]
 
-        print(f"开始翻译 {len(merged_segments)} 个段落...")
+
         translated_segments = []
         for idx, seg in enumerate(merged_segments, 1):
             if seg["end"] <= seg["start"]:
                 continue
-            print(f"正在翻译第 {idx}/{len(merged_segments)} 段: {seg['text'][:15]}...")
-            translated_text = self._translate(seg["text"])
             # 保留原始时间戳
             translated_segments.append({
-                "text": translated_text,
+                "text": seg["text"],
                 "start": round(seg["start"], 3),
                 "end": round(seg["end"], 3)
             })
