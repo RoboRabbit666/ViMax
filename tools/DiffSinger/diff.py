@@ -3,12 +3,11 @@ import os
 import sys
 
 
-def run_diffsinger(exp_name="0228_opencpop_ds100_rel", inp="", save_name=""):
+def run_diffsinger(exp_name="0228_opencpop_ds100_rel", input_dir=""):
     # Parse arguments
     parser = argparse.ArgumentParser(description='Run diff singer inference')
     parser.add_argument('--exp_name', default=exp_name, type=str, help='Experiment name')
-    parser.add_argument('--inp', default=inp, type=str, help='audio info')
-    parser.add_argument('--save_name', default=save_name, type=str, help='save name')
+    parser.add_argument('--input_dir', default=input_dir, type=str, help='audio info')
     args = parser.parse_args([])  # Empty list to avoid reading command line arguments
 
     # Get current working directory
@@ -33,8 +32,7 @@ def run_diffsinger(exp_name="0228_opencpop_ds100_rel", inp="", save_name=""):
             sys.executable,
             "inference/svs/ds_e2e.py",
             "--exp_name", args.exp_name,
-            "--inp", args.inp,
-            "--save_name", save_name
+            "--input_dir", args.input_dir,
         ]
 
         process = subprocess.run(cmd_parts)
