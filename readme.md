@@ -13,9 +13,8 @@
 </div>
 
 # 🎉 News
-
-- [ ] [2024.04.17] 🎯 Plan to upgrade quality for music videos, providing perfect rythm!
-- [ ] [2024.04.17] 🎯 Plan to implement precise visual perception to capture nuanced human gestures and emotions throughout storyboarding and clip editing processes.
+- [ ] [2024.04.20] 🎯 Plan to upgrade quality for music videos, providing perfect rythm!
+- [ ] [2024.04.20] 🎯 Plan to implement precise visual perception to capture nuanced human gestures and emotions throughout storyboarding and clip editing processes.
 - [x] [2024.04.14] 🎯 Plan to update the usage and codes of AI-Creator!
 - [x] [2024.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
 - [x] [2024.04.07] 📢 Releasing three more interesting demo videos made by AI-Creator on our bilibili account!
@@ -453,34 +452,42 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 <table>
   <tr>
     <th align="center">Feature Type</th>
+    <th align="center">Video Demo</th>
     <th align="center">Required Models</th>
   </tr>
   <tr>
     <td align="center">Cross Talk</td>
+    <td align="center">English Stand-up Comedy to Chinese Crosstalk</td>
     <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">Talk Show</td>
+    <td align="center">Chinese Crosstalk to English Stand-up Comedy</td>
     <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">MAD TTS</td>
+    <td align="center">Xiao-Ming-Jian-Mo(小明剑魔) Meme</td>
     <td align="center">fish-speech</td>
   </tr>
   <tr>
     <td align="center">MAD SVC</td>
+    <td align="center">AI Music Videos</td>
     <td align="center">DiffSinger, seed-vc, MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">Rhythm</td>
+    <td align="center">Spider-Man: Across the Spider-Verse</td>
     <td align="center">MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">Comm</td>
+    <td align="center">Novel-to-Screen Adaptation</td>  
     <td align="center">MiniCPM, Whisper, ImageBind</td>
   </tr>
   <tr>
     <td align="center">News</td>
+    <td align="center">Tech News: OpenAI's GPT-4o Image Generation Release</td>
     <td align="center">MiniCPM, Whisper, ImageBind</td>
   </tr>
 </table>
@@ -489,12 +496,15 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 
 ## LLM Config
 ```
-#AI-Creator\environment\config\config.yml 
-#Input your LLM API (Currently we only support third-party proxy that can use a variety of business models eg. OpenAI&DeepSeek&Claude)
+# AI-Creator\environment\config\config.yml 
+# Input your LLM API
 llm:
   api_key:
   base_url: 
 ```
+Model names may vary depending on the LLM base URL.
+The correct model names must be specified in `environment/config/llm.py`.
+For direct APIs that support only a single model (e.g., the official GPT series), all model names should be replaced with the corresponding supported model (e.g., `gpt-4o-mini`)
 ## Input Config
 ```
 # Configure the input of cross talk videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
