@@ -1,6 +1,6 @@
 [project]
 name = "AI-Creator"
-version = "0.2.1"
+version = "0.2.2"
 description = "AI Creator Toolkit"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -61,6 +61,7 @@ dependencies = [
   "tenacity",
   "whisper",
   "transformers==4.40.1",
+  "sentence-transformers==2.2.2",
   "uvicorn==0.30.0",
   "wget==3.2",
   "fastapi==0.115.6",
@@ -105,7 +106,7 @@ dependencies = [
   "silero-vad",
   "ormsgpack",
   "cachetools",
-  "huggingface-hub==0.29.2",
+  "huggingface-hub==0.24.6",
   "munch==4.0.0",
   "descript-audio-codec==1.0.0",
   "pydub==0.25.1",
