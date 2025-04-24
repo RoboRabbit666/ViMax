@@ -19,7 +19,7 @@ def speech_to_text(video_name, working_dir, segment_index2name, audio_output_for
     
     # Check if the model directory exists
     if not os.path.exists(model_path):
-        logging.warning(f"Local model not found at {model_path}, falling back to loading from Hugging Face")
+        logging.warning(f"Local model not found at {model_path}")
         model_id = "whisper-large-v3-turbo"
     else:
         model_id = model_path
@@ -54,7 +54,7 @@ def speech_to_text(video_name, working_dir, segment_index2name, audio_output_for
     for index in tqdm(segment_index2name, desc=f"Speech Recognition {video_name}"):
         segment_name = segment_index2name[index]
         audio_file = os.path.join(cache_path, f"{segment_name}.{audio_output_format}")
-        result = pipe(audio_file)
+        result = pipe(audio_file, generate_kwargs = {"task":"transcribe", "language":"<|en|>"} )
         
         formatted_result = ""
         if "chunks" in result:

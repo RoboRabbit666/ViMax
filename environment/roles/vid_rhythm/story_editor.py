@@ -1,9 +1,8 @@
 import json
 import os
-import math
-import time
 import tenacity
 from typing import Dict, List, Any
+import math
 from environment.config.llm import gpt
 
 
@@ -12,207 +11,119 @@ class VideoContentExtractionAgent:
     
     def __init__(self, 
                  json_file_path: str, 
-                 output_file_path: str = "video_summary.json",
-                 chunks: int = 4):  # Default to 4 chunks
+                 output_file_path: str = "video_summary.json"):
         """Initialize the agent with file paths."""
         self.json_file_path = json_file_path
         self.output_file_path = output_file_path
-        self.chunks = chunks  # Number of chunks to split content into
-        
-        # Model configuration
-        self.model = "gpt-4o"
-        self.max_tokens = 16384  # Token limit for summaries
     
-    @tenacity.retry(
-        wait=tenacity.wait_exponential(multiplier=1, min=2, max=60),
-        stop=tenacity.stop_after_attempt(5),
-        before_sleep=lambda retry_state: print(f"API call failed. Retrying in {retry_state.next_action.sleep} seconds... (Attempt {retry_state.attempt_number})")
-    )
-    def _call_gpt_api(self, prompt, max_tokens, temperature):
-        """Call GPT API with retry logic using tenacity."""
-        response = gpt(model=self.model, user=prompt)
-        return response
-        
     def process(self) -> Dict[str, str]:
-        """Process the video segments file in multiple chunks and generate narrative-focused summaries."""
+        """Process the video segments file, extract content and add IDs."""
         # Load data
         print(f"Loading data from {self.json_file_path}")
         with open(self.json_file_path, 'r', encoding='utf-8') as file:
             segments_data = json.load(file)
         
-        # Extract all content
+        # Extract all content and add IDs to each Caption
         all_contents = []
+        caption_id = 1
+        
         for video_key, segments in segments_data.items():
-            for segment_id, segment_data in segments.items():
+            for segment_id, segment_data in sorted(segments.items(), key=lambda x: int(x[0])):
                 if "content" in segment_data:
-                    all_contents.append(segment_data["content"])
+                    # Get the content
+                    content = segment_data["content"]
+                    
+                    # Add the ID after "Caption:"
+                    if content.startswith("Caption:"):
+                        content = content.replace("Caption:", f"Video Segments {caption_id}:", 1)
+                        caption_id += 1
+                    
+                    all_contents.append(content)
         
-        # Split into multiple chunks
-        chunk_size = math.ceil(len(all_contents) / self.chunks)
-        content_chunks = []
+        # Join all contents with double newlines
+        final_summary = "\n\n".join(all_contents)
         
-        for i in range(0, len(all_contents), chunk_size):
-            chunk = all_contents[i:i + chunk_size]
-            content_chunks.append("\n\n".join(chunk))
-        
-        print(f"Split content into {len(content_chunks)} parts with approximately {chunk_size} segments each")
-        
-        # Process each chunk
-        chunk_summaries = []
-        for i, chunk_content in enumerate(content_chunks):
-            print(f"Creating narrative summary for chunk {i+1}/{len(content_chunks)}...")
-            chunk_summary = self._get_chunk_summary(chunk_content, i+1, len(content_chunks))
-            chunk_summaries.append(chunk_summary)
-            
-            # Add a small delay between API calls to avoid rate limiting
-            if i < len(content_chunks) - 1:
-                time.sleep(1)
-        
-        # First combine pairs of summaries to reduce the number of chunks
-        if len(chunk_summaries) > 2:
-            print("Combining chunk summaries into intermediate summaries...")
-            intermediate_summaries = []
-            
-            for i in range(0, len(chunk_summaries), 2):
-                if i + 1 < len(chunk_summaries):
-                    # Combine pair of summaries
-                    combined = self._combine_pair(chunk_summaries[i], chunk_summaries[i+1], i//2+1)
-                    intermediate_summaries.append(combined)
-                else:
-                    # Handle odd number of summaries
-                    intermediate_summaries.append(chunk_summaries[i])
-                
-                # Add delay between API calls
-                if i + 2 < len(chunk_summaries):
-                    time.sleep(1)
-            
-            # Replace chunk_summaries with intermediate_summaries for final combination
-            chunk_summaries = intermediate_summaries
-        
-        # Final combination of all summaries
-        print("Creating final cohesive narrative...")
-        final_summary = self._combine_all_narratives(chunk_summaries)
-        
-        # Save detailed information to file
+        # Save to output file
         output_data = {
-            "video_summary": final_summary,
-            "chunk_summaries": chunk_summaries
+            "video_summary": final_summary
         }
         
         with open(self.output_file_path, 'w', encoding='utf-8') as file:
             json.dump(output_data, file, indent=2, ensure_ascii=False)
         
-        print(f"Narrative summary saved to {self.output_file_path}")
+        print(f"Content with caption IDs saved to {self.output_file_path}")
         
         return output_data
-    
-    def _get_chunk_summary(self, content: str, chunk_number: int, total_chunks: int) -> str:
-        """Create a scene-focused narrative summary of a content chunk."""
-        prompt = f"""You are analyzing part {chunk_number} of {total_chunks} from a video or film. Create a brief narrative summary that focuses on the storytelling elements and scene details. 
-
-        For each important scene or sequence:
-        - Describe the setting, atmosphere, and visual elements
-        - Identify key characters and their actions or interactions
-        - Capture any important dialogue or narrative developments
-        - Note any significant emotional moments
-
-        Your summary should flow like a cohesive story, following the narrative arc present in this part of the video. Don't just list scenes - create a flowing narrative that captures the storytelling.
-
-        Here is part {chunk_number} of {total_chunks} of the video content:
-
-        {content}
-        """
-        
-        try:
-            response = self._call_gpt_api(prompt, self.max_tokens, 0.4)
-            return response.choices[0].message.content
-        except Exception as e:
-            print(f"All retry attempts failed for chunk {chunk_number}: {str(e)}")
-            return f"Error generating summary for part {chunk_number}: {str(e)}"
-    
-    def _combine_pair(self, first_summary: str, second_summary: str, pair_number: int) -> str:
-        """Combine a pair of consecutive narrative summaries."""
-        prompt = f"""You have two consecutive narrative summaries from parts of the same video or film.
-
-        First summary:
-        {first_summary}
-
-        Second summary:
-        {second_summary}
-
-        Create a single cohesive narrative that combines these two parts. The combined narrative should:
-        - Flow naturally as one story section
-        - Connect character developments and plot points between the two parts
-        - Maintain important scenes and storytelling elements
-        - Be concise but comprehensive
-        
-        This combined narrative will later be merged with other section summaries.
-        """
-        
-        try:
-            response = self._call_gpt_api(prompt, self.max_tokens, 0.3)
-            return response.choices[0].message.content
-        except Exception as e:
-            print(f"Error combining pair {pair_number}: {e}")
-            # Fallback to simple concatenation
-            return f"Part {pair_number}A: {first_summary}\n\nPart {pair_number}B: {second_summary}"
-    
-    def _combine_all_narratives(self, summaries: List[str]) -> str:
-        """Combine all narrative summaries into one cohesive story."""
-        summaries_text = "\n\n---\n\n".join([f"Part {i+1}:\n{summary}" for i, summary in enumerate(summaries)])
-        
-        prompt = f"""You have multiple narrative summaries describing different parts of the same video or film.
-
-        {summaries_text}
-
-        Create a single cohesive narrative that tells the complete story of the video from beginning to end. The final narrative should:
-        - Be highly summarized but complete
-        - Flow naturally as one complete story
-        - Maintain the important scenes and storytelling elements from all parts
-        - Preserve the narrative arc across the entire video
-        - Connect character developments and plot points across all parts
-        - Read as if it was written as a single narrative summary
-
-        Your combined narrative should capture the full storytelling experience of the video from start to finish in a concise and engaging way.
-        """
-        
-        try:
-            response = self._call_gpt_api(prompt, 8000, 0.4)
-            return response.choices[0].message.content
-        except Exception as e:
-            print(f"Error creating final combined narrative: {e}")
-            # Fallback to simple concatenation
-            return "Complete Video Narrative:\n\n" + "\n\n".join([f"Part {i+1}: {summary}" for i, summary in enumerate(summaries)])
-
 
 
 class StoryboardAgent:
     """Agent that creates a storyboard based on user ideas and grounded video information."""
     
     def __init__(self, audio_json_path: str, rhythm_plot_path: str):
-        self.max_tokens = 8000
+        self.max_tokens = 16000
         self.audio_json_path = audio_json_path
         self.rhythm_plot_path = rhythm_plot_path
         self.model = "gpt-4o-mini"
+        # Initialize conversation state tracking
+        self.conversation = []
+        self.system_message = "You are a creative beat sync video producer who is good at write scenes from ground truth video segments, strictly following the user's requirements."
 
     @tenacity.retry(
         wait=tenacity.wait_exponential(multiplier=1, min=2, max=60),
         stop=tenacity.stop_after_attempt(5),
         before_sleep=lambda retry_state: print(f"API call failed. Retrying in {retry_state.next_action.sleep} seconds... (Attempt {retry_state.attempt_number})")
     )
-    def _call_gpt_api(self, system_prompt, user_prompt, temperature, max_tokens):
-        """Call GPT API with retry logic using tenacity."""
-        response = gpt(model=self.model, system=system_prompt, user=user_prompt)
+    def _call_gpt_api(self, user_prompt, temperature=0.7):
+        """Call API with retry logic, maintaining conversation state."""
+        # Store the prompt in our internal conversation tracking
+        self.conversation.append({"role": "user", "content": user_prompt})
+        
+        # Create initial message for this round with system prompt
+        initial_message = ""
+        if len(self.conversation) > 1:
+            # If we have previous conversation, let the model know about it
+            assistant_messages = [msg["content"] for msg in self.conversation if msg["role"] == "assistant"]
+            if assistant_messages:
+                initial_message = "In our previous conversation, you said: " + assistant_messages[-1] + "\n\n"
+        
+        # Call the API with the combined message
+        combined_prompt = initial_message + user_prompt
+        response = gpt(model=self.model, system=self.system_message, user=combined_prompt)
+        
+        # Store the response in our conversation tracker
+        assistant_response = response.choices[0].message.content
+        self.conversation.append({"role": "assistant", "content": assistant_response})
+        
         return response
 
     def create_storyboard(self, user_idea, video_summary=None):
         """Generate a rhythm-aware storyboard incorporating user ideas and optional video content."""
+        # Reset conversation tracking
+        self.conversation = []
+        
+        # First, send the video summary as context if provided
+        if video_summary:
+            video_context_prompt = f"""
+            Here is the visual description of all the video segments from the source video:
 
-        # Default to 10 sections if JSON file doesn't exist
-        sections_num = 10
+            {video_summary}
+
+            Each video segments represents a scene from the ground truth video.
+            Later, you'll need to use these video segments content to write storybards. 
+
+            """
+
+            print("\n=== SENDING VIDEO VISUAL CONTENT FOR ANALYSIS ===")
+            video_analysis_response = self._call_gpt_api(video_context_prompt)
+            print("\nWaiting for the Agent to understand the video:")
+            print(video_analysis_response.choices[0].message.content)
+            print("\n=== VIDEO CONTENT ANALYSIS COMPLETE ===\n")
+        
+        # Get sections number from audio analysis
+        sections_num = 0  # Default value if not found
         try:
             if os.path.exists(self.audio_json_path):
-                with open(self.audio_json_path, 'r') as file:
+                with open(self.audio_json_path, 'r', encoding='utf-8') as file:
                     sectionsdata = json.load(file)
                     sections_num = sectionsdata['beat_data']['count']
                     print(f"Found {sections_num} rhythm sections in audio analysis")
@@ -235,41 +146,30 @@ class StoryboardAgent:
         else:
             rhythm_reference = "Note: No rhythm visualization is available. Create scenes with your own rhythm pacing."
 
-        # Add video summary reference if provided
-        video_reference = ""
-        if video_summary:
-            video_reference = f"""
-            Supplementary Reference Material (If needed):
-            {video_summary}
-            """
-
-        system_prompt = "You are a creative director specializing in rhythm-based visual storyboard creation, strictly follow user's requirements."
-
-        user_prompt = f"""
-        Create a rhythm-synchronized storyboard that aligns with user requirements and musical elements.
+        # Create the storyboard using the same conversation
+        storyboard_prompt = f"""
+        Now, build rhythm-synchronized video storybaords from the ground truth video segments content you just saw, and aligns with user's requirements
 
         {rhythm_reference}
 
         Total Scenes Required: {sections_num}
         ###################################
 
-        User creative requests (high priority):
+        User's creative requests (high priority):
         "{user_idea}"
         ###################################
 
-        Storyboard Creation Guidelines:
+        Video Storyboards Guidelines:
 
         1. Scene Structure:
         - Begin each scene with /////
         - Number scenes from 1 to {sections_num}
-        - Align scene transitions and rhythm
-        - Balance scene energy with musical flow
+        - The video segments can only write from the video segments content given to you before
+        - The storyboards you are working on is suitable for beat sync video, which is usually to splice together high-energy clips from the video material.
 
         2. Visual Requirements:
         - Provide detailed character appearances in every scene (e.g., "Spider-Gwen in white and pink suit with a hood and ballet shoes on a train")
-        - Include specific visual elements
-        - Capture the mood through visual atmosphere
-        - No dialogue design required
+        - No dialogue required
         - Include rich motion and visual descriptions
 
         3. Rhythm Integration:
@@ -277,39 +177,32 @@ class StoryboardAgent:
         - Use peaks for impactful moments
 
         4. Content Rules:
-        - Can not exceed two sentences per scene
+        - Can not exceed two sentences per scene sections
         - Focus on visual and emotional elements
         - Keep descriptions clear, concise and short
         - Maintain narrative flow between scenes
+        - The storybaords should based on previous grounded video segments
 
-        Format Output Example:
+        #################################
+        Format Output Example (Don't answer anything unrelated, eg. ''' '''):
 
-        /////\n[Scene description]\n\n/////\n[Scene description]
-
-        {video_reference}
+        /////\nA brass telescope lay forgotten on the windowsill, its lens catching the last golden rays of sunset.\n\n/////\nAutumn leaves spiraled down from maple trees, creating a russet carpet across the silent garden.
         """
 
         try:
-            response = self._call_gpt_api(system_prompt, user_prompt, 0.7, self.max_tokens)
+            print("=== CREATING STORYBOARD ===")
+            response = self._call_gpt_api(storyboard_prompt, 0.7)
             return response.choices[0].message.content
 
         except Exception as e:
             return f"Error creating storyboard: {str(e)}"
 
-def story_main(use_video_content=False, user_idea=None):
+
+def story_main(use_video_content=True, user_idea=None):
     """Run the complete pipeline to extract video content and create a storyboard."""
-    import os
-    import json
-    
-    # Get the current file's directory
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    
-    # Navigate to the Vtube root directory
-    vtube_root = os.path.abspath(os.path.join(current_dir, '..', '..', '..'))
-    
-    # Define base directory paths
-    dataset_dir = os.path.join(vtube_root, 'dataset')
-    video_edit_dir = os.path.join(dataset_dir, 'video_edit')
+
+    current_dir = os.getcwd()
+    video_edit_dir = os.path.join(current_dir, 'dataset/video_edit')
     
     scene_output_dir = os.path.join(video_edit_dir, 'scene_output')
     music_analysis_dir = os.path.join(video_edit_dir, 'music_analysis')
@@ -344,7 +237,7 @@ def story_main(use_video_content=False, user_idea=None):
             print(f"Video segments file not found at {video_segments_path}")
         print("Creating storyboard based on your idea only.")
     
-    # If user_idea is not provided (should never happen with new approach)
+    # If user_idea is not provided (should never happen with your new approach)
     if user_idea is None or user_idea == "":
         user_idea = "A creative music video with visual effects"
         print(f"Using default idea: {user_idea}")

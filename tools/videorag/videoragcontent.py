@@ -47,7 +47,7 @@ class VideoRAG:
     # video
     threads_for_split: int = 10
     video_segment_length: int = 30 # 30 seconds
-    rough_num_frames_per_segment: int = 5 # 5 frames
+    rough_num_frames_per_segment: int = 10 # 5 frames
     video_output_format: str = "mp4"
     audio_output_format: str = "mp3"
     video_embedding_batch_num: int = 2
@@ -161,9 +161,9 @@ class VideoRAG:
             )
             
             process_saving_video_segments.start()
-            #process_segment_caption.start()
+            process_segment_caption.start()
             process_saving_video_segments.join()
-            #process_segment_caption.join()
+            process_segment_caption.join()
             
             # if raise error in this two, stop the processing
             while not error_queue.empty():
@@ -176,7 +176,8 @@ class VideoRAG:
             segments_information = merge_segment_information(
                 segment_index2name,
                 segment_times_info,
-                transcripts
+                transcripts,
+                captions
             )
             manager.shutdown()
             loop.run_until_complete(self.video_segments.upsert(
