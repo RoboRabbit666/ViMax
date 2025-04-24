@@ -438,16 +438,16 @@ cd tools
 git lfs clone https://huggingface.co/openai/whisper-large-v3-turbo
 ```
 ```
+# Download all-MiniLM-L6-v2
+cd tools
+git lfs clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+```
+```
 # Download ImageBind
 cd tools
 mkdir .checkpoints
 cd .checkpoints
 wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
-```
-```
-# Download all-MiniLM-L6-v2
-cd tools
-git lfs clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
 ```
 ```
 🌟Multiple models are available for your convenience; you may wish to download only those relevant to your project.
