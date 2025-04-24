@@ -524,8 +524,8 @@ cross_talk:
 ```
 ## Character Image for Visual Retrieval Enhancement
 ```
-Under the dataset\video_edit\face_db, add folders of images of characters to be identified for visual retrieval enhancement
-The completed characters images folders structure should look like this, notice that the name of the character folder must be the same as the character name (eg. Spiderman/Batman/Superman...):
+Under the dataset\video_edit\face_db, add images of the character to be recognized to enhance visual retrieval
+The completed character images folders structure should look like this, notice that the name of the character folder must be the same as the character name (eg. Spiderman/Batman/Superman...):
 
 face_db
 ├── Spiderman ── image01.png
