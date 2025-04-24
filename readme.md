@@ -14,8 +14,8 @@
 
 # 🎉 News
 - [ ] [2024.04.24] 🎯 Plan to upgrade quality for music videos, providing perfect rythm!
-- [ ] [2024.04.24] 🎯 Plan to implement precise visual perception to capture nuanced human gestures and emotions throughout storyboarding and clip editing processes.
-- [x] [2024.04.14] 🎯 Plan to update the usage and codes of AI-Creator!
+- [x] [2024.04.24] 📢 Achieve more precise visual perception during storyboarding and editing to capture specific characters frames and understand source video.
+- [x] [2024.04.14] 📢 Update the usage and codes of AI-Creator!
 - [x] [2024.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
 - [x] [2024.04.07] 📢 Releasing three more interesting demo videos made by AI-Creator on our bilibili account!
 - [x] [2024.04.07] 📢 Releasing the video retrieval implementation code of AI-Creator! Supporting all the demo video types showcased!
@@ -521,6 +521,16 @@ cross_talk:
   peng_gen: 'dataset/cross_talk/付航'
   output: "dataset/user_output_video/cross_talk_video.mp4"
   video_source_dir: "dataset/user_video/"
+```
+## Character Image for Visual Retrieval Enhancement
+```
+Under the dataset\video_edit\face_db, add folders of images of characters to be identified for visual retrieval enhancement
+The completed characters images folders structure should look like this, notice that the name of the character folder must be the same as the character name (eg. Spiderman/Batman/Superman...):
+
+face_db
+├── Spiderman ── image01.png
+└── Batman ── image02.png
+
 ```
 ## Command Line Usage
 ```
