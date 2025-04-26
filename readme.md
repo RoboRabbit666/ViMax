@@ -13,7 +13,7 @@
 </div>
 
 # 🎉 News
-- [ ] [2024.04.24] 🎯 Plan to upgrade quality for music videos, providing perfect rythm!
+- [ ]  🎯 Plan to update code framework!
 - [x] [2024.04.24] 📢 Achieve more precise visual perception during storyboarding and editing to capture specific characters frames and understand source video.
 - [x] [2024.04.14] 📢 Update the usage and codes of AI-Creator!
 - [x] [2024.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
