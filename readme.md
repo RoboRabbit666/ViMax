@@ -13,7 +13,7 @@
 </div>
 
 # 🎉 News
-- [ ]  🎯 Plan to update code framework!
+- [ ] [2024.05.6] 🎯 Plan to update code framework!
 - [x] [2024.04.24] 📢 Achieve more precise visual perception during storyboarding and editing to capture specific characters frames and understand source video.
 - [x] [2024.04.14] 📢 Update the usage and codes of AI-Creator!
 - [x] [2024.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
