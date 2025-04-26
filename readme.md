@@ -13,14 +13,14 @@
 </div>
 
 # 🎉 News
-- [ ] [2024.05.06] 🎯 Plan to update code framework!
-- [x] [2024.04.24] 📢 Achieve more precise visual perception during storyboarding and editing to capture specific characters frames and understand source video.
-- [x] [2024.04.14] 📢 Update the usage and codes of AI-Creator!
-- [x] [2024.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
-- [x] [2024.04.07] 📢 Releasing three more interesting demo videos made by AI-Creator on our bilibili account!
-- [x] [2024.04.07] 📢 Releasing the video retrieval implementation code of AI-Creator! Supporting all the demo video types showcased!
-- [x] [2024.03.31] 📢 Releasing the audio files of AI-Creator (Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion)!
-- [x] [2024.03.31] 📢 Releasing the audio implementation code of AI-Creator!
+- [ ] [2025.05.06] 🎯 Plan to update code framework!
+- [x] [2025.04.24] 📢 Achieve more precise visual perception during storyboarding and editing to capture specific characters frames and understand source video.
+- [x] [2025.04.14] 📢 Update the usage and codes of AI-Creator!
+- [x] [2025.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
+- [x] [2025.04.07] 📢 Releasing three more interesting demo videos made by AI-Creator on our bilibili account!
+- [x] [2025.04.07] 📢 Releasing the video retrieval implementation code of AI-Creator! Supporting all the demo video types showcased!
+- [x] [2025.03.31] 📢 Releasing the audio files of AI-Creator (Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion)!
+- [x] [2025.03.31] 📢 Releasing the audio implementation code of AI-Creator!
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
 
 # 🎥 Demos & How We Made Them
