@@ -408,7 +408,7 @@ pip install -r requirements.txt
 ```
 ## Model Download
 ```
-# Make sure you have git-lfs installed (https://git-lfs.com)
+# Make sure git-lfs is installed (https://git-lfs.com)
 git lfs install
 ```
 ```
