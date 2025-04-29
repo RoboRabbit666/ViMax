@@ -408,6 +408,10 @@ pip install -r requirements.txt
 ```
 ## Model Download
 ```
+# Make sure you have git-lfs installed (https://git-lfs.com)
+git lfs install
+```
+```
 # Download CosyVoice
 cd tools/CosyVoice
 huggingface-cli download PillowTa1k/CosyVoice --local-dir pretrained_models
