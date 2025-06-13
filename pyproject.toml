@@ -106,7 +106,7 @@ dependencies = [
   "silero-vad",
   "ormsgpack",
   "cachetools",
-  "huggingface-hub==0.24.6",
+  "huggingface-hub==0.25.1",
   "munch==4.0.0",
   "descript-audio-codec==1.0.0",
   "pydub==0.25.1",
