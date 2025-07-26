@@ -7,7 +7,6 @@
     </h3>
     <a href='https://space.bilibili.com/3546868449544308'><img src="https://img.shields.io/badge/bilibili-00A1D6.svg?logo=bilibili&logoColor=white" /></a>&nbsp;
     <a href='https://www.youtube.com/@AI-Creator-is-here'><img src='https://badges.aleen42.com/src/youtube.svg' /></a>&nbsp;
-    <img src="https://badges.pufler.dev/visits/hkuds/ai-creator?style=flat-square&logo=github">&nbsp;
     <img src='https://img.shields.io/github/stars/hkuds/ai-creator' />
     <img src='assets/cover_16-9.png' />
 </div>
