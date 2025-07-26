@@ -1,4 +1,4 @@
-<h1 align='center'>🚀 AI-Creator: Multi-Modal Agents for Video Production</h1>
+<h1 align='center'>🚀 Agentic-AIGC: Multi-Modal Agents for Video Production</h1>
 
 <div align='center'>
     <h3>
@@ -24,7 +24,7 @@
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
 
 # 🎥 Demos & How We Made Them
-We have made videos of six distinct types using our AI-Creator, including:
+We have made videos of six distinct types using our Agentic-AIGC, including:
 <table>
 <tr>
 <td align="center" width="33%">
@@ -59,9 +59,9 @@ News Summarization
 **Note**: All videos are used for research and demonstration purposes only. The audio and visual assets are sourced from the Internet. Please contact us if you believe any content infringes upon your intellectual property rights.
 
 ## 1. Movie Edits
-Ever dreamed of creating stunning movie edits that captivate your audience? With AI-Creator, you can transform your favorite movie clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
+Ever dreamed of creating stunning movie edits that captivate your audience? With Agentic-AIGC, you can transform your favorite movie clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
 
-🚀 **How AI-Creator Makes Movie Edits**
+🚀 **How Agentic-AIGC Makes Movie Edits**
 - Users just need to prepare the video sources, music audio file and the idea they want.
 - Automatically extract music rhythm points (optional) setting threshold & mask parameters.
 - Automatically assists with storyboard query design through video content based on user-provided ideas.
@@ -76,7 +76,7 @@ Ever dreamed of creating stunning movie edits that captivate your audience? With
 - Maintain visual continuity and reduce redundant clips
 - Accurately align the storyboard description of the user prompt (eg. 1st, 2nd sections)
 
-Through intelligent analysis of hours of film footage, AI-Creator automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
+Through intelligent analysis of hours of film footage, Agentic-AIGC automatically identifies **rhythm cues**, **high-energy action scenes**, and **character highlights** to achieve precise editing.
 
 📝 **Prompt**:
 ```
@@ -91,7 +91,7 @@ Begin with Gwen with blonde hair sitting at a dining table in front of a window,
 🌟 **Key Features:**
 - For the same input video, edit different styles by adapting your prompts
 
-We showcase two distinct edits of *Interstella* created using AI-Creator. The first version focuses on the theme "love transcending space and time," while the second emphasizes humanity's courage in space exploration. Both edits demonstrate how different prompts can shape the narrative and emotional impact of the same source material.
+We showcase two distinct edits of *Interstella* created using Agentic-AIGC. The first version focuses on the theme "love transcending space and time," while the second emphasizes humanity's courage in space exploration. Both edits demonstrate how different prompts can shape the narrative and emotional impact of the same source material.
 
 📝 **Prompt**:
 ```
@@ -126,9 +126,9 @@ A romantic and sweet love story about Jack and Rose meeting on the Titanic. It c
 ```
 
 ## 2. Meme Videos
-Want to create engaging and hilarious meme videos? AI-Creator helps you craft memorable content by intelligently combining video clips, text, and effects into shareable content that could go viral.
+Want to create engaging and hilarious meme videos? Agentic-AIGC helps you craft memorable content by intelligently combining video clips, text, and effects into shareable content that could go viral.
 
-🚀 **How AI-Creator Makes Meme Videos**
+🚀 **How Agentic-AIGC Makes Meme Videos**
 - Users just need to provide the video path and your requirements.
 - Automatically preprocesses audio (voice separation, loudness normalization, resampling, transcription) with corresponding agents
 - Automatically segments the audio and performs segment-level copywriting adaptation via the Writer Agent
@@ -183,7 +183,7 @@ Video 4: Original 小明剑魔 Video
 </tr>
 </table>
 
-The 小明剑魔 meme has gained massive popularity recently through his insightful yet comedic streaming commentary. Many content creators have successfully adapted his distinctive speech pattern into creative videos. We've used AI-Creator to generate three videos of this viral meme format, each capturing the unique style and energy of the original while adding new creative elements.
+The 小明剑魔 meme has gained massive popularity recently through his insightful yet comedic streaming commentary. Many content creators have successfully adapted his distinctive speech pattern into creative videos. We've used Agentic-AIGC to generate three videos of this viral meme format, each capturing the unique style and energy of the original while adding new creative elements.
 
 📝 **Prompts**:
 ```
@@ -218,9 +218,9 @@ Based on the following scenario, create an angry rebuttal from Zhuge Liang (me):
 ```
 
 ## 3. AI Music Videos
-Ready to create music videos realizing your creative ideas? AI-Creator helps you write lyrics, select singers you specify, and generate matching visuals to bring your musical vision to life. The system can coordinate lyrics, visuals, and music to create engaging amateur music videos.
+Ready to create music videos realizing your creative ideas? Agentic-AIGC helps you write lyrics, select singers you specify, and generate matching visuals to bring your musical vision to life. The system can coordinate lyrics, visuals, and music to create engaging amateur music videos.
 
-🚀 **How AI-Creator Makes Music Videos**
+🚀 **How Agentic-AIGC Makes Music Videos**
 - Users just need to provide the music MIDI file, original lyrics, BGM file (optional), target voice file, and requirements. 
 - Automatically performs loudness normalization and annotates the MIDI file using the Annotator Agent.
 - Automatically calibrates and adapts lyrics at the word level via the Analyzer Agent.
