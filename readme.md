@@ -21,6 +21,155 @@
 - [x] [2025.03.31] 📢 Releasing the audio implementation code of Agentic-AIGC!
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
 
+# Usage
+[中文文档](https://o86nig8lht.feishu.cn/docx/P86mdzslVowcz7xuGJ0cE7n0n2b?from=from_copylink)
+## Clone and Install
+```
+git clone https://github.com/HKUDS/Agentic-AIGC.git
+conda create --name aicreator python=3.10
+conda activate aicreator
+conda install -y -c conda-forge pynini==2.1.5 ffmpeg
+pip install -r requirements.txt
+```
+## Model Download
+```
+# Make sure git-lfs is installed (https://git-lfs.com)
+git lfs install
+```
+```
+# Download CosyVoice
+cd tools/CosyVoice
+huggingface-cli download PillowTa1k/CosyVoice --local-dir pretrained_models
+```
+```
+# Download fish-speech
+cd tools/fish-speech
+huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
+```
+```
+# Download seed-vc
+cd tools/seed-vc
+huggingface-cli download PillowTa1k/seed-vc --local-dir checkpoints
+```
+```
+# Download DiffSinger
+cd tools/DiffSinger
+huggingface-cli download PillowTa1k/DiffSinger --local-dir checkpoints
+```
+```
+# Download MiniCPM
+cd tools
+git lfs clone https://huggingface.co/openbmb/MiniCPM-V-2_6-int4
+```
+```
+# Download Whisper
+cd tools
+git lfs clone https://huggingface.co/openai/whisper-large-v3-turbo
+```
+```
+# Download all-MiniLM-L6-v2
+cd tools
+git lfs clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+```
+```
+# Download ImageBind
+cd tools
+mkdir .checkpoints
+cd .checkpoints
+wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
+```
+```
+🌟Multiple models are available for your convenience; you may wish to download only those relevant to your project.
+```
+<div align="center">
+
+<table>
+  <tr>
+    <th align="center">Feature Type</th>
+    <th align="center">Video Demo</th>
+    <th align="center">Required Models</th>
+  </tr>
+  <tr>
+    <td align="center">Cross Talk</td>
+    <td align="center">English Stand-up Comedy to Chinese Crosstalk</td>
+    <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2 </td>
+  </tr>
+  <tr>
+    <td align="center">Talk Show</td>
+    <td align="center">Chinese Crosstalk to English Stand-up Comedy</td>
+    <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
+  </tr>
+  <tr>
+    <td align="center">MAD TTS</td>
+    <td align="center">Xiao-Ming-Jian-Mo(小明剑魔) Meme</td>
+    <td align="center">fish-speech</td>
+  </tr>
+  <tr>
+    <td align="center">MAD SVC</td>
+    <td align="center">AI Music Videos</td>
+    <td align="center">DiffSinger, seed-vc, MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
+  </tr>
+  <tr>
+    <td align="center">Rhythm</td>
+    <td align="center">Spider-Man: Across the Spider-Verse</td>
+    <td align="center">MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
+  </tr>
+  <tr>
+    <td align="center">Comm</td>
+    <td align="center">Novel-to-Screen Adaptation</td>  
+    <td align="center">MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
+  </tr>
+  <tr>
+    <td align="center">News</td>
+    <td align="center">Tech News: OpenAI's GPT-4o Image Generation Release</td>
+    <td align="center">MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
+  </tr>
+</table>
+
+</div>
+
+## LLM Config
+```
+# Agentic-AIGC\environment\config\config.yml 
+# Input your LLM API
+llm:
+  api_key:
+  base_url: 
+```
+Model names may vary depending on the LLM base URL.
+The correct model names must be specified in `environment/config/llm.py`.
+For direct APIs that support only a single model (e.g., the official GPT series), all model names should be replaced with the corresponding supported model (e.g., `gpt-4o-mini`)
+## Input Config
+```
+# Configure the input of cross talk videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
+# eg. Agentic-AIGC\environment\config\cross_talk.yml
+cross_talk:
+  reqs: 'Generate a Chinese crosstalk (Xiangsheng) script. The story should be based on objectively existing situations, set against a Chinese background, avoiding examples from other countries. The script should be approximately 40-50 sentences long.'
+  audio_path: 'dataset/cross_talk/英文脱口秀1.wav'
+  dou_gen: 'dataset/cross_talk/郭德纲'
+  peng_gen: 'dataset/cross_talk/付航'
+  output: "dataset/user_output_video/cross_talk_video.mp4"
+  video_source_dir: "dataset/user_video/"
+```
+## Character Image for Visual Retrieval Enhancement
+```
+Under the dataset\video_edit\face_db, add images of the character to be recognized to enhance visual retrieval
+The completed character images folders structure should look like this, notice that the name of the character folder must be the same as the character name (eg. Spiderman/Batman/Superman...):
+
+face_db
+├── Spiderman ── image01.png
+└── Batman ── image02.png
+
+```
+## Command Line Usage
+```
+# With the configuration now complete, proceed to run the following instructions:
+python main.py
+# The console will output:
+Please describe the type of video you would like to produce:
+# You can choose Cross Talk、Talk Show、TTS、SVC、Rhythm-Based Editing、Summary of Comment Types、Summary of News
+```
+
 # 🎥 Demos & How We Made Them
 We have made videos of six distinct types using our Agentic-AIGC, including:
 <table>
@@ -394,149 +543,3 @@ All content used in our demonstrations is for research purposes only. We deeply 
 [First a framework plot]
 Then a short explanation on the framework, without specific technical details. -->
 
-# Usage
-[中文文档](https://o86nig8lht.feishu.cn/docx/P86mdzslVowcz7xuGJ0cE7n0n2b?from=from_copylink)
-## Clone and Install
-```
-git clone https://github.com/HKUDS/Agentic-AIGC.git
-conda create --name aicreator python=3.10
-conda activate aicreator
-conda install -y -c conda-forge pynini==2.1.5 ffmpeg
-pip install -r requirements.txt
-```
-## Model Download
-```
-# Make sure git-lfs is installed (https://git-lfs.com)
-git lfs install
-```
-```
-# Download CosyVoice
-cd tools/CosyVoice
-huggingface-cli download PillowTa1k/CosyVoice --local-dir pretrained_models
-```
-```
-# Download fish-speech
-cd tools/fish-speech
-huggingface-cli download fishaudio/fish-speech-1.5 --local-dir checkpoints/fish-speech-1.5
-```
-```
-# Download seed-vc
-cd tools/seed-vc
-huggingface-cli download PillowTa1k/seed-vc --local-dir checkpoints
-```
-```
-# Download DiffSinger
-cd tools/DiffSinger
-huggingface-cli download PillowTa1k/DiffSinger --local-dir checkpoints
-```
-```
-# Download MiniCPM
-cd tools
-git lfs clone https://huggingface.co/openbmb/MiniCPM-V-2_6-int4
-```
-```
-# Download Whisper
-cd tools
-git lfs clone https://huggingface.co/openai/whisper-large-v3-turbo
-```
-```
-# Download all-MiniLM-L6-v2
-cd tools
-git lfs clone https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
-```
-```
-# Download ImageBind
-cd tools
-mkdir .checkpoints
-cd .checkpoints
-wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
-```
-```
-🌟Multiple models are available for your convenience; you may wish to download only those relevant to your project.
-```
-<div align="center">
-
-<table>
-  <tr>
-    <th align="center">Feature Type</th>
-    <th align="center">Video Demo</th>
-    <th align="center">Required Models</th>
-  </tr>
-  <tr>
-    <td align="center">Cross Talk</td>
-    <td align="center">English Stand-up Comedy to Chinese Crosstalk</td>
-    <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2 </td>
-  </tr>
-  <tr>
-    <td align="center">Talk Show</td>
-    <td align="center">Chinese Crosstalk to English Stand-up Comedy</td>
-    <td align="center">CosyVoice, MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
-  </tr>
-  <tr>
-    <td align="center">MAD TTS</td>
-    <td align="center">Xiao-Ming-Jian-Mo(小明剑魔) Meme</td>
-    <td align="center">fish-speech</td>
-  </tr>
-  <tr>
-    <td align="center">MAD SVC</td>
-    <td align="center">AI Music Videos</td>
-    <td align="center">DiffSinger, seed-vc, MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
-  </tr>
-  <tr>
-    <td align="center">Rhythm</td>
-    <td align="center">Spider-Man: Across the Spider-Verse</td>
-    <td align="center">MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
-  </tr>
-  <tr>
-    <td align="center">Comm</td>
-    <td align="center">Novel-to-Screen Adaptation</td>  
-    <td align="center">MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
-  </tr>
-  <tr>
-    <td align="center">News</td>
-    <td align="center">Tech News: OpenAI's GPT-4o Image Generation Release</td>
-    <td align="center">MiniCPM, Whisper, ImageBind, all-MiniLM-L6-v2</td>
-  </tr>
-</table>
-
-</div>
-
-## LLM Config
-```
-# Agentic-AIGC\environment\config\config.yml 
-# Input your LLM API
-llm:
-  api_key:
-  base_url: 
-```
-Model names may vary depending on the LLM base URL.
-The correct model names must be specified in `environment/config/llm.py`.
-For direct APIs that support only a single model (e.g., the official GPT series), all model names should be replaced with the corresponding supported model (e.g., `gpt-4o-mini`)
-## Input Config
-```
-# Configure the input of cross talk videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
-# eg. Agentic-AIGC\environment\config\cross_talk.yml
-cross_talk:
-  reqs: 'Generate a Chinese crosstalk (Xiangsheng) script. The story should be based on objectively existing situations, set against a Chinese background, avoiding examples from other countries. The script should be approximately 40-50 sentences long.'
-  audio_path: 'dataset/cross_talk/英文脱口秀1.wav'
-  dou_gen: 'dataset/cross_talk/郭德纲'
-  peng_gen: 'dataset/cross_talk/付航'
-  output: "dataset/user_output_video/cross_talk_video.mp4"
-  video_source_dir: "dataset/user_video/"
-```
-## Character Image for Visual Retrieval Enhancement
-```
-Under the dataset\video_edit\face_db, add images of the character to be recognized to enhance visual retrieval
-The completed character images folders structure should look like this, notice that the name of the character folder must be the same as the character name (eg. Spiderman/Batman/Superman...):
-
-face_db
-├── Spiderman ── image01.png
-└── Batman ── image02.png
-
-```
-## Command Line Usage
-```
-# With the configuration now complete, proceed to run the following instructions:
-python main.py
-# The console will output:
-Please describe the type of video you would like to produce: 
