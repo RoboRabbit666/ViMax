@@ -13,12 +13,12 @@
 # 🎉 News
 - [x] [2025.05] 🎯 Plan to update code framework!
 - [x] [2025.04.24] 📢 Achieve more precise visual perception during storyboarding and editing to capture specific characters frames and understand source video.
-- [x] [2025.04.14] 📢 Update the usage and codes of AI-Creator!
+- [x] [2025.04.14] 📢 Update the usage and codes of Agentic-AIGC!
 - [x] [2025.04.08] 📢 Our demo videos have received over 100k views and 19k likes! Watch them on <a href='https://space.bilibili.com/3546868449544308'>bilibili</a> !
-- [x] [2025.04.07] 📢 Releasing three more interesting demo videos made by AI-Creator on our bilibili account!
-- [x] [2025.04.07] 📢 Releasing the video retrieval implementation code of AI-Creator! Supporting all the demo video types showcased!
-- [x] [2025.03.31] 📢 Releasing the audio files of AI-Creator (Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion)!
-- [x] [2025.03.31] 📢 Releasing the audio implementation code of AI-Creator!
+- [x] [2025.04.07] 📢 Releasing three more interesting demo videos made by Agentic-AIGC on our bilibili account!
+- [x] [2025.04.07] 📢 Releasing the video retrieval implementation code of Agentic-AIGC! Supporting all the demo video types showcased!
+- [x] [2025.03.31] 📢 Releasing the audio files of Agentic-AIGC (Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion)!
+- [x] [2025.03.31] 📢 Releasing the audio implementation code of Agentic-AIGC!
 - [x] [2025.03.31] 📢 Releasing the first demo videos! Including Movie Edits, Meme Videos, AI Music Videos, English Talk Show to Chinese Crosstalk Conversion, AI-Generated TV Drama Clips, and Tech News Updates
 
 # 🎥 Demos & How We Made Them
@@ -240,7 +240,7 @@ The song is performed by Patrick Star, focusing on the theme of ​**"the strugg
 ## 4. Cross-Culture Verbal Comedy Arts
 Interested in bridging cultural gaps through comedy? Transform popular English talk show segments into authentic Chinese crosstalk performances, and vice versa. Complete with cultural adaptations and localized humor that resonates with audiences of different culture backgrounds.
 
-🚀 **How AI-Creator Makes Talk Show Transitions**
+🚀 **How Agentic-AIGC Makes Talk Show Transitions**
 - Users just need to provide the target cross-talk (comedy dialogue) audio file.
 - Automatically adapts the script based on the provided target audio file.
 - Automatically selects the appropriate vocal tone for voice cloning according to the emotional context of the script.
@@ -279,9 +279,9 @@ Original Chinese Crosstalk Segment
 </table>
 
 ## 5. Novel-to-Screen Adaptation
-Want to bring your favorite novels to life? AI-Creator transforms written narratives into compelling video adaptations, complete with AI-generated scenes, characters, and dialogues - all without the need for actual filming or actors. Experience your beloved stories in a whole new medium.
+Want to bring your favorite novels to life? Agentic-AIGC transforms written narratives into compelling video adaptations, complete with AI-generated scenes, characters, and dialogues - all without the need for actual filming or actors. Experience your beloved stories in a whole new medium.
 
-🚀 **How AI-Creator Makes Novel-to-Screen Adaption**
+🚀 **How Agentic-AIGC Makes Novel-to-Screen Adaption**
 
 - Users just need to provide their idea, novel/book txt file and film/tv series video source files they want as visual materials.
 - (Optional) Provide favorite commentary audio files for cloning.
@@ -296,7 +296,7 @@ Want to bring your favorite novels to life? AI-Creator transforms written narrat
 
 <a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/" target='_blank'><img src="assets/joylife_cover.png" width="60%"></a>
 
-We used AI-Creator to generate a video adaptation of the opening chapters from *Joy of Life*. Our agents analyzed the novel's text and automatically created a compelling video sequence by intelligently selecting and arranging relevant scenes from the TV series.
+We used Agentic-AIGC to generate a video adaptation of the opening chapters from *Joy of Life*. Our agents analyzed the novel's text and automatically created a compelling video sequence by intelligently selecting and arranging relevant scenes from the TV series.
 
 📝 **Prompt:**
 ```
@@ -304,9 +304,9 @@ Write fluent commentary script with 1500 words.
 ```
 
 ## 6. Tech News Summarization Updates
-Want to create engaging tech news videos? AI-Creator helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
+Want to create engaging tech news videos? Agentic-AIGC helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
 
-🚀 **How AI-Creator Makes News Summary Videos**
+🚀 **How Agentic-AIGC Makes News Summary Videos**
 
 - Users only need to provide their idea and the interview/news source files they want to summarize.
 - (Optional) Provide favorite audio files for cloning.
@@ -319,7 +319,7 @@ Want to create engaging tech news videos? AI-Creator helps transform complex tec
 <tr>
 <td align="center" width="50%">
 <a href="https://www.bilibili.com/video/BV12mZ6YLEqW/" target='_blank'><img src="assets/openai_news_cover.png" width="100%"></a>
-Tech News made by AI-Creator
+Tech News made by Agentic-AIGC
 </td>
 <td align="center" width="50%">
 <a href="https://www.youtube.com/watch?v=2f3K43FHRKo" target='_blank'><img src="assets/tech_news_original_cover.png" width="100%"></a>
@@ -364,7 +364,7 @@ Short movie podcast, colloquial expression within 300 words, notice to identify 
 
 # Acknowledgements
 
-We would like to express our deepest gratitude to the numerous individuals and organizations that have made AI-Creator possible. This project stands on the shoulders of giants, benefiting from the collective wisdom of the open-source community and the groundbreaking work of AI researchers worldwide.
+We would like to express our deepest gratitude to the numerous individuals and organizations that have made Agentic-AIGC possible. This project stands on the shoulders of giants, benefiting from the collective wisdom of the open-source community and the groundbreaking work of AI researchers worldwide.
 
 First and foremost, we are indebted to the open-source community and AI service providers whose tools and technologies form the foundation of our work:
 
@@ -389,7 +389,7 @@ Our work has been significantly enriched by the creative contributions of conten
 All content used in our demonstrations is for research purposes only. We deeply respect the intellectual property rights of all content creators and welcome any concerns or feedback regarding content usage.
 - Spider-Man movie editing idea reference Douyin account[@我是不是zx](https://www.douyin.com/user/MS4wLjABAAAApVuuGxyM7CI4MJRHQvc6SAy0J2zrJ12eg3f5jFqCIXk?from_tab_name=main&vid=7468621366913273115)
 
-<!-- # Framework of AI-Creator
+<!-- # Framework of Agentic-AIGC
 
 [First a framework plot]
 Then a short explanation on the framework, without specific technical details. -->
@@ -398,7 +398,7 @@ Then a short explanation on the framework, without specific technical details. -
 [中文文档](https://o86nig8lht.feishu.cn/docx/P86mdzslVowcz7xuGJ0cE7n0n2b?from=from_copylink)
 ## Clone and Install
 ```
-git clone https://github.com/HKUDS/AI-Creator.git
+git clone https://github.com/HKUDS/Agentic-AIGC.git
 conda create --name aicreator python=3.10
 conda activate aicreator
 conda install -y -c conda-forge pynini==2.1.5 ffmpeg
@@ -503,7 +503,7 @@ wget https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth
 
 ## LLM Config
 ```
-# AI-Creator\environment\config\config.yml 
+# Agentic-AIGC\environment\config\config.yml 
 # Input your LLM API
 llm:
   api_key:
@@ -515,7 +515,7 @@ For direct APIs that support only a single model (e.g., the official GPT series)
 ## Input Config
 ```
 # Configure the input of cross talk videos in advance (rhythm_agent/news_agent/comm_agent/cross_talk/mad_svc/mad_tts).yml files
-# eg. AI-Creator\environment\config\cross_talk.yml
+# eg. Agentic-AIGC\environment\config\cross_talk.yml
 cross_talk:
   reqs: 'Generate a Chinese crosstalk (Xiangsheng) script. The story should be based on objectively existing situations, set against a Chinese background, avoiding examples from other countries. The script should be approximately 40-50 sentences long.'
   audio_path: 'dataset/cross_talk/英文脱口秀1.wav'
