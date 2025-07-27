@@ -23,6 +23,13 @@
 
 # Usage
 [中文文档](https://o86nig8lht.feishu.cn/docx/P86mdzslVowcz7xuGJ0cE7n0n2b?from=from_copylink)
+
+## Environment
+```
+GPU Memory：8GB
+System: Linux、Windows
+```
+
 ## Clone and Install
 ```
 git clone https://github.com/HKUDS/Agentic-AIGC.git
