@@ -178,50 +178,21 @@ Please describe the type of video you would like to produce:
 ```
 
 # 🎥 Demos & How We Made Them
-We have made videos of six distinct types using our Agentic-AIGC, including:
-<table>
-<tr>
-<td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1C9Z6Y3ESo/" target='_blank'><img src="assets/spiderman_cover.png" width="100%"></a>
-Movie Edits
-</td>
-<td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1ucZ6YmEBU/" target='_blank'><img src="assets/masterma_cover.png" width="100%"></a>
-Meme Videos
-</td>
-<td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1t8ZCYsEeA/" target='_blank'><img src="assets/airencuoguo_cover.png" width="100%"></a>
-Music Videos
-</td>
-</tr>
-<tr>
-<td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1ucZ6YmESg/" target='_blank'><img src="assets/adapted_crosstalk_cover.png" width="100%"></a>
-Verbal Comedy Arts
-</td>
-<td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/" target='_blank'><img src="assets/joylife_cover.png" width="100%"></a>
-TV Drama
-</td>
-<td align="center" width="33%">
-<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/" target='_blank'><img src="assets/openai_news_cover.png" width="100%"></a>
-News Summarization
-</td>
-</tr>
-</table>
 
 **Note**: All videos are used for research and demonstration purposes only. The audio and visual assets are sourced from the Internet. Please contact us if you believe any content infringes upon your intellectual property rights.
 
-## 1. Movie Edits
-Ever dreamed of creating stunning movie edits that captivate your audience? With Agentic-AIGC, you can transform your favorite movie clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
+## 1. 🎬 Agentic Video Editing
+Ever dreamed of creating stunning video edits that captivate your audience? With Agentic-AIGC, you can transform your favorite video clips into breathtaking montages that tell your unique story, complete with perfectly synchronized music and transitions.
 
-🚀 **How Agentic-AIGC Makes Movie Edits**
+### 1.1 Agentic Movie Edits
+
+🚀 **Technical Details**
 - Users just need to prepare the video sources, music audio file and the idea they want.
 - Automatically extract music rhythm points (optional) setting threshold & mask parameters.
 - Automatically assists with storyboard query design through video content based on user-provided ideas.
 - Automatically complete the editing and integration of the video.
 
-### 1.1 *Spider-Man: Across the Spider-Verse*
+#### 1.1.1 *Spider-Man: Across the Spider-Verse*
 <a href='https://www.bilibili.com/video/BV1C9Z6Y3ESo/' target='_blank'><img src='assets/spiderman_cover.png' width=60%/></a>
 
 🌟 **Key Features:**
@@ -237,7 +208,7 @@ Through intelligent analysis of hours of film footage, Agentic-AIGC automaticall
 Begin with Gwen with blonde hair sitting at a dining table in front of a window, followed by her playing drums with pop textures and notes in the background. Include action scenes featuring Miguel O'Hara in his dark blue suit with red accents, sharp red claws and black/red eye lenses, Spider-Gwen in her white and pink suit with hood and ballet shoes, Miles Morales with curly hair and red spider logo on his chest, and The Spot in his black suit covered in white spots using portal powers. Focus on the chase scene in the blue sky with trains, and emphasize quality motion such as web-swinging, fighting, and colorful special effects throughout the sequence.
 ```
 
-### 1.2 *Interstella*
+#### 1.1.2 *Interstella*
 
 <a href='https://www.bilibili.com/video/BV1yQZ6YkEkw/' target='_blank'><img src='assets/interstella_cover_love.png' width=45%/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href='https://www.bilibili.com/video/BV1koZ6YuEeL/' target='_blank'><img src='assets/interstella_cover.png' width=45%/></a>
@@ -257,7 +228,7 @@ Version 2:
 Celebrate humanity's courage in space exploration. Include scenes featuring spaceships, wormholes, black holes, space station docking maneuvers, ocean planets, and glacial worlds. Show astronauts in their distinctive white spacesuits as they venture into the unknown, highlighting mankind's relentless drive to explore the cosmos.
 ```
 
-### 1.3 *Nezha*
+#### 1.1.3 *Nezha*
 <a href='https://www.bilibili.com/video/BV1NQZ6YCEPH/' target='_blank'><img src='assets/nezha_cover.png' width=60%/></a>
 
 🌟 **Key Features:**
@@ -268,7 +239,7 @@ Celebrate humanity's courage in space exploration. Include scenes featuring spac
 Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (black-robed), Dragon Prince Ao Bing (blue-robed).
 ```
 
-### 1.4 *Titanic*
+#### 1.1.4 *Titanic*
 <a href='https://www.bilibili.com/video/BV12mZ6YLEXJ/' target='_blank'><img src='assets/titanic_cover.png' width=60%/></a>
 
 🌟 **Key Features:**
@@ -279,10 +250,96 @@ Capture more scenes of conflicts and battles between Nezha and Shen Gongbao (bla
 A romantic and sweet love story about Jack and Rose meeting on the Titanic. It cannot include the part where the ship is in distress, nor the night scene. In the first section, Rose, wearing a purple hat and a white shirt, walks out of a white car with a purple umbrella, looking thoughtfully.
 ```
 
-## 2. Meme Videos
+### 1.2 Agentic Novel-to-Screen Edits
+Want to bring your favorite novels to life? Agentic-AIGC transforms written narratives into compelling video adaptations, complete with AI-generated scenes, characters, and dialogues - all without the need for actual filming or actors. Experience your beloved stories in a whole new medium.
+
+🚀 **Technical Details**
+
+- Users just need to provide their idea, novel/book txt file and film/tv series video source files they want as visual materials.
+- (Optional) Provide favorite commentary audio files for cloning.
+- (Optional) Customized presentation style txt file.
+- Automatically write copy based on the provided novel/book text content.
+- Automatically complete video material splicing and audio integration.
+
+🌟 **Key Features:**
+- Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
+- Automated scene matching that pairs textual descriptions with appropriate visual elements, ensuring narrative coherence
+- Audio generation
+
+<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/" target='_blank'><img src="assets/joylife_cover.png" width="60%"></a>
+
+We used Agentic-AIGC to generate a video adaptation of the opening chapters from *Joy of Life*. Our agents analyzed the novel's text and automatically created a compelling video sequence by intelligently selecting and arranging relevant scenes from the TV series.
+
+📝 **Prompt:**
+```
+Write fluent commentary script with 1500 words.
+```
+
+### 1.3 Agentic News Summary Edits
+Want to create engaging tech news videos? Agentic-AIGC helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
+
+🚀 **Technical Details**
+
+- Users only need to provide their idea and the interview/news source files they want to summarize.
+- (Optional) Provide favorite audio files for cloning.
+- (Optional) Customize presentation style txt file.
+- Automatically transcribe the interview content through voice and extract key information of people/events to write news summaries.
+- Automatically complete video material splicing and audio integration.
+
+#### 1.3.1 Tech News: OpenAI's GPT-4o Image Generation Release
+<table>
+<tr>
+<td align="center" width="50%">
+<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/" target='_blank'><img src="assets/openai_news_cover.png" width="100%"></a>
+Tech News made by Agentic-AIGC
+</td>
+<td align="center" width="50%">
+<a href="https://www.youtube.com/watch?v=2f3K43FHRKo" target='_blank'><img src="assets/tech_news_original_cover.png" width="100%"></a>
+Original Tech Report
+</td>
+</tr>
+</table>
+
+🌟 **Key Features:**
+- Automated news content summarization
+- Accurate audio and video clip alignment (eg. 1:00 Generate a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
+- Audio generation
+
+📝 **Prompt:**
+```
+Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
+```
+
+#### 1.3.2 Dune 2 Movie Cast Update Interview
+<table>
+<tr>
+<td align="center" width="50%">
+<a href="https://www.bilibili.com/video/BV1m1Z6Y2Erb/" target='_blank'><img src="assets/dune_news_cover.png" width="100%"></a>
+Podcast Summarization About <i>Dune</i> 2 Cast
+</td>
+<td align="center" width="50%">
+<a href="https://www.youtube.com/watch?v=AVQRnDFZ1Qs" target='_blank'><img src="assets/dune_original_cover.png" width="100%"></a>
+Original Podcast with <i>Dune</i> 2 Cast
+</td>
+</tr>
+</table>
+
+🌟 **Key Features:**
+- Automated news content summarization
+- Accurate audio and main characters video clip alignment (eg. 00:13 Timothée Chalamet, 00:28 Zendaya, 00:38 Romance, 00:47 Florence Pugh, 00:56 Austin Butler, 01:06 Javier Bardem)
+- Audio generation
+
+📝 **Prompt:**
+```
+Short movie podcast, colloquial expression within 300 words, notice to identify which actor or host is talking, don't mention movie tickets available issue.
+```
+
+## 2. Agentic Video Remaking
 Want to create engaging and hilarious meme videos? Agentic-AIGC helps you craft memorable content by intelligently combining video clips, text, and effects into shareable content that could go viral.
 
-🚀 **How Agentic-AIGC Makes Meme Videos**
+### 2.1 🎨 Agentic Meme Video
+
+🚀 **Technical Details**
 - Users just need to provide the video path and your requirements.
 - Automatically preprocesses audio (voice separation, loudness normalization, resampling, transcription) with corresponding agents
 - Automatically segments the audio and performs segment-level copywriting adaptation via the Writer Agent
@@ -293,7 +350,7 @@ Want to create engaging and hilarious meme videos? Agentic-AIGC helps you craft 
 - Intelligent understanding and transformation of meme concepts
 - Precise audio synthesis and precise scene matching
 
-### 2.1 Master Ma as AI Researcher
+#### 2.1.1 Master Ma as AI Researcher
 <table>
 <tr>
 <td align="center" width="50%">
@@ -313,7 +370,7 @@ Original Video of Master Ma
 Create a humorous narrative about two PhD students seeking advice from Master Ma. For the two PhD students, one of them is known for high citation counts and the other for numerous publications. Transform martial arts terms into AI research terminology while keeping phrase lengths similar (length difference should be less than two Chinese characters). The story highlights their academic rivalry and ends with Master Ma advising against "窝里斗" (internal competition). Keep signature phrases like "大意了没有闪" (wasn't cautious enough) and "四两拨千斤" (achieving great results with minimal effort) while avoiding mentions of real institutions. The word combinations should be logical and appropriate for an academic context.
 ```
 
-### 2.2 Xiao-Ming-Jian-Mo(小明剑魔) Meme
+#### 2.1.2 Xiao-Ming-Jian-Mo(小明剑魔) Meme
 <table>
 <tr>
 <td align="center" width="50%">
@@ -371,10 +428,10 @@ Based on the following scenario, create an angry rebuttal from Zhuge Liang (me):
 - Use colloquial language, align with historical facts, and only replace specific content
 ```
 
-## 3. AI Music Videos
+### 2.2 Agentic Music Videos
 Ready to create music videos realizing your creative ideas? Agentic-AIGC helps you write lyrics, select singers you specify, and generate matching visuals to bring your musical vision to life. The system can coordinate lyrics, visuals, and music to create engaging amateur music videos.
 
-🚀 **How Agentic-AIGC Makes Music Videos**
+🚀 **Technical Details**
 - Users just need to provide the music MIDI file, original lyrics, BGM file (optional), target voice file, and requirements. 
 - Automatically performs loudness normalization and annotates the MIDI file using the Annotator Agent.
 - Automatically calibrates and adapts lyrics at the word level via the Analyzer Agent.
@@ -392,11 +449,10 @@ Ready to create music videos realizing your creative ideas? Agentic-AIGC helps y
 The song is performed by Patrick Star, focusing on the theme of ​**"the struggles of manuscript submission and dealing with overly critical reviewers"**, following the original lyrics' sentence structure while replacing specific content. It incorporates elements of reviewer nitpicking (e.g., questioning innovation, demanding redundant experiments) and expresses frustration with lines like "If only I could swap reviewers, this academic fate is too cruel" to highlight the emotional toll of peer review.
 ```
 
-
-## 4. Cross-Culture Verbal Comedy Arts
+### 2.3 Agentic Cross-Culture Comedy
 Interested in bridging cultural gaps through comedy? Transform popular English talk show segments into authentic Chinese crosstalk performances, and vice versa. Complete with cultural adaptations and localized humor that resonates with audiences of different culture backgrounds.
 
-🚀 **How Agentic-AIGC Makes Talk Show Transitions**
+🚀 **Technical Details**
 - Users just need to provide the target cross-talk (comedy dialogue) audio file.
 - Automatically adapts the script based on the provided target audio file.
 - Automatically selects the appropriate vocal tone for voice cloning according to the emotional context of the script.
@@ -406,7 +462,7 @@ Interested in bridging cultural gaps through comedy? Transform popular English t
 - Performance style transformation while preserving core comedic elements
 - Voice generation
 
-### 4.1 English Stand-up Comedy to Chinese Crosstalk
+#### 2.3.1 English Stand-up Comedy to Chinese Crosstalk
 <table>
 <tr>
 <td align="center" width="50%">
@@ -420,7 +476,7 @@ Original Stand-up Comedy Segment
 </tr>
 </table>
 
-### 4.2 Chinese Crosstalk to English Stand-up Comedy
+#### 2.3.2 Chinese Crosstalk to English Stand-up Comedy
 <table>
 <tr>
 <td align="center" width="50%">
@@ -434,89 +490,20 @@ Original Chinese Crosstalk Segment
 </tr>
 </table>
 
-## 5. Novel-to-Screen Adaptation
-Want to bring your favorite novels to life? Agentic-AIGC transforms written narratives into compelling video adaptations, complete with AI-generated scenes, characters, and dialogues - all without the need for actual filming or actors. Experience your beloved stories in a whole new medium.
+## 3. Agentic Video Generation
+Want to generate original, multi-modal video content from scratch?​​ Agentic-AIGC empowers you to create compelling videos by intelligently synthesizing visuals, music, and narratives into cohesive productions that bring your ideas to life.
 
-🚀 **How Agentic-AIGC Makes Novel-to-Screen Adaption**
-
-- Users just need to provide their idea, novel/book txt file and film/tv series video source files they want as visual materials.
-- (Optional) Provide favorite commentary audio files for cloning.
-- (Optional) Customized presentation style txt file.
-- Automatically write copy based on the provided novel/book text content.
-- Automatically complete video material splicing and audio integration.
+🚀 **Technical Details**
+- Users just need to provide video description and requirements. 
+- Automatically generates detailed shot descriptions
+- Automatically maintains character and scene consistency
+- Automatically assembles final videos by orchestrating editing tools
 
 🌟 **Key Features:**
-- Transforming novel narratives into visual storytelling by adapting descriptive text into cinematic scenes
-- Automated scene matching that pairs textual descriptions with appropriate visual elements, ensuring narrative coherence
-- Audio generation
-
-<a href="https://www.bilibili.com/video/BV1TmZ6YjEvV/" target='_blank'><img src="assets/joylife_cover.png" width="60%"></a>
-
-We used Agentic-AIGC to generate a video adaptation of the opening chapters from *Joy of Life*. Our agents analyzed the novel's text and automatically created a compelling video sequence by intelligently selecting and arranging relevant scenes from the TV series.
-
-📝 **Prompt:**
-```
-Write fluent commentary script with 1500 words.
-```
-
-## 6. Tech News Summarization Updates
-Want to create engaging tech news videos? Agentic-AIGC helps transform complex technical updates into visually appealing content with dynamic graphics and clear explanations that keep viewers informed and engaged.
-
-🚀 **How Agentic-AIGC Makes News Summary Videos**
-
-- Users only need to provide their idea and the interview/news source files they want to summarize.
-- (Optional) Provide favorite audio files for cloning.
-- (Optional) Customize presentation style txt file.
-- Automatically transcribe the interview content through voice and extract key information of people/events to write news summaries.
-- Automatically complete video material splicing and audio integration.
-
-### 6.1 Tech News: OpenAI's GPT-4o Image Generation Release
-<table>
-<tr>
-<td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV12mZ6YLEqW/" target='_blank'><img src="assets/openai_news_cover.png" width="100%"></a>
-Tech News made by Agentic-AIGC
-</td>
-<td align="center" width="50%">
-<a href="https://www.youtube.com/watch?v=2f3K43FHRKo" target='_blank'><img src="assets/tech_news_original_cover.png" width="100%"></a>
-Original Tech Report
-</td>
-</tr>
-</table>
-
-🌟 **Key Features:**
-- Automated news content summarization
-- Accurate audio and video clip alignment (eg. 1:00 Generate a comic about relativity, 1:09 Generate a trade card image including the dog Sanji)
-- Audio generation
-
-📝 **Prompt:**
-```
-Short tech news, colloquial expression within 250 words, check the accuracy of key terms, e.g. the GPT model name should be 4o instead of 4.0
-```
-
-### 6.2 Dune 2 Movie Cast Update Interview
-<table>
-<tr>
-<td align="center" width="50%">
-<a href="https://www.bilibili.com/video/BV1m1Z6Y2Erb/" target='_blank'><img src="assets/dune_news_cover.png" width="100%"></a>
-Podcast Summarization About <i>Dune</i> 2 Cast
-</td>
-<td align="center" width="50%">
-<a href="https://www.youtube.com/watch?v=AVQRnDFZ1Qs" target='_blank'><img src="assets/dune_original_cover.png" width="100%"></a>
-Original Podcast with <i>Dune</i> 2 Cast
-</td>
-</tr>
-</table>
-
-🌟 **Key Features:**
-- Automated news content summarization
-- Accurate audio and main characters video clip alignment (eg. 00:13 Timothée Chalamet, 00:28 Zendaya, 00:38 Romance, 00:47 Florence Pugh, 00:56 Austin Butler, 01:06 Javier Bardem)
-- Audio generation
-
-📝 **Prompt:**
-```
-Short movie podcast, colloquial expression within 300 words, notice to identify which actor or host is talking, don't mention movie tickets available issue.
-```
+- Restore the novel's plot in Ghibli style  
+- Maintain consistency in characters and scenes  
+- Automatic addition of subtitles
+<a href='https://www.bilibili.com/video/BV1NYhAzjEWn' target='_blank'><img src='assets/the wandering earth.png' width=60%/></a>
 
 # Acknowledgements
 
