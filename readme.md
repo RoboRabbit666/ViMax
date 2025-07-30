@@ -503,6 +503,7 @@ Want to generate original, multi-modal video content from scratch?​​ Agentic
 - Restore the novel's plot in Ghibli style  
 - Maintain consistency in characters and scenes  
 - Automatic addition of subtitles
+
 <a href='https://www.bilibili.com/video/BV1NYhAzjEWn' target='_blank'><img src='assets/the wandering earth.png' width=60%/></a>
 
 # Acknowledgements
