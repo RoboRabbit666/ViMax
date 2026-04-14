@@ -16,12 +16,6 @@ from utils.provider_presets import resolve_chat_model_config
 
 class Script2VideoPipeline:
 
-    # events
-    character_portrait_events = {}
-    shot_desc_events = {}
-    frame_events = {}
-
-
     def __init__(
         self,
         chat_model: str,
@@ -29,6 +23,11 @@ class Script2VideoPipeline:
         video_generator,
         working_dir: str,
     ):
+        # FIX: moved event dicts from class-level to instance-level to prevent
+        # state sharing across instances.
+        self.character_portrait_events = {}
+        self.shot_desc_events = {}
+        self.frame_events = {}
 
         self.chat_model = chat_model
         self.image_generator = image_generator
@@ -171,93 +170,96 @@ class Script2VideoPipeline:
         first_shot_idx = camera.active_shot_idxs[0]
         first_shot_ff_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", "first_frame.png")
 
-        if os.path.exists(first_shot_ff_path):
-            print(f"🚀 Skipped generating first_frame for shot {first_shot_idx}, already exists.")
-            self.frame_events[first_shot_idx]["first_frame"].set()
+        # FIX: wrapped in try/finally so the first_frame event is always set even if
+        # generation raises an exception, preventing generate_video_for_single_shot
+        # from deadlocking while waiting on frame_events.
+        try:
+            if os.path.exists(first_shot_ff_path):
+                print(f"🚀 Skipped generating first_frame for shot {first_shot_idx}, already exists.")
 
-        else:
-            print(f"🖼️ Starting first_frame generation for shot {first_shot_idx}...")
-            available_image_path_and_text_pairs = []
-
-            for character_idx in shot_descriptions[first_shot_idx].ff_vis_char_idxs:
-                identifier_in_scene = characters[character_idx].identifier_in_scene
-                registry_item = character_portraits_registry[identifier_in_scene]
-                for view, item in registry_item.items():
-                    available_image_path_and_text_pairs.append((item["path"], item["description"]))
-            
-            # generate the first_frame based on the shot_description.ff_desc
-            if camera.parent_shot_idx is not None:
-                # generate the first_frame based on the transition video
-                parent_shot_idx = camera.parent_shot_idx
-                await self.frame_events[parent_shot_idx]["first_frame"].wait()
-                parent_shot_ff_path = os.path.join(self.working_dir, "shots", f"{parent_shot_idx}", "first_frame.png")
-                transition_video_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", f"transition_video_from_shot_{parent_shot_idx}.mp4")
-
-                if os.path.exists(transition_video_path):
-                    print(f"🚀 Skipped generating transition video for shot {first_shot_idx} from shot {parent_shot_idx}, already exists.")
-                else:
-                    print(f"🖼️ Starting transition video generation for shot {first_shot_idx} from shot {parent_shot_idx}...")
-                    transition_video_output = await self.camera_image_generator.generate_transition_video(
-                        first_shot_visual_desc=shot_descriptions[parent_shot_idx].visual_desc,
-                        second_shot_visual_desc=shot_descriptions[first_shot_idx].visual_desc,
-                        first_shot_ff_path=parent_shot_ff_path,
-                    )
-                    transition_video_output.save(transition_video_path)
-                    print(f"☑️ Generated transition video for shot {first_shot_idx} from shot {parent_shot_idx}, saved to {transition_video_path}.")
-
-                new_camera_image_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", f"new_camera_{camera.idx}.png")
-                if os.path.exists(new_camera_image_path):
-                    print(f"🚀 Skipped generating new camera image for shot {first_shot_idx}, already exists.")
-                else:
-                    print(f"🖼️ Starting new camera image generation for shot {first_shot_idx}...")
-                    new_camera_image = self.camera_image_generator.get_new_camera_image(transition_video_path)
-                    new_camera_image.save(new_camera_image_path)
-                    print(f"☑️ Generated new camera image for shot {first_shot_idx} (not completed), saved to {new_camera_image_path}.")
-
-                    available_image_path_and_text_pairs.append(
-                        (
-                            new_camera_image_path,
-                            f"The composition and background are correct but some elements may be wrong. The wrong elements should be replaced.\nWrong elements: {camera.missing_info}.\nYou must select this image as the main reference and replace the characters in the image with the provided character portraits. Don't change the background."
-                        )
-                    )
-
-
-            # 如果子镜头缺少信息，则需要选择参考图像生成
-            if camera.parent_shot_idx is None or camera.missing_info is not None:
-                ff_selector_output_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", "first_frame_selector_output.json")
-                if os.path.exists(ff_selector_output_path):
-                    with open(ff_selector_output_path, 'r', encoding='utf-8') as f:
-                        ff_selector_output = json.load(f)
-                    print(f"🚀 Loaded existing reference image selection and prompt for first_frame of shot {first_shot_idx} from {ff_selector_output_path}.")
-                else:
-                    print(f"🔍 Selecting reference images and generating prompt for first_frame of shot {first_shot_idx}...")
-                    ff_selector_output = await self.reference_image_selector.select_reference_images_and_generate_prompt(
-                        available_image_path_and_text_pairs=available_image_path_and_text_pairs,
-                        frame_description=shot_descriptions[first_shot_idx].ff_desc
-                    )
-                    with open(ff_selector_output_path, 'w', encoding='utf-8') as f:
-                        json.dump(ff_selector_output, f, ensure_ascii=False, indent=4)
-
-                    print(f"☑️ Selected reference images and generated prompt for first_frame of shot {first_shot_idx}, saved to {ff_selector_output_path}.")
-
-                reference_image_path_and_text_pairs, prompt = ff_selector_output["reference_image_path_and_text_pairs"], ff_selector_output["text_prompt"]
-                prefix_prompt = ""
-                for i, (image_path, text) in enumerate(reference_image_path_and_text_pairs):
-                    prefix_prompt += f"Image {i}: {text}\n"
-                prompt = f"{prefix_prompt}\n{prompt}"
-                reference_image_paths = [item[0] for item in reference_image_path_and_text_pairs]
-                ff_image: ImageOutput = await self.image_generator.generate_single_image(
-                    prompt=prompt,
-                    reference_image_paths=reference_image_paths,
-                    size="1600x900",
-                )
-                ff_image.save(first_shot_ff_path)
-                self.frame_events[first_shot_idx]["first_frame"].set()
-                print(f"☑️ Generated first_frame for shot {first_shot_idx}, saved to {first_shot_ff_path}.")
             else:
-                shutil.copy(new_camera_image_path, first_shot_ff_path)
-                self.frame_events[first_shot_idx]["first_frame"].set()
-                print(f"☑️ Generated first_frame for shot {first_shot_idx}, saved to {first_shot_ff_path}.")
+                print(f"🖼️ Starting first_frame generation for shot {first_shot_idx}...")
+                available_image_path_and_text_pairs = []
+
+                for character_idx in shot_descriptions[first_shot_idx].ff_vis_char_idxs:
+                    identifier_in_scene = characters[character_idx].identifier_in_scene
+                    registry_item = character_portraits_registry[identifier_in_scene]
+                    for view, item in registry_item.items():
+                        available_image_path_and_text_pairs.append((item["path"], item["description"]))
+
+                # generate the first_frame based on the shot_description.ff_desc
+                if camera.parent_shot_idx is not None:
+                    # generate the first_frame based on the transition video
+                    parent_shot_idx = camera.parent_shot_idx
+                    await self.frame_events[parent_shot_idx]["first_frame"].wait()
+                    parent_shot_ff_path = os.path.join(self.working_dir, "shots", f"{parent_shot_idx}", "first_frame.png")
+                    transition_video_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", f"transition_video_from_shot_{parent_shot_idx}.mp4")
+
+                    if os.path.exists(transition_video_path):
+                        print(f"🚀 Skipped generating transition video for shot {first_shot_idx} from shot {parent_shot_idx}, already exists.")
+                    else:
+                        print(f"🖼️ Starting transition video generation for shot {first_shot_idx} from shot {parent_shot_idx}...")
+                        transition_video_output = await self.camera_image_generator.generate_transition_video(
+                            first_shot_visual_desc=shot_descriptions[parent_shot_idx].visual_desc,
+                            second_shot_visual_desc=shot_descriptions[first_shot_idx].visual_desc,
+                            first_shot_ff_path=parent_shot_ff_path,
+                        )
+                        transition_video_output.save(transition_video_path)
+                        print(f"☑️ Generated transition video for shot {first_shot_idx} from shot {parent_shot_idx}, saved to {transition_video_path}.")
+
+                    new_camera_image_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", f"new_camera_{camera.idx}.png")
+                    if os.path.exists(new_camera_image_path):
+                        print(f"🚀 Skipped generating new camera image for shot {first_shot_idx}, already exists.")
+                    else:
+                        print(f"🖼️ Starting new camera image generation for shot {first_shot_idx}...")
+                        new_camera_image = self.camera_image_generator.get_new_camera_image(transition_video_path)
+                        new_camera_image.save(new_camera_image_path)
+                        print(f"☑️ Generated new camera image for shot {first_shot_idx} (not completed), saved to {new_camera_image_path}.")
+
+                        available_image_path_and_text_pairs.append(
+                            (
+                                new_camera_image_path,
+                                f"The composition and background are correct but some elements may be wrong. The wrong elements should be replaced.\nWrong elements: {camera.missing_info}.\nYou must select this image as the main reference and replace the characters in the image with the provided character portraits. Don't change the background."
+                            )
+                        )
+
+                # 如果子镜头缺少信息，则需要选择参考图像生成
+                if camera.parent_shot_idx is None or camera.missing_info is not None:
+                    ff_selector_output_path = os.path.join(self.working_dir, "shots", f"{first_shot_idx}", "first_frame_selector_output.json")
+                    if os.path.exists(ff_selector_output_path):
+                        with open(ff_selector_output_path, 'r', encoding='utf-8') as f:
+                            ff_selector_output = json.load(f)
+                        print(f"🚀 Loaded existing reference image selection and prompt for first_frame of shot {first_shot_idx} from {ff_selector_output_path}.")
+                    else:
+                        print(f"🔍 Selecting reference images and generating prompt for first_frame of shot {first_shot_idx}...")
+                        ff_selector_output = await self.reference_image_selector.select_reference_images_and_generate_prompt(
+                            available_image_path_and_text_pairs=available_image_path_and_text_pairs,
+                            frame_description=shot_descriptions[first_shot_idx].ff_desc
+                        )
+                        with open(ff_selector_output_path, 'w', encoding='utf-8') as f:
+                            json.dump(ff_selector_output, f, ensure_ascii=False, indent=4)
+
+                        print(f"☑️ Selected reference images and generated prompt for first_frame of shot {first_shot_idx}, saved to {ff_selector_output_path}.")
+
+                    reference_image_path_and_text_pairs, prompt = ff_selector_output["reference_image_path_and_text_pairs"], ff_selector_output["text_prompt"]
+                    prefix_prompt = ""
+                    for i, (image_path, text) in enumerate(reference_image_path_and_text_pairs):
+                        prefix_prompt += f"Image {i}: {text}\n"
+                    prompt = f"{prefix_prompt}\n{prompt}"
+                    reference_image_paths = [item[0] for item in reference_image_path_and_text_pairs]
+                    ff_image: ImageOutput = await self.image_generator.generate_single_image(
+                        prompt=prompt,
+                        reference_image_paths=reference_image_paths,
+                        size="1600x900",
+                    )
+                    ff_image.save(first_shot_ff_path)
+                    print(f"☑️ Generated first_frame for shot {first_shot_idx}, saved to {first_shot_ff_path}.")
+                else:
+                    shutil.copy(new_camera_image_path, first_shot_ff_path)
+                    print(f"☑️ Generated first_frame for shot {first_shot_idx}, saved to {first_shot_ff_path}.")
+
+        finally:
+            self.frame_events[first_shot_idx]["first_frame"].set()
 
 
         # 2. generate the following frames of the camera
@@ -344,52 +346,56 @@ class Script2VideoPipeline:
 
         frame_image_path = os.path.join(self.working_dir, "shots", f"{shot_idx}", f"{frame_type}.png")
 
-        if os.path.exists(frame_image_path):
-            print(f"🚀 Skipped generating {frame_type} for shot {shot_idx}, already exists.")
+        # FIX: wrapped in try/finally so the event is always set even if generation
+        # raises an exception, preventing generate_video_for_single_shot from deadlocking.
+        try:
+            if os.path.exists(frame_image_path):
+                print(f"🚀 Skipped generating {frame_type} for shot {shot_idx}, already exists.")
 
-        else:
-            print(f"🖼️ Starting {frame_type} generation for shot {shot_idx}...")
-            available_image_path_and_text_pairs = []
-            for visible_character in visible_characters:
-                identifier_in_scene = visible_character.identifier_in_scene
-                registry_item = character_portraits_registry[identifier_in_scene]
-                for view, item in registry_item.items():
-                    available_image_path_and_text_pairs.append((item["path"], item["description"]))
-
-            available_image_path_and_text_pairs.append(first_shot_ff_path_and_text_pair)
-
-            selector_output_path = os.path.join(self.working_dir, "shots", f"{shot_idx}", f"{frame_type}_selector_output.json")
-            if os.path.exists(selector_output_path):
-                with open(selector_output_path, 'r', encoding='utf-8') as f:
-                    selector_output = json.load(f)
-                print(f"🚀 Loaded existing reference image selection and prompt for {frame_type} frame of shot {shot_idx} from {selector_output_path}.")
             else:
-                print(f"🔍 Selecting reference images and generating prompt for {frame_type} frame of shot {shot_idx}...")
-                selector_output = await self.reference_image_selector.select_reference_images_and_generate_prompt(
-                    available_image_path_and_text_pairs=available_image_path_and_text_pairs,
-                    frame_description=frame_desc
+                print(f"🖼️ Starting {frame_type} generation for shot {shot_idx}...")
+                available_image_path_and_text_pairs = []
+                for visible_character in visible_characters:
+                    identifier_in_scene = visible_character.identifier_in_scene
+                    registry_item = character_portraits_registry[identifier_in_scene]
+                    for view, item in registry_item.items():
+                        available_image_path_and_text_pairs.append((item["path"], item["description"]))
+
+                available_image_path_and_text_pairs.append(first_shot_ff_path_and_text_pair)
+
+                selector_output_path = os.path.join(self.working_dir, "shots", f"{shot_idx}", f"{frame_type}_selector_output.json")
+                if os.path.exists(selector_output_path):
+                    with open(selector_output_path, 'r', encoding='utf-8') as f:
+                        selector_output = json.load(f)
+                    print(f"🚀 Loaded existing reference image selection and prompt for {frame_type} frame of shot {shot_idx} from {selector_output_path}.")
+                else:
+                    print(f"🔍 Selecting reference images and generating prompt for {frame_type} frame of shot {shot_idx}...")
+                    selector_output = await self.reference_image_selector.select_reference_images_and_generate_prompt(
+                        available_image_path_and_text_pairs=available_image_path_and_text_pairs,
+                        frame_description=frame_desc
+                    )
+                    with open(selector_output_path, 'w', encoding='utf-8') as f:
+                        json.dump(selector_output, f, ensure_ascii=False, indent=4)
+                    print(f"☑️ Selected reference images and generated prompt for {frame_type} frame of shot {shot_idx}, saved to {selector_output_path}.")
+
+                reference_image_path_and_text_pairs, prompt = selector_output["reference_image_path_and_text_pairs"], selector_output["text_prompt"]
+                prefix_prompt = ""
+                for i, (image_path, text) in enumerate(reference_image_path_and_text_pairs):
+                    prefix_prompt += f"Image {i}: {text}\n"
+                prompt = f"{prefix_prompt}\n{prompt}"
+                reference_image_paths = [item[0] for item in reference_image_path_and_text_pairs]
+
+                frame_image: ImageOutput = await self.image_generator.generate_single_image(
+                    prompt=prompt,
+                    reference_image_paths=reference_image_paths,
+                    size="1600x900",
                 )
-                with open(selector_output_path, 'w', encoding='utf-8') as f:
-                    json.dump(selector_output, f, ensure_ascii=False, indent=4)
-                print(f"☑️ Selected reference images and generated prompt for {frame_type} frame of shot {shot_idx}, saved to {selector_output_path}.")
+                frame_image.save(frame_image_path)
+                print(f"☑️ Generated {frame_type} frame for shot {shot_idx}, saved to {frame_image_path}.")
 
-            reference_image_path_and_text_pairs, prompt = selector_output["reference_image_path_and_text_pairs"], selector_output["text_prompt"]
-            prefix_prompt = ""
-            for i, (image_path, text) in enumerate(reference_image_path_and_text_pairs):
-                prefix_prompt += f"Image {i}: {text}\n"
-            prompt = f"{prefix_prompt}\n{prompt}"
-            reference_image_paths = [item[0] for item in reference_image_path_and_text_pairs]
+        finally:
+            self.frame_events[shot_idx][frame_type].set()
 
-            frame_image: ImageOutput = await self.image_generator.generate_single_image(
-                prompt=prompt,
-                reference_image_paths=reference_image_paths,
-                size="1600x900",
-            )
-            frame_image.save(frame_image_path)
-            print(f"☑️ Generated {frame_type} frame for shot {shot_idx}, saved to {frame_image_path}.")
-
-
-        self.frame_events[shot_idx][frame_type].set()
         return frame_image_path
 
 

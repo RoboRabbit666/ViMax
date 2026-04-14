@@ -1,5 +1,5 @@
 import logging
-from optparse import Option
+# FIX: removed unused `from optparse import Option`.
 from typing import List, Optional
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser

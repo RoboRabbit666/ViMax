@@ -83,12 +83,9 @@ class ShotBriefDescription(BaseModel):
         s = f"Shot {self.idx}:\n"
         s += f"Camera Index: {self.cam_idx}\n"
         s += f"Visual: {self.visual_desc}\n"
-        if self.sound_effect is not None or self.speaker is not None:
-            s += f"Audio:"
-            if self.sound_effect is not None:
-                s += f"[Sound Effect] {self.sound_effect}"
-            if self.speaker is not None:
-                s += f"[Speaker] {self.speaker} ({self.emotion}): {self.line}"
+        # FIX: was referencing deleted fields (sound_effect, speaker, emotion, line);
+        # replaced with the current audio_desc field.
+        s += f"Audio: {self.audio_desc}\n"
         return s
 
 

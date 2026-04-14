@@ -144,7 +144,7 @@ class CameraImageGenerator:
             cam.parent_cam_idx = parent_cam_item.parent_cam_idx if parent_cam_item is not None else None
             cam.parent_shot_idx = parent_cam_item.parent_shot_idx if parent_cam_item is not None else None
             cam.reason = parent_cam_item.reason if parent_cam_item is not None else None
-            cam.parent_shot_idx = parent_cam_item.parent_shot_idx if parent_cam_item is not None else None
+            # FIX: removed duplicate cam.parent_shot_idx assignment that appeared here.
             cam.is_parent_fully_covers_child = parent_cam_item.is_parent_fully_covers_child if parent_cam_item is not None else None
             cam.missing_info = parent_cam_item.missing_info if parent_cam_item is not None else None
         return cameras
@@ -184,18 +184,20 @@ class CameraImageGenerator:
 
         video_name = os.path.basename(transition_video_path).split('.')[0]
         second_video_path = os.path.join(output_dir, f"{video_name}-Scene-002.mp4")
+        # FIX: use context managers to ensure VideoFileClip handles are always closed,
+        # preventing file descriptor leaks on long runs.
         if os.path.exists(second_video_path):
             # use first frame of second shot as new camera image
-            clip = VideoFileClip(second_video_path)
-            ff = clip.get_frame(0)
+            with VideoFileClip(second_video_path) as clip:
+                ff = clip.get_frame(0)
             ff = Image.fromarray(ff.astype('uint8'), 'RGB')
             return ImageOutput(fmt="pil", ext="png", data=ff)
         else:
             # use last frame of transition video to instead
-            clip = VideoFileClip(transition_video_path)
-            lf_time = clip.duration - (1 / clip.fps)
-            lf_time = max(0, lf_time)
-            lf = clip.get_frame(lf_time)
+            with VideoFileClip(transition_video_path) as clip:
+                lf_time = clip.duration - (1 / clip.fps)
+                lf_time = max(0, lf_time)
+                lf = clip.get_frame(lf_time)
             lf = Image.fromarray(lf.astype('uint8'), 'RGB')
             return ImageOutput(fmt="pil", ext="png", data=lf)
 
