@@ -12,3 +12,8 @@ wheels/
 # working directory
 .working_dir/
 .test/
+
+# Misc
+.DS_Store
+
+CLAUDE.md
