@@ -1,0 +1,30 @@
+{
+    "The Oracle": {
+        "front": {
+            "path": "/content/vimax_outputs/idea2video/character_portraits/1_The Oracle/front.png",
+            "description": "A front view portrait of The Oracle."
+        },
+        "side": {
+            "path": "/content/vimax_outputs/idea2video/character_portraits/1_The Oracle/side.png",
+            "description": "A side view portrait of The Oracle."
+        },
+        "back": {
+            "path": "/content/vimax_outputs/idea2video/character_portraits/1_The Oracle/back.png",
+            "description": "A back view portrait of The Oracle."
+        }
+    },
+    "Kael": {
+        "front": {
+            "path": "/content/vimax_outputs/idea2video/character_portraits/0_Kael/front.png",
+            "description": "A front view portrait of Kael."
+        },
+        "side": {
+            "path": "/content/vimax_outputs/idea2video/character_portraits/0_Kael/side.png",
+            "description": "A side view portrait of Kael."
+        },
+        "back": {
+            "path": "/content/vimax_outputs/idea2video/character_portraits/0_Kael/back.png",
+            "description": "A back view portrait of Kael."
+        }
+    }
+}

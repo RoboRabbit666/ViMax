@@ -1,0 +1,9 @@
+{
+    "reference_image_path_and_text_pairs": [
+        [
+            "/content/vimax_outputs/idea2video/scene_0/shots/2/first_frame.png",
+            "An Over-The-Shoulder medium shot is established from behind a figure draped in massive, dark robes (The Oracle). The frame looks onto another figure (Kael), who is centered, leaning forward, her face showing a strained expression of defiance while leveling a violently pulsing sapphire blade."
+        ]
+    ],
+    "text_prompt": "Create an image following the given description: The entire frame is filled with a uniform, brilliant white light, completely obscuring any figures or environmental details. This suggests an instantaneous, blinding flash event. The scene and style should reference Image 0, but completely replace the content with the blinding white light."
+}

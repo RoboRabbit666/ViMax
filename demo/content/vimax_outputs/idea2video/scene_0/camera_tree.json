@@ -1,0 +1,35 @@
+[
+    {
+        "idx": 0,
+        "active_shot_idxs": [
+            0
+        ],
+        "parent_cam_idx": null,
+        "parent_shot_idx": null,
+        "reason": "CAMERA_0 establishes the entire scene, including the setting (Neo-Veridia, decaying skyscrapers, toxic sky) and introduces the first character (<Kael>) in an establishing shot (EXTREME WIDE SHOT). It is the root camera.",
+        "is_parent_fully_covers_child": null,
+        "missing_info": null
+    },
+    {
+        "idx": 1,
+        "active_shot_idxs": [
+            1
+        ],
+        "parent_cam_idx": 0,
+        "parent_shot_idx": 0,
+        "reason": "CAMERA_1 (MEDIUM CLOSE-UP on Kael's face/upper body drawing the weapon) zooms in on the main character introduced in CAMERA_0 Shot 0 (EXTREME WIDE SHOT). Shot 0 contains Kael and the setting, making it the logical parent for the tighter focus on Kael's action and expression.",
+        "is_parent_fully_covers_child": false,
+        "missing_info": "The establishing context of the environment (canyon of skyscrapers, neon lights, street intersection) present in Shot 0."
+    },
+    {
+        "idx": 2,
+        "active_shot_idxs": [
+            2
+        ],
+        "parent_cam_idx": 1,
+        "parent_shot_idx": 1,
+        "reason": "CAMERA_2 features an OVER-THE-SHOULDER shot centered on <Kael> as she lunges with the weapon, moments after she draws the weapon in CAMERA_1 Shot 1. Shot 1 provides the immediate setup (Kael drawing the blade and revealing the opponent's presence), making it the closest contextual parent for the action sequence in Shot 2.",
+        "is_parent_fully_covers_child": false,
+        "missing_info": "The specific framing details of <The Oracle> (robes, white data pinpricks) visible in Shot 1, as Shot 2 shifts perspective to behind <The Oracle> looking at <Kael> and focusing on the confrontation/impact."
+    }
+]

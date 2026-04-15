@@ -1,0 +1,19 @@
+{
+    "idx": 1,
+    "is_last": false,
+    "cam_idx": 1,
+    "visual_desc": "MEDIUM CLOSE-UP. The camera is focused tightly on <Kael>'s face and upper body. Her expression is strained but focused. Her right hand moves with practiced speed to her hip and draws the LUMINAR. As the ancient data-blade clears the scabbard, it erupts in a violent, cool SAPPHIRE BLUE light, illuminating <Kael>'s determined features and casting sharp blue shadows. Across the street, deep in shadow, two pinpricks of cold WHITE DATA briefly bloom where <The Oracle>'s head should be. Faint, dark energy lines web the ferrocrete near <The Oracle>'s feet.",
+    "variation_type": "medium",
+    "variation_reason": "Compared to the first frame, a new character appears in the last frame (indicated by the white data points), and there are significant changes in the lighting and internal action (drawing and igniting the blade). So the variation type is medium.",
+    "ff_desc": "MEDIUM CLOSE-UP shot. The focus is tight on a person's face and upper body. This individual has a visibly scarred appearance. Their expression is strained but focused. They are wearing gloves and are draped in a heavy, tattered black synthetic cloak scarred by plasma burns and grime. The environment around them is visible but indistinct due to the tight framing.",
+    "ff_vis_char_idxs": [
+        0
+    ],
+    "lf_desc": "MEDIUM CLOSE-UP shot. The focus remains tight on the same individual's face, which is now sharply illuminated by a vibrant, cool SAPPHIRE BLUE light emanating from a drawn data-blade held near their hip. The blue light casts distinct, sharp blue shadows across the determined features. Across the scene, deep in shadow and slightly out of focus, two pinpricks of cold WHITE DATA are visible where another figure's head should be. Faint, dark energy lines web the ferrocrete near the feet of the shadowed figure.",
+    "lf_vis_char_idxs": [
+        0,
+        1
+    ],
+    "motion_desc": "The camera remains static (MEDIUM CLOSE-UP). The warrior (scarred physical appearance, draped in a heavy, tattered black synthetic cloak) moves their right hand with practiced speed to their hip and draws the LUMINAR. As the ancient data-blade clears the scabbard, it erupts in a violent, cool SAPPHIRE BLUE light. This illumination lights up the determined features of the warrior and casts sharp blue shadows. Simultaneously, the figure across the street (draped in heavy, layered, traditional-looking robes) momentarily displays two pinpricks of cold WHITE DATA deep within their hood, and faint, dark energy lines become visible near their feet.",
+    "audio_desc": "[Speaker] Kael: \"End it. Or give me the key.\" [Sound Effect] Audible, powerful HUM from the Luminar blade igniting, causing nearby neon buzz to stutter wildly."
+}

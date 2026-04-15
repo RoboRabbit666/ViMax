@@ -1,0 +1,17 @@
+{
+    "idx": 2,
+    "is_last": true,
+    "cam_idx": 2,
+    "visual_desc": "The shot is an OVER-THE-SHOULDER composition, positioned behind <The Oracle>'s massive, dark robes, looking directly at <Kael>. <Kael> is centered, leaning forward, her face contorted in a guttural exertion of defiance, leveling the violently pulsing sapphire blade. She lunges forward. The shot rapidly CLOSES on the point of impact: brilliant blue energy meets the dense, light-absorbing darkness of <The Oracle>'s field. INSTANTANEOUS BLINDING WHITE FLASH engulfs the frame.",
+    "variation_type": "large",
+    "variation_reason": "The shot involves a significant, abrupt transition from a framed composition featuring two characters engaged in conflict to a sudden, total whiteout, representing an overwhelming visual event.",
+    "ff_desc": "An Over-The-Shoulder medium shot is established from behind a figure draped in massive, dark robes (The Oracle). The frame looks onto another figure (Kael), who is centered, leaning forward, her face showing a strained expression of defiance while leveling a violently pulsing sapphire blade.",
+    "ff_vis_char_idxs": [
+        1,
+        0
+    ],
+    "lf_desc": "The entire frame is filled with a uniform, brilliant white light, completely obscuring any figures or environmental details. This suggests an instantaneous, blinding flash event.",
+    "lf_vis_char_idxs": [],
+    "motion_desc": "The camera executes a rapid, smooth CLOSE on the point of impact between the sapphire blade and the light-absorbing darkness of the figure in the massive, dark robes. As the lunge concludes, there is an instantaneous, blinding white flash that completely overtakes the frame.",
+    "audio_desc": "[Speaker] Kael: (Guttural ROAR) [Sound Effect] The sound abruptly CUTS OUT completely, replaced by the high-frequency echo of the blade’s hum rapidly fading into dead silence."
+}

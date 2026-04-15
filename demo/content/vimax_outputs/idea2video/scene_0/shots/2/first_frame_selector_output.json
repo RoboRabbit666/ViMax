@@ -1,0 +1,17 @@
+{
+    "reference_image_path_and_text_pairs": [
+        [
+            "/content/vimax_outputs/idea2video/character_portraits/1_The Oracle/back.png",
+            "A back view portrait of The Oracle."
+        ],
+        [
+            "/content/vimax_outputs/idea2video/character_portraits/0_Kael/front.png",
+            "A front view portrait of Kael."
+        ],
+        [
+            "/content/vimax_outputs/idea2video/scene_0/shots/2/new_camera_2.png",
+            "The composition and background are correct but some elements may be wrong. The wrong elements should be replaced.\nWrong elements: The specific framing details of <The Oracle> (robes, white data pinpricks) visible in Shot 1, as Shot 2 shifts perspective to behind <The Oracle> looking at <Kael> and focusing on the confrontation/impact..\nYou must select this image as the main reference and replace the characters in the image with the provided character portraits. Don't change the background."
+        ]
+    ],
+    "text_prompt": "Create an image following the given description: An Over-The-Shoulder medium shot from behind the figure of The Oracle, who is draped in massive, dark robes. The frame looks onto Kael, who is centered, leaning forward, showing a strained expression of defiance while leveling a violently pulsing sapphire blade (like in Image 1). The Oracle should reference Image 0 for appearance, but with their back to the camera as suggested by the composition in Image 2. Kael should reference Image 1 for appearance and posture. The scene and background should reference Image 2."
+}

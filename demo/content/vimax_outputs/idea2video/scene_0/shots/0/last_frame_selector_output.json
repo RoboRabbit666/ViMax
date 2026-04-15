@@ -1,0 +1,17 @@
+{
+    "reference_image_path_and_text_pairs": [
+        [
+            "/content/vimax_outputs/idea2video/scene_0/shots/0/first_frame.png",
+            "EXTREME WIDE SHOT. The skeletal canyon of decaying skyscrapers in Neo-Veridia is visible against a toxic amber sky. Broken neon signs flicker erratically, projecting toxic magenta and green light across the scene. A small, dark figure, characterized by a tattered black cloak, stands still in the center of a cracked ferrocrete street, positioned precisely at the intersection of Rigel and 4th Sector, sharply framed by the harsh, contrasting shadows of the flickering neon."
+        ],
+        [
+            "/content/vimax_outputs/idea2video/character_portraits/0_Kael/front.png",
+            "A front view portrait of Kael."
+        ],
+        [
+            "/content/vimax_outputs/idea2video/character_portraits/1_The Oracle/front.png",
+            "A front view portrait of The Oracle."
+        ]
+    ],
+    "text_prompt": "Create an image following the given description: \nEXTREME WIDE SHOT. The skeletal canyon of decaying skyscrapers in Neo-Veridia is visible against a toxic amber sky. Broken neon signs flicker erratically, projecting toxic magenta and green light across the scene. A small, dark figure, characterized by a tattered black cloak, stands still in the center of a cracked ferrocrete street, positioned precisely at the intersection of Rigel and 4th Sector, sharply framed by the harsh, contrasting shadows of the flickering neon. This figure (Kael) should reference Image 1. Adjacent to the figure, a silhouette of profound darkness, The Oracle, draped in heavy, layered robes, has appeared. The Oracle should reference Image 2, maintaining the style and environment of Image 0."
+}

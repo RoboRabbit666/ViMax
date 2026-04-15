@@ -1,0 +1,13 @@
+{
+    "reference_image_path_and_text_pairs": [
+        [
+            "/content/vimax_outputs/idea2video/character_portraits/0_Kael/front.png",
+            "A front view portrait of Kael."
+        ],
+        [
+            "/content/vimax_outputs/idea2video/scene_0/shots/1/first_frame.png",
+            "MEDIUM CLOSE-UP shot. The focus is tight on a person's face and upper body. This individual has a visibly scarred appearance. Their expression is strained but focused. They are wearing gloves and are draped in a heavy, tattered black synthetic cloak scarred by plasma burns and grime. The environment around them is visible but indistinct due to the tight framing."
+        ]
+    ],
+    "text_prompt": "Create an image following the given description: \nMEDIUM CLOSE-UP shot of Kael, referencing Image 1 for his pose and expression, but with his face sharply illuminated by a vibrant, cool SAPPHIRE BLUE light casting distinct, sharp blue shadows across his determined features. Kael should be holding a drawn data-blade near his hip which is the source of the light, referencing the glow of the sword in Image 0. Across the scene, deep in shadow and slightly out of focus, two pinpricks of cold WHITE DATA are visible where another figure's head should be, resembling the glowing eyes of The Oracle depicted in Image 3. Faint, dark energy lines web the ferrocrete near the feet of the shadowed figure. The environment should reference the background of Image 1."
+}

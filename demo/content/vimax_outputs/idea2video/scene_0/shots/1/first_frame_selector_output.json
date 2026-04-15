@@ -1,0 +1,13 @@
+{
+    "reference_image_path_and_text_pairs": [
+        [
+            "/content/vimax_outputs/idea2video/character_portraits/0_Kael/front.png",
+            "A front view portrait of Kael."
+        ],
+        [
+            "/content/vimax_outputs/idea2video/scene_0/shots/1/new_camera_1.png",
+            "The composition and background are correct but some elements may be wrong. The wrong elements should be replaced.\nWrong elements: The establishing context of the environment (canyon of skyscrapers, neon lights, street intersection) present in Shot 0..\nYou must select this image as the main reference and replace the characters in the image with the provided character portraits. Don't change the background."
+        ]
+    ],
+    "text_prompt": "Create an image that is a medium close-up shot focused tightly on a person's face and upper body. This person should have the appearance of Kael, referencing Image 0 for the facial features, expression, clothing (tattered black synthetic cloak, gloves), and posture. The environment should be the indistinct city street background from Image 3, maintaining the same lighting and atmosphere, but with Kael now being the main subject."
+}

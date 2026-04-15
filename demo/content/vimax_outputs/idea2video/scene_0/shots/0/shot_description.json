@@ -1,0 +1,19 @@
+{
+    "idx": 0,
+    "is_last": false,
+    "cam_idx": 0,
+    "visual_desc": "EXTREME WIDE SHOT. The skeletal canyon of decaying skyscrapers rises under a toxic amber sky in Neo-Veridia. Broken neon signs flicker erratically, casting toxic magenta and green light. <Kael> (female, 30s, scarred, tattered black cloak) is a small, dark figure moving with professional tightness down the center of the cracked ferrocrete street. She stops precisely at the intersection of Rigel and 4th Sector, framed by the harsh, contrasting shadows of the flickering neon.",
+    "variation_type": "medium",
+    "variation_reason": "The composition is largely maintained, but a new significant element (The Oracle) is introduced into the frame, causing a medium degree of change in the overall visual content.",
+    "ff_desc": "EXTREME WIDE SHOT. The skeletal canyon of decaying skyscrapers in Neo-Veridia is visible against a toxic amber sky. Broken neon signs flicker erratically, projecting toxic magenta and green light across the scene. A small, dark figure, characterized by a tattered black cloak, stands still in the center of a cracked ferrocrete street, positioned precisely at the intersection of Rigel and 4th Sector, sharply framed by the harsh, contrasting shadows of the flickering neon.",
+    "ff_vis_char_idxs": [
+        0
+    ],
+    "lf_desc": "EXTREME WIDE SHOT. The skeletal canyon of decaying skyscrapers in Neo-Veridia is visible against a toxic amber sky. Broken neon signs flicker erratically, projecting toxic magenta and green light across the scene. A small, dark figure, characterized by a tattered black cloak, stands still in the center of a cracked ferrocrete street, positioned precisely at the intersection of Rigel and 4th Sector, sharply framed by the harsh, contrasting shadows of the flickering neon. Adjacent to the figure, a silhouette of profound darkness, seemingly absorbing all light and draped in heavy, layered robes, has appeared.",
+    "lf_vis_char_idxs": [
+        0,
+        1
+    ],
+    "motion_desc": "Static camera, holding the EXTREME WIDE SHOT. The small figure, draped in a heavy, tattered black synthetic cloak scarred by plasma burns and grime, moves with professional tightness down the center of the cracked ferrocrete street before stopping precisely at the intersection. Suddenly, a figure of profound darkness, draped in heavy, layered, traditional-looking robes that absorb weak neon light, emerges or materializes directly beside the stopped figure. Within the hood of the newly appeared silhouette, two pinpricks of pure, cold white data briefly bloom.",
+    "audio_desc": "[Sound Effect] Mechanical groan of decaying infrastructure; the sputter of dying neon lights."
+}

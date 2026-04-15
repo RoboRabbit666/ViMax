@@ -1,0 +1,16 @@
+[
+    {
+        "idx": 0,
+        "identifier_in_scene": "Kael",
+        "is_visible": true,
+        "static_features": "A lone warrior with a scarred physical appearance, betraying years of fighting experience.",
+        "dynamic_features": "Draped in a heavy, tattered black synthetic cloak scarred by plasma burns and grime. Wielding the Luminar, an ancient data-blade whose crystalline structure ignites with violent, cool sapphire energy. Wears gloves."
+    },
+    {
+        "idx": 1,
+        "identifier_in_scene": "The Oracle",
+        "is_visible": true,
+        "static_features": "A figure of profound darkness with a faceless presence. Their silhouette is unnervingly absolute, seemingly absorbing all light.",
+        "dynamic_features": "Draped in heavy, layered, traditional-looking robes that absorb weak neon light. Two pinpricks of pure, cold white data briefly bloom deep within their hood."
+    }
+]
