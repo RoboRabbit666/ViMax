@@ -81,6 +81,8 @@ class VideoGeneratorVeoYunwuAPI:
                         response = await response.json()
                         logging.debug(f"Response: {response}")
                         task_id = response["id"]
+                        if not task_id:
+                            raise ValueError(f"Empty task_id in response: {response}")
                         logging.info(f"Video generation task created successfully. Task ID: {task_id}")
             except Exception as e:
                 logging.error(f"Error occurred while creating video generation task: {e}. Retrying in 1 second...")
