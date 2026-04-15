@@ -5,11 +5,14 @@ from pipelines.idea2video_pipeline import Idea2VideoPipeline
 # SET YOUR OWN IDEA, USER REQUIREMENT, AND STYLE HERE
 idea = \
     """
-A lone warrior walks through a misty abandoned city at night.
+A lone warrior in a tattered black cloak walks through a ruined cyberpunk city at dusk.
+Neon signs flicker in the smog. She stops and draws a glowing ancient sword,
+facing a mysterious hooded stranger who emerges from the shadows.
 """
 user_requirement = \
     """
-No more than 2 scenes. Each scene should be no more than 3 shots.
+No more than 1 scene. Each scene no more than 3 shots.
+Dark fantasy cyberpunk style with cinematic camera work.
 """
 style = "3D Anime, cinematic"
 
