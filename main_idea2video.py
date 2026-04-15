@@ -6,7 +6,7 @@ from pipelines.idea2video_pipeline import Idea2VideoPipeline
 idea = \
     """
 A lone warrior in a tattered black cloak walks through a ruined cyberpunk city at dusk.
-Neon signs flicker in the smog. She stops and draws a glowing ancient sword,
+Neon signs flicker in the smog. He stops and draws a glowing ancient sword,
 facing a mysterious hooded stranger who emerges from the shadows.
 """
 user_requirement = \
