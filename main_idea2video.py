@@ -13,7 +13,7 @@ at the camera with a gorgeous look asking the viewer understood the proper form.
 """
 user_requirement = \
     """
-For adults, do not exceed 3 scenes. Each scene should be no more than 5 shots.
+For adults, no more than 1 scene. Each scene no more than 3 shots.
 """
 style = "Realistic, warm feel"
 
