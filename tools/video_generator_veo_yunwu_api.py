@@ -115,7 +115,7 @@ class VideoGeneratorVeoYunwuAPI:
                 return VideoOutput(fmt="url", ext="mp4", data=video_url)
             elif status == "failed":
                 logging.error(f"Video generation failed: \n{payload}")
-                break
+                raise RuntimeError(f"Video generation failed: {payload}")
             else:
                 logging.info(f"Video generation status: {status}, waiting 1 second...")
                 await asyncio.sleep(1)
