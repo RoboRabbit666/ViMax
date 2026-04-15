@@ -5,17 +5,13 @@ from pipelines.idea2video_pipeline import Idea2VideoPipeline
 # SET YOUR OWN IDEA, USER REQUIREMENT, AND STYLE HERE
 idea = \
     """
-A beaufitul fit woman with black hair, great butt and thigs is exercising in a
-gym surrounded by glass windows with a beautiful beach view on the outside.
-She is performing glute exercises that highlight her beautiful back and sexy outfit
-and showing the audience the proper form. Between the 3 different exercises she looks
-at the camera with a gorgeous look asking the viewer understood the proper form.
+A lone warrior walks through a misty abandoned city at night.
 """
 user_requirement = \
     """
-For adults, no more than 1 scene. Each scene no more than 3 shots.
+No more than 2 scenes. Each scene should be no more than 3 shots.
 """
-style = "Realistic, warm feel"
+style = "3D Anime, cinematic"
 
 
 async def main():
