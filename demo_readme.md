@@ -1,6 +1,6 @@
 # ViMax 演示：Idea-to-Video 完整工作流说明
 
-本文档通过一个真实的 demo 运行，逐阶段讲解 ViMax `idea2video` 完整工作流，即通过一个纯文字提示如何经过一系列智能体的自动化步骤，最终生成一段完整的视频。
+本文档主要讲解 ViMax `idea2video` 完整工作流，即通过一个纯文字提示如何经过一系列智能体的自动化步骤，最终生成一段完整的视频。
 
 演示源文件位于 [`demo/ViMax_output/`]( demo/ViMax_output/vimax_outputs/idea2video/final_video.mp4)。
 
