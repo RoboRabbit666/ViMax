@@ -1,16 +1,15 @@
-"""Minimal smoke test for the direct Volcengine Ark SeedDance API.
+"""Smoke tests for the direct Volcengine Ark SeedDance 2.0 API.
 
-Sends a single text-to-video task (no reference images) with a short
-prompt and low-cost settings, then polls until the task completes or
-fails.  Run with:
+Test 1 — t2v:   text-only, no reference images. Verifies basic connectivity.
+Test 2 — ff2v:  single first_frame image. Verifies that the `first_frame` role
+                is supported by SeedDance 2.0 (critical for ViMax pipeline).
 
-    python -m pytest tests/test_seedance_volcengine.py -s
-
-Or directly:
-
+Run:
     python tests/test_seedance_volcengine.py
 
 The API key must be set via the VOLCENGINE_API_KEY environment variable.
+A demo first-frame image is expected at:
+    demo/ViMax_output/vimax_outputs/idea2video/scene_0/shots/0/first_frame.png
 """
 
 import asyncio
@@ -20,9 +19,40 @@ import sys
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, _REPO_ROOT)
 
 from tools.video_generator_doubao_seedance_volcengine_api import VideoGeneratorDoubaoSeedanceVolcengineAPI
+
+_DEMO_FIRST_FRAME = os.path.join(
+    _REPO_ROOT,
+    "demo/ViMax_output/vimax_outputs/idea2video/scene_0/shots/0/first_frame.png",
+)
+
+
+async def test_t2v(generator: VideoGeneratorDoubaoSeedanceVolcengineAPI):
+    print("\n=== Test 1: t2v (text-only) ===")
+    output = await generator.generate_single_video(
+        prompt="A calm ocean wave on a sunny day.",
+        reference_image_paths=[],
+        aspect_ratio="16:9",
+        duration=5,
+    )
+    print(f"PASS. Video URL: {output.data}")
+
+
+async def test_ff2v(generator: VideoGeneratorDoubaoSeedanceVolcengineAPI):
+    print("\n=== Test 2: ff2v (first_frame role) ===")
+    if not os.path.exists(_DEMO_FIRST_FRAME):
+        print(f"SKIP. Demo image not found at: {_DEMO_FIRST_FRAME}")
+        return
+    output = await generator.generate_single_video(
+        prompt="A lone warrior walks slowly down a ruined cyberpunk street at dusk.",
+        reference_image_paths=[_DEMO_FIRST_FRAME],   # first_frame role
+        aspect_ratio="16:9",
+        duration=5,
+    )
+    print(f"PASS. Video URL: {output.data}")
 
 
 async def run():
@@ -33,15 +63,8 @@ async def run():
 
     generator = VideoGeneratorDoubaoSeedanceVolcengineAPI(api_key=api_key)
 
-    print("Creating t2v task (text-only, 5 s, 16:9)...")
-    output = await generator.generate_single_video(
-        prompt="A calm ocean wave on a sunny day.",
-        reference_image_paths=[],
-        aspect_ratio="16:9",
-        duration=5,
-    )
-
-    print(f"SUCCESS. Video URL: {output.data}")
+    await test_t2v(generator)
+    await test_ff2v(generator)
 
 
 if __name__ == "__main__":
