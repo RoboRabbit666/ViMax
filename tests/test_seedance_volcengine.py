@@ -33,12 +33,11 @@ async def run():
 
     generator = VideoGeneratorDoubaoSeedanceVolcengineAPI(api_key=api_key)
 
-    print("Creating t2v task (text-only, 5 s, 480p, 16fps)...")
+    print("Creating t2v task (text-only, 5 s, 16:9)...")
     output = await generator.generate_single_video(
         prompt="A calm ocean wave on a sunny day.",
         reference_image_paths=[],
-        resolution="480p",
-        fps=16,
+        aspect_ratio="16:9",
         duration=5,
     )
 
