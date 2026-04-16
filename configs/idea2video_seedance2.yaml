@@ -1,0 +1,42 @@
+# Configuration using Volcengine SeedDance 2.0 for video generation.
+# Video calls go directly to the Volcengine Ark API (no third-party proxy).
+#
+# Prerequisites:
+#   1. Create an inference endpoint for SeedDance 2.0 in the Ark console.
+#   2. Set the endpoint ID as the model value below (format: ep-YYYYMMDDHHMMSS-xxxxx).
+#
+# API keys (leave blank and pass via environment, or fill in directly):
+#   VOLCENGINE_API_KEY  — Volcengine Ark API key (UUID format)
+#   YUNWU_API_KEY       — yunwu.ai key (used for image generation only)
+#   OPENROUTER_API_KEY  — OpenRouter key (used for chat model)
+
+chat_model:
+  init_args:
+    model: google/gemini-2.5-flash-lite-preview-09-2025
+    model_provider: openai
+    api_key:
+    base_url: https://openrouter.ai/api/v1
+  max_requests_per_minute: 500
+  max_requests_per_day: 2000
+
+# Image generation still routes through yunwu.ai (Seedream 4.0).
+# A direct Volcengine image generation class is not yet available.
+image_generator:
+  class_path: tools.ImageGeneratorDoubaoSeedreamYunwuAPI
+  init_args:
+    api_key:
+  max_requests_per_minute: 10
+  max_requests_per_day: 500
+
+# Video generation via direct Volcengine Ark API (SeedDance 2.0).
+video_generator:
+  class_path: tools.VideoGeneratorDoubaoSeedanceVolcengineAPI
+  init_args:
+    api_key:
+    t2v_model: ep-20260416124751-x4tfn
+    ff2v_model: ep-20260416124751-x4tfn
+    flf2v_model: ep-20260416124751-x4tfn
+  max_requests_per_minute: 2
+  max_requests_per_day: 50
+
+working_dir: .working_dir/idea2video
