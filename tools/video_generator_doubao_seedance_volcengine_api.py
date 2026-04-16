@@ -80,10 +80,11 @@ class VideoGeneratorDoubaoSeedanceVolcengineAPI:
                 async with aiohttp.ClientSession() as session:
                     async with session.post(_BASE_URL, headers=headers, json=payload) as response:
                         response_json = await response.json()
-                        logging.debug(f"Response: {response_json}")
+                        logging.info(f"Response: {response_json}")
                         task_id = response_json["id"]
             except Exception as e:
                 logging.error(f"Error creating video generation task: {e}. Retrying in 1 second...")
+                logging.error(f"Raw response was: {response_json if 'response_json' in dir() else 'no response'}")
                 await asyncio.sleep(1)
                 continue
             break
