@@ -31,6 +31,11 @@ prompt_template_back = \
 Generate a full-body, back-view portrait of character {identifier} based on the provided front-view portrait, with a pure white background. The character should be centered in the image, occupying most of the frame. No facial features should be visible.
 """
 
+prompt_template_face = \
+"""
+Generate a close-up portrait of the face of character {identifier} based on the provided front-view portrait, with a pure white background. The face should be centered and occupy most of the frame. Show facial features, expression, skin texture, and hair in detail. No body below the neck should be visible.
+"""
+
 
 class CharacterPortraitsGenerator:
     def __init__(
@@ -88,5 +93,20 @@ class CharacterPortraitsGenerator:
             prompt=prompt,
             reference_image_paths=[front_image_path],
             # size="512x512",
+        )
+        return image_output
+
+    @retry(stop=stop_after_attempt(3), after=after_func, reraise=True)
+    async def generate_face_portrait(
+        self,
+        character: CharacterInScene,
+        front_image_path: str,
+    ) -> ImageOutput:
+        prompt = prompt_template_face.format(
+            identifier=character.identifier_in_scene,
+        )
+        image_output = await self.image_generator.generate_single_image(
+            prompt=prompt,
+            reference_image_paths=[front_image_path],
         )
         return image_output

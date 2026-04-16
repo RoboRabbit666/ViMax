@@ -513,6 +513,14 @@ class Script2VideoPipeline:
             back_portrait_output = await self.character_portraits_generator.generate_back_portrait(character, front_portrait_path)
             back_portrait_output.save(back_portrait_path)
 
+        # face close-up — provides higher facial detail for CU/MCU shots
+        face_portrait_path = os.path.join(character_dir, "face.png")
+        if os.path.exists(face_portrait_path):
+            pass
+        else:
+            face_portrait_output = await self.character_portraits_generator.generate_face_portrait(character, front_portrait_path)
+            face_portrait_output.save(face_portrait_path)
+
         self.character_portrait_events[character.idx].set()
 
         print(f"☑️ Completed character portrait generation for {character.identifier_in_scene}.")
@@ -530,6 +538,10 @@ class Script2VideoPipeline:
                 "back": {
                     "path": back_portrait_path,
                     "description": f"A back view portrait of {character.identifier_in_scene}.",
+                },
+                "face": {
+                    "path": face_portrait_path,
+                    "description": f"A face close-up portrait of {character.identifier_in_scene}, showing facial features in detail.",
                 },
             }
         }
